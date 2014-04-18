@@ -1,0 +1,130 @@
+<% 
+
+	@pageheader = "NEW CONTRACT"
+	@pageheader_subtitle = "Add / Manage Contracts"
+
+	@new_contract_selected = "selected"
+	@new_contract_active = "active"
+	
+%>
+
+<%= form_for @contract, url: {controller: "backend", action: "contracts_add"} do |f| %>
+
+	<div class="row">
+		<div class="col-sm-5">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+						ADD CONTRACT					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<div class="form-group">
+						<%= f.label :tenant %><br />
+						<%= f.select :tenant_id, @tenants.collect {|a| [a.tenant.last_name + ', ' + a.tenant.first_name, a.tenant.id]  } %>
+						<br />
+					</div>
+
+
+					<div class="form-group">
+						<%= f.label :property_id %><br />
+						<%= f.select :property_id, @properties.collect {|a| [a.name_of_building, a.id]} %>
+						<br />
+					</div>
+
+					<div class="form-group">
+						<%= f.label :room_no %><br />
+						<%= f.text_field :room_no %>
+						<br />
+				
+					</div>
+
+					<div class="form-group">
+						<%= f.label :start_date %><br />
+						<%= f.date_select :start_date %>
+						<br />
+				
+					</div>
+
+
+					<div class="form-group">
+						<%= f.label :end_date %><br />
+						<%= f.date_select :end_date %>
+						<br />
+				
+					</div>
+
+					<div class="form-group">
+						<%= f.label :rental_amount %><br />
+						<%= f.text_field :rental_amount %>
+						<br />
+				
+					</div>
+
+					<div class="form-group">
+						<%= f.label :pay_date %><br />
+						<%= f.select :pay_date, (1..31) %>
+						<br />
+				
+					</div>
+
+					<div class="form-group">
+						<%= f.label :notes %><br />
+						<%= f.text_area :notes %>
+						<br />
+				
+					</div>
+
+					<hr />
+			<div>
+				<%= f.submit "Add Contract", class: "btn btn-success"  %>
+			</div>
+
+					
+				</div>
+
+			</div>
+		</div>
+
+	
+
+		
+
+		
+
+	</div>
+	<div class="row">
+
+		<div class="col-sm-8">
+			
+		</div>
+		
+	</div>
+
+
+	<script src="/assets/backendassets/plugins/flot/jquery.flot.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.pie.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.resize.min.js"></script>
+		<script src="/assets/backendassets/plugins/jquery.sparkline/jquery.sparkline.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		<script src="/assets/backendassets/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
+		<script src="/assets/backendassets/js/index.js"></script>
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				Index.init();
+			});
+		</script>
+
+	<script>
+		
+		$("#edit_landlord_1").validate();
+	
+	</script>
+
+
+<% end %>

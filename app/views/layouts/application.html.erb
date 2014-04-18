@@ -1,14 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" >
 <head>
-  <title>Geniedrives</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title><%= @title %> - GenieLets</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+	<%= favicon_link_tag 'favicon.ico' %>
+
+	<%= stylesheet_link_tag 'application' %>
+<!-- 	<link rel="stylesheet" href="/assets/css/main.css" id="skin_color">
+	<link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/assets/fonts/style.css">
+	<link rel="stylesheet" href="/assets/plugins/iCheck/skins/all.css">
+	<link rel="stylesheet" href="/assets/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+	<link rel="stylesheet" href="/assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
+	<link rel="stylesheet" href="/assets/css/theme_light.css" id="skin_color"> -->
+
+
+	<style>
+
+		h2 {
+			margin-bottom: 10px;
+			text-align: center;
+		}
+
+		input[type="password"], input[type="email"] {
+			width: 100%;
+		}
+
+	</style>
 </head>
-<body>
+<body class="login example2">
 
-<%= yield %>
+	<div class="main-login col-sm-4 col-sm-offset-4">
+		<div class="logo">
+			<%= image_tag 'brand.png' %>
+		</div>
+		<!-- start: LOGIN BOX -->
+		<div class="box-login">
 
-</body>
-</html>
+			<%= yield %>
+
+		</div>
+		<!-- end: LOGIN BOX -->
+		<!-- start: FORGOT BOX -->
+
+		<!-- end: FORGOT BOX -->
+		<!-- start: REGISTER BOX -->
+		<%= render 'layouts/footer' %>
+		<!-- end: REGISTER BOX -->
+		<!-- start: COPYRIGHT -->
+		<div class="copyright" style="text-align: center; width: 100%">
+			&copy; 2014 <a href="genielets.com">GenieLets</a>
+		</div>
+		<!-- end: COPYRIGHT -->
+	</div>
+
+
+
+	<!-- start: MAIN JAVASCRIPTS -->
+		<!--[if lt IE 9]>
+		<script src="assets/plugins/respond.min.js"></script>
+		<script src="assets/plugins/excanvas.min.js"></script>
+		<![endif]-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="/assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="/assets/plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="/assets/plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="/assets/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="/assets/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="/assets/plugins/less/less-1.5.0.min.js"></script>
+		<script src="/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="/assets/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="/assets/js/main.js"></script>
+		<!-- end: MAIN JAVASCRIPTS -->
+		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script src="/assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script src="/assets/js/login.js"></script>
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				Login.init();
+			});
+		</script>
+
+
+	</body>
+	</html>

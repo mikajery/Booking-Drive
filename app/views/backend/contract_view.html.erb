@@ -1,0 +1,426 @@
+<% 
+
+	@pageheader = "View Contract"
+	@pageheader_subtitle = "Contract Details and Summary"
+
+	@new_contract_selected = "selected"
+	@new_contract_active = "active"
+	
+%>
+
+<div class="row">
+
+		<!-- Property Profile -->
+		<div class="col-sm-4">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					CONTRACT INFO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<div class="form-group">
+						Property Name<br />
+						<div class="h3"><%= @contract.property.name_of_building %></div>
+					</div>
+
+					<div class="form-group">
+						Room #<br />
+						<div class="h3"><%= @contract.room_no %> </div>
+					</div>
+
+
+					<div class="form-group">
+						Contract Date<br />
+						<div class="h3">From: <%= @contract.start_date %><br /> To: <%= @contract.end_date %> </div>
+					</div>
+
+					<div class="form-group">
+						Rental Amount<br />
+						<div class="h3"><%= @contract.rental_amount %> </div>
+					</div>
+
+					<div class="form-group">
+						Pay Date<br />
+						<div class="h3"><%= @contract.pay_date %> </div>
+					</div>
+
+					
+
+					<hr/>
+					<div class="form-group">
+						Notes<br />
+						<div class="h5">
+							<%= @contract.notes %><br />
+						</div>
+					</div>
+								
+					<% if session[:user_type] == "Landlord" %>
+					<hr />
+					<a class="btn btn-success" href = '/contract/<%= @contract.id %>/edit' >Edit Contract Info</a>
+					<% end %>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="col-sm-8">
+
+			<div class="row">
+
+				<div class="col-sm-6">
+
+						<div class="panel panel-default" style="position: static; zoom: 1;">
+							<div class="panel-heading">
+								<i class="fa fa-external-link-square"></i>
+								TENANT INFO
+								<div class="panel-tools">
+
+									
+								</div>
+							</div>
+						<div class="panel-body" style="display: block;">
+
+						<div class="form-group">
+							Name<br />
+							<div class="h5"><%= @contract.tenant.last_name %>, <%= @contract.tenant.first_name %> </div>
+						</div>
+
+						<div class="form-group">
+							Sex<br />
+							<div class="h5"><%= @contract.tenant.sex %> </div>
+						</div>
+
+						<div class="form-group">
+							DOB<br />
+							<div class="h5"><%= @contract.tenant.dob %> </div>
+						</div>
+						
+						<hr />
+						<div class="form-group">
+							Email<br />
+							<div class="h5">
+								<%= @contract.tenant.primary_email %><br />
+								<%= @contract.tenant.secondary_email %><br />
+							</div>
+						</div>
+
+						<div class="form-group">
+							Phone<br />
+							<div class="h5">
+								<%= @contract.tenant.primary_phone %><br />
+								<%= @contract.tenant.secondary_phone %><br />
+							</div>
+						</div>
+
+						<div class="form-group">
+							Notes<br />
+							<div class="h5">
+								<%= @contract.tenant.notes %><br />
+							</div>
+						</div>
+									
+						
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="col-sm-6">
+
+						<div class="panel panel-default" style="position: static; zoom: 1;">
+							<div class="panel-heading">
+								<i class="fa fa-external-link-square"></i>
+								LANDLORD INFO
+								<div class="panel-tools">
+									
+								</div>
+							</div>
+							<div class="panel-body" style="display: block;">
+
+							<div class="form-group">
+							Name<br />
+							<div class="h5">
+								<%= @contract.landlord.last_name %>, <%= @contract.landlord.first_name %>
+							</div>
+							</div>
+
+							<div class="form-group">
+								Address<br />
+								<div class="h5">
+									<%= @contract.landlord.address_line_1 %><br />
+									<%= @contract.landlord.address_line_2 %>
+								</div>
+							</div>
+
+							<div class="form-group">
+							City<br />
+								<div class="h5">
+								<%= @contract.landlord.city_town %><br />
+								
+								</div>
+							</div>
+					
+
+							<div class="form-group">
+							Region / County / State / Province<br />
+								<div class="h5">
+									<%= @contract.landlord.province_state_county_region %><br />
+									
+								</div>
+							</div>
+
+							<div class="form-group">
+							Country<br />
+								<div class="h5">
+									<%= @contract.landlord.country %><br />
+									
+								</div>
+							</div>
+
+							<hr />
+						
+							<div class="form-group">
+							Phone<br />
+								<div class="h5">
+
+									<%= @contract.landlord.primary_phone %><br />
+									<%= @contract.landlord.secondary_phone %><br />
+									
+								</div>
+							</div>
+
+
+							<div class="form-group">
+							Company Info<br />
+								<div class="h5">
+									<%= @contract.landlord.company_name %><br />
+									<%= @contract.landlord.company_description %><br />
+									
+								</div>	
+							</div>
+						
+						
+						</div>
+
+				</div>
+
+			</div>	
+		</div>
+
+	</div>	
+
+</div>	
+
+	<div class="row">
+
+				<div class="col-sm-12">
+
+							<div class="panel panel-default" style="position: static; zoom: 1;">
+							<div class="panel-heading">
+								<i class="fa fa-external-link-square"></i>
+								Outstanding Payments (Unpaid Dues)
+								<div class="panel-tools">
+									
+								</div>
+							</div>
+							<div class="panel-body" style="display: block;">
+
+								<table class="table table-striped table-bordered table-hover table-full-width" id="sample_2"> 
+
+									<thead>
+										<td>Invoice ID</td>
+										
+										<td>Due Date</td>
+										<td>Amount</td>
+										<td>Status</td>
+
+										<% if session[:user_type] == 'Landlord' %>
+										
+											<td align="center" width="30%">Action</td>
+
+										<% else %>
+
+											<td align="center" width="30%">Payment</td>
+
+										<% end %>	
+
+
+									</thead>
+
+									<% @payments_late.each do |payment| %>
+
+									<tr>
+										<td>
+											<%= payment.id %>
+										</td>
+										<td>
+											<%= payment.due_date %>
+										</td>
+										<td>
+											<%= payment.amount %>
+										</td>
+										<td>
+											<%= payment.status %>
+										</td>
+										<% if session[:user_type] == 'Landlord' %>
+
+											<td align="center">
+												
+													<% if payment.status == 'Unpaid' %>
+														<a class="btn btn-primary" href="/payment/<%= payment.id %>/mark_as_paid">Mark As Paid</i></a>
+													<% end %>
+
+													<a class="btn btn-primary" href="/payment/<%= payment.id %>/edit"><i class="fa fa-pencil fa fa-white"></i></a>
+
+														 
+											</td>
+
+										<% else %>
+												
+											<td align="center">
+												
+													<% if payment.status == 'Unpaid' %>
+
+														<%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), payment.paypal_url(root_url + 'payment/'+ payment.return_token + '/confirm') 
+ %>
+													<% end %>
+
+													
+														 
+											</td>	
+
+										<% end %>
+
+									</tr>
+
+									<% end %>
+
+								</table>
+						
+							</div>
+
+						</div>
+
+						<div class="panel panel-default" style="position: static; zoom: 1;">
+							<div class="panel-heading">
+								<i class="fa fa-external-link-square"></i>
+								Payment Schedule
+								<div class="panel-tools">
+									
+								</div>
+							</div>
+							<div class="panel-body" style="display: block;">
+
+								<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1"> 
+
+									<thead>
+										<td>Invoice ID</td>
+										<td>Due Date</td>
+										<td>Amount</td>
+										<td>Payment Method</td>
+										<td>Status</td>
+										
+										
+										<% if session[:user_type] == 'Landlord' %>
+											<td align="center" width="30%">Action</td>
+										<% else %>
+											<td align="center" width="30%">Payment</td>	
+										<% end %>	
+
+									</thead>
+
+									<% @payments.each do |payment| %>
+
+									<tr>
+										<td>
+											<%= payment.id %>
+										</td>
+										<td>
+											<%= payment.due_date %>
+										</td>
+										<td>
+											<%= payment.amount %>
+										</td>
+										<td>
+											<%= payment.payment_method %>
+										</td>
+										<td>
+											<%
+
+												if payment.status == 'Paid'
+													color = 'color: #4cae4c'
+													paid_on = 'on ' + payment.date_paid.to_s
+												end
+													
+
+											%>
+											
+											<span style = "font-weight: bold;<%= color %>"><%= payment.status %> <%= paid_on %> </span>
+
+										</td>
+
+										<% if session[:user_type] == 'Landlord' %>
+
+											<td align="center">
+												
+													<% if payment.status == 'Unpaid' %>
+														<a class="btn btn-primary" href="/payment/<%= payment.id %>/mark_as_paid">Mark As Paid</i></a>
+													<% end %>
+
+													<a class="btn btn-primary" href="/payment/<%= payment.id %>/edit"><i class="fa fa-pencil fa fa-white"></i></a>
+
+														 
+											</td>
+										<% else %>
+												
+											<td align="center">
+												
+													<% if payment.status == 'Unpaid' %>
+
+														
+														
+														<%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), payment.paypal_url(root_url + 'payment/'+ payment.return_token + '/confirm') 
+ %>
+													<% end %>
+
+													
+														 
+											</td>	
+										<% end %>
+
+									</tr>
+
+									<% end %>
+
+								</table>
+						
+							</div>
+
+						</div>
+
+				</div>
+
+			</div>	
+
+	<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2.css">
+		<link rel="stylesheet" href="/assets/plugins/DataTables/media/css/DT_bootstrap.css">
+		<script type="text/javascript" src="/assets/backendassets/plugins/select2/select2.min.js"></script>
+		<script type="text/javascript" src="/assets/backendassets/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" src="/assets/backendassets/plugins/DataTables/media/js/DT_bootstrap.js"></script>
+		<script src="/assets/backendassets/js/table-data.js"></script>
+<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				TableData.init();
+			});
+		</script>
+	

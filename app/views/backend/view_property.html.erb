@@ -1,0 +1,172 @@
+<% 
+
+	@pageheader = "View Property"
+	@pageheader_subtitle = "Property Details and Summary"
+
+	@add_property_selected = "selected"
+	@add_property_active = "active"
+	
+%>
+
+
+
+
+<div class="row">
+
+		<!-- Property Profile -->
+		<div class="col-sm-4">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					PROPERTY INFO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<div class="form-group">
+						Property Type<br />
+						<div class="h3"><%= @property.property_type %></div>
+					</div>
+
+					<div class="form-group">
+						Name of Building<br />
+						<div class="h3"><%= @property.name_of_building %></div>
+					</div>
+
+
+					<div class="form-group">
+						Number of Rooms<br />
+						<div class="h3"><%= @property.number_of_rooms %></div>
+					</div>
+
+					<div class="form-group">
+						Approx. Rental<br />
+						<div class="h3"><%= @property.approx_rental %></div>
+					</div>
+
+					<div class="form-group">
+						Notes<br />
+						<div class="h4"><%= @property.notes %></div>
+					</div>
+
+					<hr/>
+					<div class="form-group">
+
+
+							Phone Number:<br />
+							<div><%= @property.phone_number %></div><br /><br />
+
+							Address<br />
+							<div><%= @property.address_line_1 %><br />
+							<%= @property.address_line_2 %></div><br /><br />
+							
+							City:<br />
+							<div><%= @property.city_town %></div><br /><br />
+
+							Province / County / Region / State:<br />
+							<div><%= @property.province_state_county_region %></div><br /><br />
+
+							Post Code:<br />
+							<div><%= @property.post_code %></div><br /><br />
+
+							Country:<br />
+							<div><%= @property.country %></div><br />
+
+
+						
+					</div>
+				
+					<hr />
+					<a class="btn btn-success" href = '/properties/<%= @property.id %>/edit' >Edit Property Info</a>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="col-sm-8">
+
+			<div class="row">
+
+				<div class="col-sm-6">
+
+						<div class="panel panel-default" style="position: static; zoom: 1;">
+							<div class="panel-heading">
+								<i class="fa fa-external-link-square"></i>
+								Tenant Info
+								<div class="panel-tools">
+									
+								</div>
+							</div>
+							<div class="panel-body" style="display: block;">
+
+						
+							</div>
+
+						</div>
+
+				</div>
+
+				<div class="col-sm-6">
+
+						<div class="panel panel-default" style="position: static; zoom: 1;">
+							<div class="panel-heading">
+								<i class="fa fa-external-link-square"></i>
+								Contract Info
+								<div class="panel-tools">
+									
+								</div>
+							</div>
+							<div class="panel-body" style="display: block;">
+
+						
+							</div>
+
+						</div>
+
+				</div>
+
+			</div>	
+
+			<div class="row">
+
+				<div class="col-sm-12">
+
+						<div class="panel panel-default" style="position: static; zoom: 1;">
+							<div class="panel-heading">
+								<i class="fa fa-external-link-square"></i>
+								Payment History
+								<div class="panel-tools">
+									
+								</div>
+							</div>
+							<div class="panel-body" style="display: block;">
+
+						
+							</div>
+
+						</div>
+
+				</div>
+
+			</div>	
+
+		</div>	
+
+
+
+</div>	
+
+
+<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				TableData.init();
+			});
+		</script>
+	

@@ -1,0 +1,131 @@
+
+
+				<div class="main-navigation navbar-collapse collapse">
+					<!-- start: MAIN MENU TOGGLER BUTTON -->
+					<div class="navigation-toggler">
+						<i class="clip-chevron-left"></i>
+						<i class="clip-chevron-right"></i>
+					</div>
+					<!-- end: MAIN MENU TOGGLER BUTTON -->
+					<!-- start: MAIN NAVIGATION MENU -->
+					<ul class="main-navigation-menu">
+						<li class="<%= @dashboard_active %>">
+							<a href="/backend/dashboard"><i class="clip-bars"></i>
+								<span class="title"> <%= session[:user_type] %> Dashboard </span><span class="<%= @dashboard_selected %>"></span>
+							</a>
+						</li>
+						<li class="<%= @add_property_active %>">
+							<a href="javascript:void(0)"><i class="fa fa-home"></i>
+								<span class="title"> Properties </span><i class="icon-arrow"></i>
+								<span class="selected"></span>
+							</a>
+							<ul class="sub-menu">
+								<li >
+									<a href="/properties/add">
+										<span class="title"> Add New Property </span><span class="<%= @add_property_selected %>"></span>
+									</a>
+								</li>
+								<li>
+									<a href="/properties/list">
+										<span class="title"> List Of Properties</span><span class="<%= @list_property_selected %>"></span>
+									</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="<%= @add_tenant_active %>">
+							<a href="javascript:void(0)"><i class="clip-users"></i>
+								<span class="title"> Tenants </span><i class="icon-arrow"></i>
+								<span class="selected"></span>
+							</a>
+							<ul class="sub-menu">
+									<li>
+									<a href="/tenants/addconnection">
+										<span class="title"> Request Connection </span><span class="<%= @add_tenant_selected %>"></span>
+									</a>
+								</li>
+								<li>
+									<a href="/tenants/list">
+										<span class="title"> List of Tenants </span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="<%= @new_contract_active %>">
+							<a href="javascript:void(0)"><i class="clip-libreoffice"></i>
+								<span class="title"> Contracts </span><i class="icon-arrow"></i>
+								<span class="selected"></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="/contracts/add">
+										<span class="title"> Add New Contract </span>
+									</a><span class="<%= @new_contract_selected %>"></span>
+								</li>
+								<li>
+									<a href="/contracts/list">
+										<span class="title"> List of Contracts </span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="clip-banknote"></i>
+								<span class="title"> Payments </span><i class="icon-arrow"></i>
+								<span class="selected"></span>
+							</a>
+							<ul class="sub-menu">
+								
+								<li>
+									<a href="/payment/dues">
+										<span class="title"> Dues Not Yet Paid</span>
+									</a>
+								</li>
+								<li>
+									<a href="/payment/paid">
+										<span class="title"> Paid Dues </span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="clip-file-2"></i>
+								<span class="title"> Reports </span><i class="icon-arrow"></i>
+								<span class="selected"></span>
+							</a>
+							<ul class="sub-menu">
+									<li>
+									<a href="/reports/property_payments">
+										<span class="title"> Property Payments </span>
+									</a>
+								</li>
+								<li>
+									<a href="/reports/tenant_payments">
+										<span class="title"> Tenant Payments </span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="<%= @profile_active %>">
+							<a href="javascript:void(0)"><i class="clip-user-2"></i>
+								<span class="title">Profile Settings</span><i class="icon-arrow"></i>
+								<span class="selected"></span>
+							</a>
+							<ul class="sub-menu">
+								<li >
+									<a href="/backend/account_summary">
+										<span class="title">Account Summary</span><span class="<%= @profile_selected %>"></span>
+									</a>
+								</li>
+								<li >
+									<a href="/backend/profile">
+										<span class="title">Edit Profile</span><span class="<%= @profile_selected %>"></span>
+									</a>
+								</li>
+								
+							</ul>
+						</li>
+						
+					</ul>
+					<!-- end: MAIN NAVIGATION MENU -->
+				</div>

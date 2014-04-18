@@ -1,0 +1,232 @@
+<% 
+
+	@pageheader = "Profile"
+	@pageheader_subtitle = "account details"
+
+	@profile_selected = "selected"
+	@profile_active = "active"
+	
+%>
+
+<%= form_for @landlord, :html =>  {:multipart => "true"}, url: {controller: "backend", action: "profile"} do |f| %>
+
+	<div class="row">
+		<div class="col-sm-4">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					NAME
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<div class="form-group">
+						<%= f.label :first_name %><br />
+						<%= f.text_field :first_name %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :middle_name %><br />
+						<%= f.text_field :middle_name %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :last_name %><br />
+						<%= f.text_field :last_name %>
+					</div>
+
+					
+					
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					COMPANY INFO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<div class="form-group">
+						<%= f.label :company_name %><br />
+						<%= f.text_field :company_name %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :company_description %><br />
+						<%= f.text_area :company_description, cols: 20, rows: 5 %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :vat_number %><br />
+						<%= f.text_field :vat_number %>
+					</div>
+
+					
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					PICTURE / COMPANY LOGO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+						<%= image_tag @landlord.avatar_url, width: "100%" %>
+						<br /><br />
+						<%= f.file_field :avatar %>
+					
+
+					
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<div class="row">
+
+		<div class="col-sm-6">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					ADDRESS / CONTACT INFO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<div class="form-group">
+						<%= f.label :address_line_1 %><br />
+						<%= f.text_field :address_line_1 %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :address_line_2 %><br />
+						<%= f.text_field :address_line_2 %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label "City / Town" %><br />
+						<%= f.text_field :city_town %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label "Region / County / State" %><br />
+						<%= f.text_field :province_state_county_region %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label "Country" %><br />
+						<%= country_select("landlord", "country", [ "United Kingdom", "United States", "France", "Germany" ]) %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label "primary_phone" %><br />
+						<%= f.text_field :primary_phone %>
+					</div>
+
+
+					<div class="form-group">
+						<%= f.label "secondary_phone" %><br />
+						<%= f.text_field :secondary_phone %>
+					</div>
+
+					
+				
+			</div>
+
+		
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					PAYMENT INFO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<div class="form-group">
+						<%= f.label :paypal_email_id %><br />
+						<%= f.email_field :paypal_email_id %>
+					</div>
+					<hr />
+					<div class="form-group">
+						<%= f.label :bank_account_no %><br />
+						<%= f.text_field :bank_account_no %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :bank_name %><br />
+						<%= f.text_field :bank_name %>
+
+					</div>
+
+					<div class="form-group">
+						<%= f.label :bank_branch %><br />
+						<%= f.text_field :bank_branch %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :currency %><br />
+						<%= f.currency_select(:currency) %>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div style="float:right; margin-bottom: 30px;">
+	<%= f.submit "Update Profile", class: "btn btn-success"  %>
+	</div>
+
+	<script src="/assets/backendassets/plugins/flot/jquery.flot.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.pie.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.resize.min.js"></script>
+		<script src="/assets/backendassets/plugins/jquery.sparkline/jquery.sparkline.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		<script src="/assets/backendassets/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+		<script src="/assets/backendassets/js/index.js"></script>
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				Index.init();
+			});
+		</script>
+
+	<script>
+		
+		$("#edit_landlord_1").validate();
+	
+	</script>
+
+
+<% end %>

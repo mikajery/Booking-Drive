@@ -1,0 +1,119 @@
+<% 
+
+	@pageheader = "Profile"
+	@pageheader_subtitle = "account details"
+
+	@profile_selected = "selected"
+	@profile_active = "active"
+	
+%>
+
+<%= form_for @tenant, url: {controller: "backend", action: "tenant_profile"} do |f| %>
+
+	<div class="row">
+		<div class="col-sm-4">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					Profile Info
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+				    <%= image_tag @tenant.avatar_url, width: "100%" %>
+				    <hr />
+
+					<div class="form-group">
+						Name:<br />
+						<div class="h3"><%= @tenant.first_name %> <%= @tenant.middle_name %> <%= @tenant.last_name %> </div>
+					</div>
+
+					<div class="form-group">
+						Sex:<br />
+						<div class="h3"><%= @tenant.sex %></div>
+					</div>
+
+					<div class="form-group">
+						DOB:<br />
+						<div class="h3"><%= @tenant.dob %></div>
+					</div>
+
+
+					<div class="form-group">
+						Notes:<br />
+						<div class="h3"><%= @tenant.notes %></div>
+					</div>
+
+					<hr />
+
+					<div class="form-group">
+						Primary Email:<br />
+						<div class="h3"><%= @tenant.primary_email %></div>
+					</div>
+
+					<div class="form-group">
+						Secondary Email:<br />
+						<div class="h3"><%= @tenant.secondary_email %></div>
+					</div>
+
+					<div class="form-group">
+						Primary Phone:<br />
+						<div class="h3"><%= @tenant.primary_phone %></div>
+					</div>
+
+					<div class="form-group">
+						Secondary Phone:<br />
+						<div class="h3"><%= @tenant.secondary_phone %></div>
+					</div>
+
+
+					
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+
+			
+		</div>
+
+		
+
+	</div>
+	<div class="row">
+
+		<div class="col-sm-8">
+			<hr />
+			
+		</div>
+		
+	</div>
+
+
+	<script src="/assets/backendassets/plugins/flot/jquery.flot.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.pie.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.resize.min.js"></script>
+		<script src="/assets/backendassets/plugins/jquery.sparkline/jquery.sparkline.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		<script src="/assets/backendassets/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
+		<script src="/assets/backendassets/js/index.js"></script>
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				Index.init();
+			});
+		</script>
+
+	<script>
+		
+		$("#edit_landlord_1").validate();
+	
+	</script>
+
+
+<% end %>

@@ -1,0 +1,36 @@
+<%
+  @title = "Sign Up"
+%>
+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+ <div class="form-group">
+  <div style="text-align: center">
+
+
+  	<%= f.radio_button :user_type, 'Landlord', :checked => (session[:type]=='landlord' or session[:type]!='tenant'), :value => 'Landlord' %>
+  	<%= f.label :landlord %> 
+  	<%= f.radio_button :user_type, 'Tenant', :checked => (session[:type]=='tenant'), :value => 'Tenant' %>
+  	<%= f.label :tenant %><br />
+
+
+  </div>
+             
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true, :class=> 'form_control' %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+</div>
+<div class="form-actions">
+  <div style="margin-top: 10px;"><%= f.submit "Sign up", :class=>"btn btn-bricky pull-right" %></div>
+</div>
+<% end %>
+<div class="new-account">
+      <%= render "devise/shared/links" %>
+</div>

@@ -1,0 +1,249 @@
+<% 
+
+	@pageheader = "Edit Contract"
+	@pageheader_subtitle = "Contract Details and Summary"
+
+	@new_contract_selected = "selected"
+	@new_contract_active = "active"
+	
+%>
+
+
+
+
+<div class="row">
+
+		<!-- Property Profile -->
+		<div class="col-sm-4">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					CONTRACT INFO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+<%= form_for @contract, url: {controller: "backend", action: "contract_edit"} do |f| %>
+						<div class="form-group">
+						<%= f.label :tenant %><br />
+						<%= f.select :tenant_id, @tenants.collect {|a| [a.tenant.last_name + ', ' + a.tenant.first_name, a.tenant.id]  } %>
+						<br />
+					</div>
+
+
+					<div class="form-group">
+						<%= f.label :property_id %><br />
+						<%= f.select :property_id, @properties.collect {|a| [a.name_of_building, a.id]} %>
+						<br />
+					</div>
+
+					<div class="form-group">
+						<%= f.label :room_no %><br />
+						<%= f.text_field :room_no %>
+						<br />
+				
+					</div>
+
+					<div class="form-group">
+						<%= f.label :start_date %><br />
+						<%= f.date_select :start_date %>
+						<br />
+				
+					</div>
+
+
+					<div class="form-group">
+						<%= f.label :end_date %><br />
+						<%= f.date_select :end_date %>
+						<br />
+				
+					</div>
+
+					<div class="form-group">
+						<%= f.label :rental_amount %><br />
+						<%= f.text_field :rental_amount %>
+						<br />
+				
+					</div>
+
+					<div class="form-group">
+						<%= f.label :pay_date %><br />
+						<%= f.select :pay_date, (1..31) %>
+						<br />
+				
+					</div>
+
+					<div class="form-group">
+						<%= f.label :notes %><br />
+						<%= f.text_area :notes %>
+						<br />
+				
+					</div>
+								
+				
+					<hr />
+					<%= f.submit "Update Contract", class: "btn btn-success"  %>
+<% end %>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="col-sm-8">
+
+			<div class="row">
+
+				<div class="col-sm-6">
+
+						<div class="panel panel-default" style="position: static; zoom: 1;">
+							<div class="panel-heading">
+								<i class="fa fa-external-link-square"></i>
+								Tenant Info
+								<div class="panel-tools">
+
+									
+								</div>
+							</div>
+						<div class="panel-body" style="display: block;">
+
+						<div class="form-group">
+							Name<br />
+							<div class="h5"><%= @contract.tenant.last_name %>, <%= @contract.tenant.first_name %> </div>
+						</div>
+
+						<div class="form-group">
+							Sex<br />
+							<div class="h5"><%= @contract.tenant.sex %> </div>
+						</div>
+
+						<div class="form-group">
+							DOB<br />
+							<div class="h5"><%= @contract.tenant.dob %> </div>
+						</div>
+						
+						<hr />
+						<div class="form-group">
+							Email<br />
+							<div class="h5">
+								<%= @contract.tenant.primary_email %><br />
+								<%= @contract.tenant.secondary_email %><br />
+							</div>
+						</div>
+
+						<div class="form-group">
+							Phone<br />
+							<div class="h5">
+								<%= @contract.tenant.primary_phone %><br />
+								<%= @contract.tenant.secondary_phone %><br />
+							</div>
+						</div>
+
+						<div class="form-group">
+							Notes<br />
+							<div class="h5">
+								<%= @contract.tenant.notes %><br />
+							</div>
+						</div>
+									
+						
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="col-sm-6">
+
+						<div class="panel panel-default" style="position: static; zoom: 1;">
+							<div class="panel-heading">
+								<i class="fa fa-external-link-square"></i>
+								LANDLORD INFO
+								<div class="panel-tools">
+									
+								</div>
+							</div>
+							<div class="panel-body" style="display: block;">
+
+							<div class="form-group">
+							Name<br />
+							<div class="h5">
+								<%= @contract.landlord.last_name %>, <%= @contract.landlord.first_name %>
+							</div>
+							</div>
+
+							<div class="form-group">
+								Address<br />
+								<div class="h5">
+									<%= @contract.landlord.address_line_1 %><br />
+									<%= @contract.landlord.address_line_2 %>
+								</div>
+							</div>
+
+							<div class="form-group">
+							City<br />
+								<div class="h5">
+								<%= @contract.landlord.city_town %><br />
+								
+								</div>
+							</div>
+					
+
+							<div class="form-group">
+							Region / County / State / Province<br />
+								<div class="h5">
+									<%= @contract.landlord.province_state_county_region %><br />
+									
+								</div>
+								</div>
+
+							<hr />
+						
+							<div class="form-group">
+							Phone<br />
+								<div class="h5">
+
+									<%= @contract.landlord.primary_phone %><br />
+									<%= @contract.landlord.secondary_phone %><br />
+									
+								</div>
+							</div>
+
+
+							<div class="form-group">
+							Company Info<br />
+								<div class="h5">
+									<%= @contract.landlord.company_name %><br />
+									<i><%= @contract.landlord.company_description %></i><br />
+									
+								</div>	
+							</div>
+						
+						
+						</div>
+
+				</div>
+
+			</div>	
+		</div>
+
+			
+
+		</div>	
+
+
+
+</div>	
+
+
+<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				TableData.init();
+			});
+		</script>
+	

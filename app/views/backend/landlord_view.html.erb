@@ -1,0 +1,195 @@
+<% 
+
+	@pageheader = "Landlord Profile"
+	@pageheader_subtitle = "Profile and Subscription Details of your Landlord"
+
+	@profile_selected = "selected"
+	@profile_active = "active"
+	
+%>
+
+<%= form_for @landlord, :html =>  {:multipart => "true"}, url: {controller: "backend", action: "profile"} do |f| %>
+
+	<div class="row">
+		<div class="col-sm-4">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					PROFILE INFO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+											
+
+					<div class="form-group">
+						<%= image_tag @landlord.avatar_url, width: "100%" %>
+					</div>
+					<hr />
+						
+
+					<div class="form-group">
+						Full Name<br />
+						<div class="h3"><%= @landlord.first_name %> <%= @landlord.middle_name %>  <%= @landlord.last_name %></div>
+					</div>
+					<hr />
+					<div class="form-group">
+						Address<br />
+						<div class="h4">
+							<%= @landlord.address_line_1 %><br />
+							<%= @landlord.address_line_2 %><br /><br />
+							<%= @landlord.city_town %><br />
+							<%= @landlord.province_state_county_region %><br />
+							<%= @landlord.country %><br />
+							<br />
+
+						</div>
+						Phone<br />
+						<div class="h4">
+							<%= @landlord.primary_phone %> (primary)<br />
+							<%= @landlord.secondary_phone %> (secondary)<br /><br />
+							
+						</div>
+					<hr />
+					
+					<div class="form-group">
+						Company Info<br />
+						<div class="h3"><%= @landlord.company_name %></div>
+					</div>
+
+					<div class="form-group">
+						Company Description<br />
+						<div class="h4"><%= @landlord.company_description %></div>
+					</div>
+
+					<div class="form-group">
+						VAT Number<br />
+						<div class="h4"><%= @landlord.vat_number %></div>
+					</div>
+
+					
+
+
+					
+					
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+
+			
+		</div>
+
+		
+
+	</div>
+	<div class="row">
+
+		<div class="col-sm-6">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					SUBSCRIPTION INFO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					
+					<div class="form-group">
+						Subscription Type:<br />
+						<div class="h4"><%= @landlord.subscription.last.subscription_type %></div>
+					</div>
+
+
+					<div class="form-group">
+						Date From:<br />
+						<div class="h4"><%= @landlord.subscription.last.date_from %></div>
+					</div>
+
+					<div class="form-group">
+						Date To:<br />
+						<div class="h4"><%= @landlord.subscription.last.date_to %></div>
+					</div>
+
+					
+				
+				</div>
+
+		
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					PAYMENT INFO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<div class="form-group">
+						Paypal Email ID<br />
+						<%= @landlord.paypal_email_id %>
+					</div>
+					<hr />
+					<div class="form-group">
+						Bank Account #<br />
+						<%= @landlord.bank_account_no %>
+					</div>
+
+					<div class="form-group">
+						Bank Name<br />
+						<%= @landlord.bank_name %>
+
+					</div>
+
+					<div class="form-group">
+						Bank Branch<br />
+						<%= @landlord.bank_branch %>
+					</div>
+
+					<div class="form-group">
+						Currency<br />
+						<%= @landlord.currency %>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	
+	<script src="/assets/backendassets/plugins/flot/jquery.flot.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.pie.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.resize.min.js"></script>
+		<script src="/assets/backendassets/plugins/jquery.sparkline/jquery.sparkline.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		<script src="/assets/backendassets/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
+		<script src="/assets/backendassets/js/index.js"></script>
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				Index.init();
+			});
+		</script>
+
+	<script>
+		
+		$("#edit_landlord_1").validate();
+	
+	</script>
+
+
+<% end %>

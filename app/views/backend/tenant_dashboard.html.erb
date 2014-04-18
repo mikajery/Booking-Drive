@@ -1,0 +1,442 @@
+<% 
+
+	@pageheader = "Dashboard"
+	@pageheader_subtitle = "overview and stats"
+	@dashboard_selected = "selected"
+	@dashboard_active = "active"
+	
+%>
+
+
+<div class="row">
+	<div class="col-sm-12">
+
+		<div class="row space12">
+
+			<ul class="mini-stats col-sm-12">
+
+				<li class="col-sm-3">
+
+					<div class="values">
+						<strong><a href="/properties/list">1</strong></a>
+						<span class="lightlabels">Total Properties</span>
+					</div>
+				</li>
+
+				<li class="col-sm-3">
+
+					<div class="values">
+						<strong><a href="/contracts/list">1</a></strong>
+						<span class="lightlabels">Active Contracts</span>
+					</div>
+				</li>
+
+				<li class="col-sm-3">
+
+					<div class="values">
+						<strong><a href="/payment/paid_current_month">0</a></strong>
+						<span class="lightlabels"># 0f Payments Collected for the Month</span>
+					</div>
+				</li>
+
+				<li class="col-sm-3">
+
+					<div class="values">
+						<strong><a href="/payment/unpaid_current_month">0</a></strong>
+						<span class="lightlabels"># of Payment Uncollected for the Month</span>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+
+<div class="row">
+	<div class="col-md-9">
+	<!-- start: CATEGORIES PANEL -->
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<i class="fa fa-external-link-square"></i>
+			Rent Collection Trend
+			<div class="panel-tools">
+				<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+				</a>
+				<a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+				<i class="fa fa-wrench"></i>
+				</a>
+				<a class="btn btn-xs btn-link panel-refresh" href="#">
+				<i class="fa fa-refresh"></i>
+				</a>
+				<a class="btn btn-xs btn-link panel-expand" href="#">
+				<i class="fa fa-resize-full"></i>
+				</a>
+				<a class="btn btn-xs btn-link panel-close" href="#">
+				<i class="fa fa-times"></i>
+				</a>
+			</div>	
+		</div>
+	<div class="panel-body">
+		<div class="flot-small-container">
+			<strong>Paid Rents ( As of 03 April 2014 ) </strong><br />
+			<div id="placeholder" class="plot" style="width:100%;height:300px;"></div>
+		</div>
+	<div class="flot-small-container">
+	<br /><br /><strong>Unpaid Rents ( As of 03 April 2014 ) </strong><br />
+	<div id="placeholderunpaid" class="plot" style="width:100%;height:200px;"></div>
+	</div>
+	<em>Note: Computed based on <b>Date Paid</b>, if a rent for March is paid advanced on January, it will be computed as earning on January because it was collected on January</em>
+	</div>
+	</div>
+	<!-- end: CATEGORIES PANEL -->
+	</div>
+	<div class="col-md-3">
+	<!-- start: CATEGORIES PANEL -->
+	<div class="panel panel-default">
+	<div class="panel-heading">
+	<i class="fa fa-external-link-square"></i>
+	Totals (2014)
+	<div class="panel-tools">
+
+	</div>
+	</div>
+		<div class="panel-body">
+
+			<table class="table table-striped table-hover" id="sample-table-1" style="width: 100%" >
+				<thead>
+				<td>Month</td>
+				<td align="right">Paid</td>
+				<td align="right">Unpaid</td>
+
+
+				</thead>
+				<tbody>
+
+
+
+				<tr><td>Jan</td><td align="right"><a href="/payment/1/paid"> 0.0</a>   </td><td align="right"><a href="/payment/1/unpaid"> 0.0</a></td></tr>
+				<tr><td>Feb</td><td  align="right"><a href="/payment/2/paid">0.0</a>   </td><td align="right"><a href="/payment/2/unpaid"> 700.0</a></td></tr>
+				<tr><td>Mar</td><td  align="right"><a href="/payment/3/paid">700.0</a>   </td><td align="right"><a href="/payment/3/unpaid"> 0.0</a></td></tr>
+				<tr><td>Apr</td><td  align="right"><a href="/payment/4/paid">0.0</a>   </td><td align="right"><a href="/payment/4/unpaid"> 0.0</a></td></tr>
+				<tr><td>May</td><td  align="right"><a href="/payment/5/paid">0.0</a>   </td><td align="right"><a href="/payment/5/unpaid"> 0.0</a></td></tr>
+				<tr><td>Jun</td><td  align="right"><a href="/payment/6/paid">0.0</a>   </td><td align="right"><a href="/payment/6/unpaid"> 0.0</a></td></tr>
+				<tr><td>Jul</td><td  align="right"><a href="/payment/7/paid">0.0</a>   </td><td align="right"><a href="/payment/7/unpaid"> 0.0</a></td></tr>
+				<tr><td>Aug</td><td  align="right"><a href="/payment/8/paid">0.0</a>   </td><td align="right"><a href="/payment/8/unpaid"> 0.0</a></td></tr>
+				<tr><td>Sep</td><td  align="right"><a href="/payment/9/paid">0.0</a>   </td><td align="right"><a href="/payment/9/unpaid"> 0.0</a></td></tr>
+				<tr><td>Oct</td><td  align="right"><a href="/payment/10/paid">0.0</a>  </td><td align="right"><a href="/payment/10/unpaid"> 0.0</a></td></tr>
+				<tr><td>Nov</td><td  align="right"><a href="/payment/11/paid">0.0</a>  </td><td align="right"><a href="/payment/11/unpaid"> 0.0</a></td></tr>
+				<tr><td>Dec</td><td  align="right"><a href="/payment/12/paid">0.0</a>  </td><td align="right"><a href="/payment/12/unpaid"> 0.0</a></td></tr>
+
+				</tbody>
+
+			</table>
+
+			<hr />
+			<p align="right">
+			<strong style="font-size: 1.4em;">GBP 700.0</strong><br />
+			<span class="lightlabels">Total Paid Rents</span><br /><br />
+
+			<strong style="font-size: 1.4em;">GBP 700.0</strong><br />
+			<span class="lightlabels">Total Unpaid Rents</span>
+			</p>
+		</div>
+	</div>
+	<!-- end: CATEGORIES PANEL -->
+	</div>
+
+	</div>
+
+
+	<!-- Begin Rents -->
+	<div class="row">
+
+
+	<div class="col-sm-6">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+	<i class="clip-users-2"></i>
+	Paid Rents This Month
+	<div class="panel-tools">
+	<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+	</a>
+	<a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+	<i class="fa fa-wrench"></i>
+	</a>
+	<a class="btn btn-xs btn-link panel-refresh" href="#">
+	<i class="fa fa-refresh"></i>
+	</a>
+	<a class="btn btn-xs btn-link panel-close" href="#">
+	<i class="fa fa-times"></i>
+	</a>
+	</div>
+	</div>
+	<div class="panel-body panel-scroll ps-container" style="height:300px">
+	<table class="table table-striped table-hover" id="sample-table-1">
+	<thead>
+	<td>Tenant</td>
+
+	<td>Due Date</td>
+	<td>Date Paid</td>
+	<td>Amount</td>
+	<td>Status</td>
+	<td align="center"></td>
+	</thead>
+	<tbody>
+	</tbody>
+	</table>
+	<hr />
+	<p align="right">
+	<strong style="font-size: 1.4em;">GBP 0</strong>
+	<br />
+	<span class="lightlabels">Total Paid Rents for April, 2014</span>
+	</p>
+	<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: -87px; width: 536px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 90px; right: 3px; height: 300px;"><div class="ps-scrollbar-y" style="top: 70px; height: 230px;"></div></div></div>
+	</div>
+	</div>
+
+	<div class="col-sm-6">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+	<i class="clip-users-2"></i>
+	Unpaid Rents This Month
+	<div class="panel-tools">
+	<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+	</a>
+	<a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+	<i class="fa fa-wrench"></i>
+	</a>
+	<a class="btn btn-xs btn-link panel-refresh" href="#">
+	<i class="fa fa-refresh"></i>
+	</a>
+	<a class="btn btn-xs btn-link panel-close" href="#">
+	<i class="fa fa-times"></i>
+	</a>
+	</div>
+	</div>
+	<div class="panel-body panel-scroll ps-container" style="height:300px">
+	<table class="table table-striped table-hover" id="sample-table-1">
+	<thead>
+	<td>Tenant</td>
+
+	<td>Due Date</td>
+	<td>Amount</td>
+	<td>Status</td>
+	<td align="center"></td>
+	</thead>
+	<tbody>
+	</tbody>
+	</table>
+	<hr />
+	<p align="right">
+	<strong style="font-size: 1.4em;">GBP 0</strong>
+	<br />
+	<span class="lightlabels">Total Unpaid Rents for April, 2014</span>
+	</p>
+	<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: -87px; width: 536px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 90px; right: 3px; height: 300px;"><div class="ps-scrollbar-y" style="top: 70px; height: 230px;"></div></div></div>
+	</div>
+	</div>
+
+
+
+
+
+	</div>
+	<!-- END Rents -->
+
+	<!-- Begin Contracts -->
+	<div class="row">
+
+
+	<div class="col-sm-6">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+	<i class="clip-users-2"></i>
+	New Contracts Starting this Month
+	<div class="panel-tools">
+	<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+	</a>
+	<a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+	<i class="fa fa-wrench"></i>
+	</a>
+	<a class="btn btn-xs btn-link panel-refresh" href="#">
+	<i class="fa fa-refresh"></i>
+	</a>
+	<a class="btn btn-xs btn-link panel-close" href="#">
+	<i class="fa fa-times"></i>
+	</a>
+	</div>
+	</div>
+	<div class="panel-body panel-scroll ps-container" style="height:300px">
+	<table class="table table-striped table-hover" id="sample-table-1">
+	<thead>
+	<td>Tenant</td>
+
+	<td>Property / Room #</td>
+	<td>Rent</td>
+
+	<td align="center"></td>
+	</thead>
+	<tbody>
+	</tbody>
+	</table>
+	<hr />
+	<p align="right">
+	<strong style="font-size: 1.4em;">0</strong>
+	<br />
+	<span class="lightlabels">Total Contracts Starting on April, 2014</span>
+	</p>
+	<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: -87px; width: 536px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 90px; right: 3px; height: 300px;"><div class="ps-scrollbar-y" style="top: 70px; height: 230px;"></div></div></div>
+	</div>
+	</div>
+
+	<div class="col-sm-6">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+	<i class="clip-users-2"></i>
+	Contracts Ending this Month
+	<div class="panel-tools">
+	<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+	</a>
+	<a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+	<i class="fa fa-wrench"></i>
+	</a>
+	<a class="btn btn-xs btn-link panel-refresh" href="#">
+	<i class="fa fa-refresh"></i>
+	</a>
+	<a class="btn btn-xs btn-link panel-close" href="#">
+	<i class="fa fa-times"></i>
+	</a>
+	</div>
+	</div>
+	<div class="panel-body panel-scroll ps-container" style="height:300px">
+	<table class="table table-striped table-hover" id="sample-table-1">
+	<thead>
+	<td>Tenant</td>
+
+	<td>Property / Room #</td>
+	<td>Rent</td>
+
+	<td align="center"></td>
+	</thead>
+	<tbody>
+	</tbody>
+	</table>
+	<hr />
+	<p align="right">
+	<strong style="font-size: 1.4em;">0</strong>
+	<br />
+	<span class="lightlabels">Total Contracts Ending on April, 2014</span>
+	</p>
+	<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: -87px; width: 536px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 90px; right: 3px; height: 300px;"><div class="ps-scrollbar-y" style="top: 70px; height: 230px;"></div></div></div>
+	</div>
+	</div>
+
+
+
+
+
+	</div>
+	<!-- END Contracts -->
+
+
+	<script src="/assets/backendassets/plugins/flot/jquery.flot.js"></script>
+	<script src="/assets/backendassets/plugins/flot/jquery.flot.pie.js"></script>
+	<script src="/assets/backendassets/plugins/flot/jquery.flot.resize.min.js"></script>
+	<script src="/assets/backendassets/plugins/flot/jquery.flot.categories.js"></script>
+	<script src="/assets/backendassets/plugins/jquery.sparkline/jquery.sparkline.js"></script>
+	<script src="/assets/backendassets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+	<script src="/assets/backendassets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<script src="/assets/backendassets/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
+	<script src="/assets/backendassets/js/index.js"></script>
+
+	<script>
+
+	jQuery(document).ready(function() {
+
+	Main.init();
+	Index.init();
+
+	var data = [
+	["Jan", 0.0],
+	["Feb", 0.0],
+	["Mar", 700.0],
+	["Apr", 0.0],
+	["May", 0.0],
+	["Jun", 0.0],
+	["Jul", 0.0],
+	["Aug", 0.0],
+	["Sep", 0.0],
+	["Oct", 0.0],
+	["Nov", 0.0],
+	["Dec", 0.0] 
+	];
+
+	jQuery.plot("#placeholder", [ data ], {
+	series: {
+	bars: {
+	show: true,
+	barWidth: 0.6,
+	align: "center"
+	}
+	},
+	xaxis: {
+	mode: "categories",
+	tickLength: 0
+	}
+	});
+
+	var dataunpaid = [
+	["Jan", 0.0],
+	["Feb", 700.0],
+	["Mar", 0.0],
+	["Apr", 0.0],
+	["May", 0.0],
+	["Jun", 0.0],
+	["Jul", 0.0],
+	["Aug", 0.0],
+	["Sep", 0.0],
+	["Oct", 0.0],
+	["Nov", 0.0],
+	["Dec", 0.0] 
+	];
+
+	jQuery.plot("#placeholderunpaid", [ dataunpaid ], {
+	series: {
+	bars: {
+	show: true,
+	barWidth: 0.6,
+	align: "center"
+	}
+	},
+	xaxis: {
+	mode: "categories",
+	tickLength: 0
+	}
+	});
+
+	});
+	</script>
+
+	<style>
+	.lightlabels {
+	color: gray;
+	}
+	</style>
+
+
+
+
+	</div>
+</div>
+
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.pie.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.resize.min.js"></script>
+		<script src="/assets/backendassets/plugins/jquery.sparkline/jquery.sparkline.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		<script src="/assets/backendassets/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
+		<script src="/assets/backendassets/js/index.js"></script>
+		

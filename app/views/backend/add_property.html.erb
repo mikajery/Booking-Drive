@@ -1,0 +1,25 @@
+<% 
+
+	@pageheader = "Add Property"
+	@pageheader_subtitle = "Create New Property"
+
+	@add_property_selected = "selected"
+	@add_property_active = "active"
+	
+%>
+
+
+
+	<%= render 'property_form' %>
+
+	<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				TableData.init();
+			});
+		</script>
+
+	
+
+
+

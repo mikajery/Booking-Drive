@@ -1,0 +1,76 @@
+<% 
+
+	@pageheader = "List Property"
+	@pageheader_subtitle = "List of all Property"
+
+	@list_property_selected = "selected"
+	@add_property_active = "active"
+	
+%>
+
+<div class="row">
+	<div class="col-md-12">
+	<p><a href="/properties/add" class= "btn btn-success"><i class=" fa fa-plus"></i> Add Property</a></p>	
+	</div>
+</div>
+<div class="row">
+						<div class="col-md-12">
+							<!-- start: DYNAMIC TABLE PANEL -->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<i class="fa fa-external-link-square"></i>
+									Properties
+									<div class="panel-tools">
+										
+									</div>
+								</div>
+								<div class="panel-body">
+									<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+										<thead>
+											<td>Property Type</td>
+											<td>Name of Building</td>
+											<td>Rooms</td>
+											<td align="center" width="20%">Actions</td>
+
+										</thead>
+									<% @properties.each do |property| %>
+										<tr>
+									
+											<td><%= property.property_type %></td>
+											<td><%= property.name_of_building %></td>
+											<td><%= property.number_of_rooms %></td>
+											<td align="center" width="20%">
+
+												<a class="btn btn-primary" href="/properties/<%= property.id %>/view"><i class="fa fa-eye fa fa-white"></i></a> 
+												<a class="btn btn-primary" href="/properties/<%= property.id %>/edit"><i class="fa fa-pencil fa fa-white"></i></a> 
+												<a class="btn btn-bricky" href="/properties/<%= property.id %>/delete"><i class="glyphicon glyphicon-remove-circle"></i></a> 
+												
+												
+											</td>
+										</tr>
+
+									<% end %>
+									</table>
+									
+								</div>
+							<!-- end: DYNAMIC TABLE PANEL -->
+						</div>
+					</div>
+
+
+					<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+
+		<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2.css">
+		<link rel="stylesheet" href="/assets/plugins/DataTables/media/css/DT_bootstrap.css">
+		<script type="text/javascript" src="/assets/backendassets/plugins/select2/select2.min.js"></script>
+		<script type="text/javascript" src="/assets/backendassets/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" src="/assets/backendassets/plugins/DataTables/media/js/DT_bootstrap.js"></script>
+		<script src="/assets/backendassets/js/table-data.js"></script>
+
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				TableData.init();
+			});
+		</script>

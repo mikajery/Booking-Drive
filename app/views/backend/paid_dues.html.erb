@@ -1,0 +1,131 @@
+<% 
+
+	@pageheader = "Paid Dues"
+	@pageheader_subtitle = "Payments Completed"
+
+	@new_contract_selected = "selected"
+	@new_contract_active = "active"
+	
+%>
+
+
+
+
+
+	<div class="row">
+
+				<div class="col-sm-12">
+
+							<div class="panel panel-default" style="position: static; zoom: 1;">
+							<div class="panel-heading">
+								<i class="fa fa-external-link-square"></i>
+								Paid Dues (Payment Completed)
+								<div class="panel-tools">
+									
+								</div>
+							</div>
+							<div class="panel-body" style="display: block;">
+
+								<table class="table table-striped table-bordered table-hover table-full-width" id="sample_2"> 
+
+									<thead>
+										<td>Tenant</td>
+										<td>Invoice ID</td>
+										
+										<td>Due Date</td>
+										<td>Date Paid</td>
+										<td>Amount</td>
+										<td>Status</td>
+
+										<% if session[:user_type] == 'Landlord' %>
+										
+											<td align="center" width="30%">Action</td>
+
+										<% else %>
+
+											<td align="center" width="30%">Payment</td>
+
+										<% end %>	
+
+
+									</thead>
+
+									<% @dues.each do |payment| %>
+
+									<tr>
+										<td>
+											<a href ="http://localhost:3000/tenants/<%= payment.tenant.id %>/view"><%= payment.tenant.last_name + ', ' +payment.tenant.first_name %></a>
+										</td>
+										<td>
+											<%= payment.id %>
+										</td>
+										<td>
+											<%= payment.due_date %>
+										</td>
+										<td>
+											<%= payment.date_paid %>
+										</td>
+										<td>
+											<%= payment.amount %>
+										</td>
+										<td>
+											<%= payment.status %>
+										</td>
+										<% if session[:user_type] == 'Landlord' %>
+
+											<td align="center">
+												
+													<% if payment.status == 'Unpaid' %>
+														<a class="btn btn-primary" href="/payment/<%= payment.id %>/mark_as_paid">Mark As Paid</i></a>
+													<% end %>
+
+													<a class="btn btn-primary" href="/payment/<%= payment.id %>/edit"><i class="fa fa-pencil fa fa-white"></i></a>
+
+														 
+											</td>
+
+										<% else %>
+												
+											<td align="center">
+												
+													<% if payment.status == 'Unpaid' %>
+
+														<%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), payment.paypal_url(root_url + 'payment/'+ payment.return_token + '/confirm') 
+ %>
+													<% end %>
+
+													
+														 
+											</td>	
+
+										<% end %>
+
+									</tr>
+
+									<% end %>
+
+								</table>
+						
+							</div>
+
+						</div>
+
+						
+				</div>
+
+			</div>	
+
+	<link rel="stylesheet" type="text/css" href="/assets/plugins/select2/select2.css">
+		<link rel="stylesheet" href="/assets/plugins/DataTables/media/css/DT_bootstrap.css">
+		<script type="text/javascript" src="/assets/backendassets/plugins/select2/select2.min.js"></script>
+		<script type="text/javascript" src="/assets/backendassets/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" src="/assets/backendassets/plugins/DataTables/media/js/DT_bootstrap.js"></script>
+		<script src="/assets/backendassets/js/table-data.js"></script>
+<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				TableData.init();
+			});
+		</script>
+	

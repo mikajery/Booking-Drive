@@ -1,0 +1,121 @@
+<% 
+
+	@pageheader = "Request Connection"
+	@pageheader_subtitle = "Connect to a tenant account"
+
+	@add_tenant_selected = "selected"
+	@add_tenant_active = "active"
+	
+%>
+
+<%= form_for @connection, url: {controller: "backend", action: "add_tenant"} do |f| %>
+
+	<div class="row">
+		<div class="col-sm-4">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					REQUEST CONNECTION
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<div class="form-group">
+						<%= f.label :tenant_email %><br />
+						<%= f.email_field :tenant_email %>
+						<br /><br />
+						<em>Enter the email of the tenant you want to add to your account. This request will show on the tenants dashboard, after the Tenant approved it, his connection will show as <strong>Active</strong> in your <a href="/tenants/connection">Connections</a> page. While waiting for approval, the request will show as <strong>Pending</strong>.</em>
+					</div>
+
+					<hr />
+			<div >
+				<%= f.submit "Request Connection", class: "btn btn-success"  %>
+			</div>
+
+					
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-8">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					PENDING CONNECTION REQUESTS
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+						<thead>
+							
+							<td>Tenant Email</td>
+							<td align="center" width="20%">Actions</td>
+
+						</thead>
+
+						
+						<% @connections.each do |conn| %>
+							<tr>
+								<td>
+									<%= conn.tenant_email %>
+								</td>
+								<td align="center">
+												
+												<a class="btn btn-bricky" href="/connections/<%= conn.id %>/delete"><i class="glyphicon glyphicon-remove-circle"></i></a> 
+								</td>
+							</tr>
+						<% end %>
+
+					</table>
+
+					
+				</div>
+
+			</div>
+		</div>
+
+		
+
+		
+
+	</div>
+	<div class="row">
+
+		<div class="col-sm-8">
+			
+		</div>
+		
+	</div>
+
+
+	<script src="/assets/backendassets/plugins/flot/jquery.flot.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.pie.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.resize.min.js"></script>
+		<script src="/assets/backendassets/plugins/jquery.sparkline/jquery.sparkline.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		<script src="/assets/backendassets/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
+		<script src="/assets/backendassets/js/index.js"></script>
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				Index.init();
+			});
+		</script>
+
+	<script>
+		
+		$("#edit_landlord_1").validate();
+	
+	</script>
+
+
+<% end %>

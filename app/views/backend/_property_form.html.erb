@@ -1,0 +1,115 @@
+<%= form_for @property, url: {controller: "backend", action: "add_property"} do |f| %>
+
+
+
+<div class="row">
+		<div class="col-sm-6">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					PROPERTY INFO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<div class="form-group">
+						<%= f.label :property_type %><br />
+						<%= f.select :property_type, ['Residential', 'Commercial'] %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :number_of_rooms %><br />
+						<%= f.text_field :number_of_rooms %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :name_of_building %><br />
+						<%= f.text_field :name_of_building %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :approx_rental %><br />
+						<%= f.text_field :approx_rental %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :notes %><br />
+						<%= f.text_area :notes %>
+					</div>
+
+					
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					ADDRESS / CONTACT INFO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<div class="form-group">
+						<%= f.label :address_line_1 %><br />
+						<%= f.text_field :address_line_1 %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :address_line_2 %><br />
+						<%= f.text_field :address_line_2 %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label "City / Town" %><br />
+						<%= f.text_field :city_town %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label "Region / County / State" %><br />
+						<%= f.text_field :province_state_county_region %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label "Country" %><br />
+						<%= country_select("property", "country", [ "United Kingdom", "United States", "France", "Germany" ]) %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label "Postcode" %><br />
+						<%= f.text_field :post_code %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :phone_number %><br />
+						<%= f.text_field :phone_number %>
+					</div>
+
+
+										
+					
+				
+			</div>
+
+		
+			</div>
+		</div>
+
+		
+
+	</div>
+
+	<%= hidden_field_tag( 'property_id',   @property_id)%>
+
+	<div style="float:right; margin-bottom: 30px;">
+	<%= f.submit "Add Property", class: "btn btn-success"  %>
+	</div>
+<% end %>

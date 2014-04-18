@@ -1,0 +1,110 @@
+<% 
+
+	@pageheader = "Edit Payment"
+	@pageheader_subtitle = "Update Payment Details"
+
+	@new_contract_selected = "selected"
+	@new_contract_active = "active"
+	
+%>
+
+
+
+
+<div class="row">
+
+		<!-- Property Profile -->
+		<div class="col-sm-4">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					PAYMENT INFO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+				<%= form_for @payment, url: {controller: "backend", action: "payment_edit"} do |f| %>
+					
+					<div class="form-group">
+						<%= f.label :date_paid %><br />
+						<%= f.date_select :date_paid %>
+						<br />
+				
+					</div>
+
+					<div class="form-group">
+						<%= f.label :due_date %><br />
+						<%= f.date_select :due_date %>
+						<br />
+				
+					</div>
+
+					<div class="form-group">
+						<%= f.label :status %><br />
+						<%= f.select :status, ['Paid', 'Unpaid'] %>
+						<br />
+				
+					</div>
+
+					<div class="form-group">
+						<%= f.label :payment_method %><br />
+						<%= f.select :payment_method, ['','Bank Deposit', 'Cash', 'Cheque', 'Paypal', 'Others'] %>
+						<br />
+				
+					</div>
+
+
+					<div class="form-group">
+						<%= f.label :amount %><br />
+						<%= f.text_field :amount %>
+						<br />
+				
+					</div>
+
+					<div class="form-group">
+						<%= f.label :reference_no %><br />
+						<%= f.text_field :reference_no %>
+						<br />
+				
+					</div>
+
+
+					<div class="form-group">
+						<%= f.label :notes %><br />
+						<%= f.text_area :notes %>
+						<br />
+				
+					</div>
+				
+					<hr />
+					<%= f.submit "Update Payment", class: "btn btn-success"  %>
+<% end %>
+				</div>
+
+			</div>
+
+		</div>
+
+	
+
+
+
+</div>	
+
+<script src="/assets/backendassets/plugins/flot/jquery.flot.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.pie.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.resize.min.js"></script>
+		<script src="/assets/backendassets/plugins/jquery.sparkline/jquery.sparkline.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		<script src="/assets/backendassets/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
+		<script src="/assets/backendassets/js/index.js"></script>
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				Index.init();
+			});
+		</script>

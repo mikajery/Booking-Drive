@@ -1,0 +1,166 @@
+<% 
+
+	@pageheader = "Profile"
+	@pageheader_subtitle = "account details"
+
+	@profile_selected = "selected"
+	@profile_active = "active"
+	
+%>
+
+<%= form_for @tenant, :html =>  {:multipart => "true"}, url: {controller: "backend", action: "tenant_profile"} do |f| %>
+
+	<div class="row">
+		<div class="col-sm-4">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					NAME
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<div class="form-group">
+						<%= f.label :first_name %><br />
+						<%= f.text_field :first_name %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :middle_name %><br />
+						<%= f.text_field :middle_name %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :last_name %><br />
+						<%= f.text_field :last_name %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :sex %><br />
+						<%= f.text_field :sex %>
+					</div>
+
+
+					<div class="form-group">
+						<%= f.label "Date of Birth" %><br />
+						<%= f.date_select :dob, :start_year => 1945 %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label "Notes" %><br />
+						<%= f.text_area :notes %>
+					</div>
+					
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					CONTACT INFO
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+
+					<div class="form-group">
+						<%= f.label "Primary Email" %><br />
+						<%= f.email_field :primary_email %>
+					</div>
+
+
+					<div class="form-group">
+						<%= f.label "secondary_email" %><br />
+						<%= f.email_field :secondary_email %>
+					</div>
+
+					<hr />
+
+					<div class="form-group">
+						<%= f.label "primary_phone" %><br />
+						<%= f.text_field :primary_phone %>
+					</div>
+
+
+					<div class="form-group">
+						<%= f.label "secondary_phone" %><br />
+						<%= f.text_field :secondary_phone %>
+					</div>
+
+					
+				
+			</div>
+
+		
+			</div>
+		</div>
+
+			<div class="col-sm-4">
+
+			<div class="panel panel-default" style="position: static; zoom: 1;">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					PICTURE / AVATAR
+					<div class="panel-tools">
+						
+					</div>
+				</div>
+				<div class="panel-body" style="display: block;">
+						<%= image_tag @tenant.avatar_url, width: "100%" %>
+						<br /><br />
+						<%= f.file_field :avatar %>
+					
+
+					
+				</div>
+
+			</div>
+		</div>
+
+		
+
+	</div>
+	<div class="row">
+
+		<div class="col-sm-8">
+			<hr />
+			<div style="margin-bottom: 30px;">
+				<%= f.submit "Update Profile", class: "btn btn-success"  %>
+			</div>
+
+		</div>
+		
+	</div>
+
+
+	<script src="/assets/backendassets/plugins/flot/jquery.flot.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.pie.js"></script>
+		<script src="/assets/backendassets/plugins/flot/jquery.flot.resize.min.js"></script>
+		<script src="/assets/backendassets/plugins/jquery.sparkline/jquery.sparkline.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="/assets/backendassets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		<script src="/assets/backendassets/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
+		<script src="/assets/backendassets/js/index.js"></script>
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				Index.init();
+			});
+		</script>
+
+	<script>
+		
+		$("#edit_landlord_1").validate();
+	
+	</script>
+
+
+<% end %>
