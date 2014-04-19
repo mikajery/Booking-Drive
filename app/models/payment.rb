@@ -1,3 +1,26 @@
+# == Schema Information
+#
+# Table name: payments
+#
+#  id             :integer          not null, primary key
+#  tenant_id      :integer
+#  landlord_id    :integer
+#  contract_id    :integer
+#  property_id    :integer
+#  status         :string(255)
+#  due_date       :date
+#  late_payment   :boolean
+#  date_paid      :boolean
+#  reference_no   :string(255)
+#  payment_method :string(255)
+#  notes          :text
+#  created_at     :datetime
+#  updated_at     :datetime
+#  amount         :decimal(, )
+#  return_token   :string(255)
+#  paypal_token   :string(255)
+#
+
 class Payment < ActiveRecord::Base
   belongs_to :tenant
   belongs_to :landlord

@@ -1,1 +1,5 @@
 Rails.application.config.assets.precompile += %w( backend.css )
+Rails.application.config.assets.precompile += %w( dashboard/plugins/bootstrap/css/bootstrap.css )
+Rails.application.config.assets.precompile += %w( dashboard/css/theme_light.css )
+Rails.application.config.assets.precompile += %w( user_dashboard.css )
+Rails.application.config.assets.precompile += %w( user_dashboard.js )

@@ -8,7 +8,7 @@ class CreatePayments < ActiveRecord::Migration
       t.string :status
       t.date :due_date
       t.boolean :late_payment
-      t.boolean :date_paid
+      t.date :date_paid
       t.string :reference_no
       t.string :payment_method
       t.text :notes

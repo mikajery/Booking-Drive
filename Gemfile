@@ -28,7 +28,7 @@ gem 'money'
 gem 'currency_select'
 gem "carrierwave", "~> 0.9.0"
 gem "paperclip", "~> 3.0"
-
+gem 'annotate'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
@@ -52,7 +52,11 @@ group :development do
 end
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', :group => [:development, :test] 
+group :development, :test do
+  gem 'railroady'
+  gem 'sqlite3'
+  gem "rails-erd"
+end
 
 group :production do 
   gem 'thin' 

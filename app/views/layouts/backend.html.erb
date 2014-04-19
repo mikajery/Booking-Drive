@@ -8,51 +8,28 @@
 	<!-- start: HEAD -->
 	<head>
 		<title><%= @pageheader %> - GenieLets</title>
-		<%= favicon_link_tag 'favicon.ico' %>
-
+  	<%= csrf_meta_tags %>
 		<!-- start: META -->
 		<meta charset="utf-8" />
-
-
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta content="" name="description" />
 		<meta content="" name="author" />
-
-  		<%= csrf_meta_tags %>
-
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
-		<% stylesheet_link_tag 'backend' %>
-		<!-- <link href="/assets/backendassets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> -->
-		<link rel="stylesheet" href="/assets/backendassets/plugins/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="/assets/backendassets/fonts/style.css">
-		<link rel="stylesheet" href="/assets/backendassets/css/main.css">
-		<link rel="stylesheet" href="/assets/backendassets/css/main-responsive.css">
-		<link rel="stylesheet" href="/assets/backendassets/plugins/iCheck/skins/all.css">
-		<link rel="stylesheet" href="/assets/backendassets/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
-		<link rel="stylesheet" href="/assets/backendassets/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
-
-		<script src="/assets/backendassets/js/jquery.min.js"></script>
-
-
-		<!--<link rel="stylesheet/less" type="text/css" href="/assets/backendassets/css/styles.less">-->
-		<link rel="stylesheet" href="/assets/backendassets/css/theme_light.css" type="text/css" id="skin_color">
+		<%= stylesheet_link_tag "user_dashboard" %>
+		<%= stylesheet_link_tag "dashboard/plugins/bootstrap/css/bootstrap", media: :screen %>
+		<!--<link rel="stylesheet/less" type="text/css" href="assets/css/styles.less">-->
+		<%= stylesheet_link_tag "dashboard/css/theme_light", type: "text/css", id: "skin_color" %>
 		<!--[if IE 7]>
-		<link rel="stylesheet" href="/assets/backendassets/plugins/font-awesome/css/font-awesome-ie7.min.css">
+		<%= stylesheet_link_tag "plugins/font-awesome/css/font-awesome-ie7.min.css"  %>
 		<![endif]-->
 		<!-- end: MAIN CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<link rel="stylesheet" href="/assets/backendassets/plugins/fullcalendar/fullcalendar/fullcalendar.css">
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<link rel="shortcut icon" href="favicon.ico" />
-		
-		<style>
-		
-		</style>
-
 	</head>
 	<!-- end: HEAD -->
 	<!-- start: BODY -->
@@ -68,22 +45,125 @@
 					</button>
 					<!-- end: RESPONSIVE MENU TOGGLER -->
 					<!-- start: LOGO -->
-                    <a class="navbar-brand" href="/backend/dashboard"> <%= image_tag "logo-backend.png" %></a>
+					<a class="navbar-brand" href="index.html">
+						<%= link_to image_tag("logo-backend.jpg"), backend_dashboard_path, html: { class: 'navbar-brand' } %>
+						CLIP<i class="clip-clip"></i>ONE
+					</a>
 					<!-- end: LOGO -->
 				</div>
 				<div class="navbar-tools">
 					<!-- start: TOP NAVIGATION MENU -->
 					<ul class="nav navbar-right">
-						
+						<!-- start: TO-DO DROPDOWN -->
+						<!-- <li class="dropdown">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="clip-list-5"></i>
+								<span class="badge"> 12</span>
+							</a>
+							<ul class="dropdown-menu todo">
+								<li>
+									<span class="dropdown-menu-title"> You have 12 pending tasks</span>
+								</li>
+								<li>
+									<div class="drop-down-wrapper">
+										<ul>
+											<li>
+												<a class="todo-actions" href="javascript:void(0)">
+													<i class="fa fa-square-o"></i>
+													<span class="desc" style="opacity: 1; text-decoration: none;">Staff Meeting</span>
+													<span class="label label-danger" style="opacity: 1;"> today</span>
+												</a>
+											</li>
+											<li>
+												<a class="todo-actions" href="javascript:void(0)">
+													<i class="fa fa-square-o"></i>
+													<span class="desc" style="opacity: 1; text-decoration: none;"> New frontend layout</span>
+													<span class="label label-danger" style="opacity: 1;"> today</span>
+												</a>
+											</li>
+											<li>
+												<a class="todo-actions" href="javascript:void(0)">
+													<i class="fa fa-square-o"></i>
+													<span class="desc"> Hire developers</span>
+													<span class="label label-warning"> tommorow</span>
+												</a>
+											</li>
+											<li>
+												<a class="todo-actions" href="javascript:void(0)">
+													<i class="fa fa-square-o"></i>
+													<span class="desc">Staff Meeting</span>
+													<span class="label label-warning"> tommorow</span>
+												</a>
+											</li>
+											<li>
+												<a class="todo-actions" href="javascript:void(0)">
+													<i class="fa fa-square-o"></i>
+													<span class="desc"> New frontend layout</span>
+													<span class="label label-success"> this week</span>
+												</a>
+											</li>
+											<li>
+												<a class="todo-actions" href="javascript:void(0)">
+													<i class="fa fa-square-o"></i>
+													<span class="desc"> Hire developers</span>
+													<span class="label label-success"> this week</span>
+												</a>
+											</li>
+											<li>
+												<a class="todo-actions" href="javascript:void(0)">
+													<i class="fa fa-square-o"></i>
+													<span class="desc"> New frontend layout</span>
+													<span class="label label-info"> this month</span>
+												</a>
+											</li>
+											<li>
+												<a class="todo-actions" href="javascript:void(0)">
+													<i class="fa fa-square-o"></i>
+													<span class="desc"> Hire developers</span>
+													<span class="label label-info"> this month</span>
+												</a>
+											</li>
+											<li>
+												<a class="todo-actions" href="javascript:void(0)">
+													<i class="fa fa-square-o"></i>
+													<span class="desc" style="opacity: 1; text-decoration: none;">Staff Meeting</span>
+													<span class="label label-danger" style="opacity: 1;"> today</span>
+												</a>
+											</li>
+											<li>
+												<a class="todo-actions" href="javascript:void(0)">
+													<i class="fa fa-square-o"></i>
+													<span class="desc" style="opacity: 1; text-decoration: none;"> New frontend layout</span>
+													<span class="label label-danger" style="opacity: 1;"> today</span>
+												</a>
+											</li>
+											<li>
+												<a class="todo-actions" href="javascript:void(0)">
+													<i class="fa fa-square-o"></i>
+													<span class="desc"> Hire developers</span>
+													<span class="label label-warning"> tommorow</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="view-all">
+									<a href="javascript:void(0)">
+										See all tasks <i class="fa fa-arrow-circle-o-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li> -->
+						<!-- end: TO-DO DROPDOWN-->
 						<!-- start: NOTIFICATION DROPDOWN -->
-						<li class="dropdown">
+						<!-- <li class="dropdown">
 							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
 								<i class="clip-notification-2"></i>
-								<span class="badge"> 0</span>
+								<span class="badge"> 11</span>
 							</a>
 							<ul class="dropdown-menu notifications">
 								<li>
-									<span class="dropdown-menu-title"> You have 0 new notifications</span>
+									<span class="dropdown-menu-title"> You have 11 notifications</span>
 								</li>
 								<li>
 									<div class="drop-down-wrapper">
@@ -91,11 +171,94 @@
 											<li>
 												<a href="javascript:void(0)">
 													<span class="label label-primary"><i class="fa fa-user"></i></span>
-													<span class="message"> Registered to GenieLets</span>
-													<span class="time"> a few hours ago</span>
+													<span class="message"> New user registration</span>
+													<span class="time"> 1 min</span>
 												</a>
 											</li>
-										
+											<li>
+												<a href="javascript:void(0)">
+													<span class="label label-success"><i class="fa fa-comment"></i></span>
+													<span class="message"> New comment</span>
+													<span class="time"> 7 min</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0)">
+													<span class="label label-success"><i class="fa fa-comment"></i></span>
+													<span class="message"> New comment</span>
+													<span class="time"> 8 min</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0)">
+													<span class="label label-success"><i class="fa fa-comment"></i></span>
+													<span class="message"> New comment</span>
+													<span class="time"> 16 min</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0)">
+													<span class="label label-primary"><i class="fa fa-user"></i></span>
+													<span class="message"> New user registration</span>
+													<span class="time"> 36 min</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0)">
+													<span class="label label-warning"><i class="fa fa-shopping-cart"></i></span>
+													<span class="message"> 2 items sold</span>
+													<span class="time"> 1 hour</span>
+												</a>
+											</li>
+											<li class="warning">
+												<a href="javascript:void(0)">
+													<span class="label label-danger"><i class="fa fa-user"></i></span>
+													<span class="message"> User deleted account</span>
+													<span class="time"> 2 hour</span>
+												</a>
+											</li>
+											<li class="warning">
+												<a href="javascript:void(0)">
+													<span class="label label-danger"><i class="fa fa-shopping-cart"></i></span>
+													<span class="message"> Transaction was canceled</span>
+													<span class="time"> 6 hour</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0)">
+													<span class="label label-success"><i class="fa fa-comment"></i></span>
+													<span class="message"> New comment</span>
+													<span class="time"> yesterday</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0)">
+													<span class="label label-primary"><i class="fa fa-user"></i></span>
+													<span class="message"> New user registration</span>
+													<span class="time"> yesterday</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0)">
+													<span class="label label-primary"><i class="fa fa-user"></i></span>
+													<span class="message"> New user registration</span>
+													<span class="time"> yesterday</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0)">
+													<span class="label label-success"><i class="fa fa-comment"></i></span>
+													<span class="message"> New comment</span>
+													<span class="time"> yesterday</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0)">
+													<span class="label label-success"><i class="fa fa-comment"></i></span>
+													<span class="message"> New comment</span>
+													<span class="time"> yesterday</span>
+												</a>
+											</li>
 										</ul>
 									</div>
 								</li>
@@ -105,56 +268,140 @@
 									</a>
 								</li>
 							</ul>
-						</li>
+						</li> -->
 						<!-- end: NOTIFICATION DROPDOWN -->
-					
+						<!-- start: MESSAGE DROPDOWN -->
+						<!-- <li class="dropdown">
+							<a class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown" href="#">
+								<i class="clip-bubble-3"></i>
+								<span class="badge"> 9</span>
+							</a>
+							<ul class="dropdown-menu posts">
+								<li>
+									<span class="dropdown-menu-title"> You have 9 messages</span>
+								</li>
+								<li>
+									<div class="drop-down-wrapper">
+										<ul>
+											<li>
+												<a href="javascript:;">
+													<div class="clearfix">
+														<div class="thread-image">
+															<img alt="" src="./assets/images/avatar-2.jpg">
+														</div>
+														<div class="thread-content">
+															<span class="author">Nicole Bell</span>
+															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
+															<span class="time"> Just Now</span>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<div class="clearfix">
+														<div class="thread-image">
+															<img alt="" src="./assets/images/avatar-1.jpg">
+														</div>
+														<div class="thread-content">
+															<span class="author">Peter Clark</span>
+															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
+															<span class="time">2 mins</span>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<div class="clearfix">
+														<div class="thread-image">
+															<img alt="" src="./assets/images/avatar-3.jpg">
+														</div>
+														<div class="thread-content">
+															<span class="author">Steven Thompson</span>
+															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
+															<span class="time">8 hrs</span>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<div class="clearfix">
+														<div class="thread-image">
+															<img alt="" src="./assets/images/avatar-1.jpg">
+														</div>
+														<div class="thread-content">
+															<span class="author">Peter Clark</span>
+															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
+															<span class="time">9 hrs</span>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<div class="clearfix">
+														<div class="thread-image">
+															<img alt="" src="./assets/images/avatar-5.jpg">
+														</div>
+														<div class="thread-content">
+															<span class="author">Kenneth Ross</span>
+															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
+															<span class="time">14 hrs</span>
+														</div>
+													</div>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="view-all">
+									<a href="pages_messages.html">
+										See all messages <i class="fa fa-arrow-circle-o-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li> -->
+						<!-- end: MESSAGE DROPDOWN -->
 						<!-- start: USER DROPDOWN -->
-						<li class="dropdown current-user">
+						<!-- <li class="dropdown current-user">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<span class="username">
-									<strong>
-										<%= session[:user_type] %> Account:
-
-										<% if session[:user_type] == 'Landlord' %>
-											(<%= session[:subscription_type]	%>)	
-										<% end %>
-
-									</strong> 
-									<%= current_user.email %> <i class="clip-chevron-down"></i></a></span>
-
+								<img src="assets/images/avatar-1-small.jpg" class="circle-img" alt="">
+								<span class="username">Peter Clark</span>
+								<i class="clip-chevron-down"></i>
 							</a>
 							<ul class="dropdown-menu">
-								
-									<% if session[:user_type] == 'Tenant' %>
-										<li>
-											<a href='/tenant/profile'>My Profile</a>
-										</li>
-										<li class="divider"></li>
-										<li>
-								
-											<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-									
-										</li>
-								
-									<% end %>
-									
-									<% if session[:user_type] == 'Landlord' %>
-										<li>
-											<a href='/backend/account_summary'>Account Summary</a>
-										</li>
-										<li>
-											<a href='/backend/profile'>Edit Profile</a>
-										</li>
-										<li class="divider"></li>
-										<li>
-								
-											<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-									
-										</li>
-									<% end %>
-
+								<li>
+									<a href="pages_user_profile.html">
+										<i class="clip-user-2"></i>
+										&nbsp;My Profile
+									</a>
+								</li>
+								<li>
+									<a href="pages_calendar.html">
+										<i class="clip-calendar"></i>
+										&nbsp;My Calendar
+									</a>
+								<li>
+									<a href="pages_messages.html">
+										<i class="clip-bubble-4"></i>
+										&nbsp;My Messages (3)
+									</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="utility_lock_screen.html"><i class="clip-locked"></i>
+										&nbsp;Lock Screen </a>
+								</li>
+								<li>
+									<a href="login_example1.html">
+										<i class="clip-exit"></i>
+										&nbsp;Log Out
+									</a>
+								</li>
 							</ul>
-						</li>
+						</li> -->
 						<!-- end: USER DROPDOWN -->
 					</ul>
 					<!-- end: TOP NAVIGATION MENU -->
@@ -163,111 +410,11 @@
 			<!-- end: TOP NAVIGATION CONTAINER -->
 		</div>
 		<!-- end: HEADER -->
-		<!-- start: MAIN CONTAINER -->
-		<div class="main-container">
-			<div class="navbar-content">
-				<!-- start: SIDEBAR -->
-				
-				<% if session[:user_type] == 'Landlord' %>
-					<%= render 'sidebar_landlord' %>
-				<% end %>
 
-				<% if session[:user_type] == 'Tenant' %>
-					<%= render 'sidebar_tenant' %>
-				<% end %>
-
-
-				<!-- end: SIDEBAR -->
-			</div>
-			<!-- start: PAGE -->
-			<div class="main-content">
-				<!-- start: PANEL CONFIGURATION MODAL FORM -->
-				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-									&times;
-								</button>
-								<h4 class="modal-title">Panel Configuration</h4>
-							</div>
-							<div class="modal-body">
-								Here will be a configuration form
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">
-									Close
-								</button>
-								<button type="button" class="btn btn-primary">
-									Save changes
-								</button>
-							</div>
-						</div>
-						<!-- /.modal-content -->
-					</div>
-					<!-- /.modal-dialog -->
-				</div>
-				<!-- /.modal -->
-				<!-- end: SPANEL CONFIGURATION MODAL FORM -->
-				<div class="container">
-					<!-- start: PAGE HEADER -->
-					<div class="row">
-						<div class="col-sm-12">
-							
-							<!-- start: PAGE TITLE & BREADCRUMB -->
-							<ol class="breadcrumb">
-								<li>
-									<i class="clip-home-3"></i>
-									<a href="/backend/dashboard">
-										Home
-									</a>
-								</li>
-								<li class="active">
-									<%= @pageheader %>
-								</li>
-								<li class="search-box">
-									<form class="sidebar-search">
-										<div class="form-group">
-											<input type="text" placeholder="Start Searching...">
-											<button class="submit">
-												<i class="clip-search-3"></i>
-											</button>
-										</div>
-									</form>
-								</li>
-							</ol>
-							<div class="page-header">
-								<h1><%= @pageheader %> <small><%= @pageheader_subtitle %> </small></h1>
-							</div>
-							<!-- end: PAGE TITLE & BREADCRUMB -->
-						</div>
-					</div>
-					<!-- end: PAGE HEADER -->
-					<!-- start: PAGE CONTENT -->
-					<% flash.each do |name, message| %>
-						<div class="alert alert-success">
-										<button data-dismiss="alert" class="close">
-											×
-										</button>
-										<i class="fa fa-check-circle"></i>
-										 <%= message %>
-						</div>
-
-					<% end %>
-					
-					
-					<%= yield %>
-					
-					
-				</div>
-			</div>
-			<!-- end: PAGE -->
-		</div>
-		<!-- end: MAIN CONTAINER -->
 		<!-- start: FOOTER -->
 		<div class="footer clearfix">
 			<div class="footer-inner">
-				&copy; 2014 <a href="genielets.com">GenieLets</a> 
+				2013 &copy; clip-one by cliptheme.
 			</div>
 			<div class="footer-items">
 				<span class="go-top"><i class="clip-chevron-up"></i></span>
@@ -300,32 +447,18 @@
 		</div>
 		<!-- start: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
-		<script src="/assets/backendassets/plugins/respond.min.js"></script>
-		<script src="/assets/backendassets/plugins/excanvas.min.js"></script>
+		<script src="assets/plugins/respond.min.js"></script>
+		<script src="assets/plugins/excanvas.min.js"></script>
 		<![endif]-->
 
-		<script src="/assets/backendassets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-
-		<script src="/assets/backendassets/plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="/assets/backendassets/plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="/assets/backendassets/plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="/assets/backendassets/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="/assets/backendassets/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="/assets/backendassets/plugins/less/less-1.5.0.min.js"></script>
-		<script src="/assets/backendassets/plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="/assets/backendassets/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="/assets/backendassets/js/main.js"></script>
-		<!-- end: MAIN JAVASCRIPTS -->
-		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		
+		<%= javascript_include_tag 'user_dashboard' %>
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				Index.init();
+			});
+		</script>
 	</body>
 	<!-- end: BODY -->
-
-	<link rel="stylesheet" href="/assets/backendassets/css/custom.css">
-	
 </html>
-
-
-
-

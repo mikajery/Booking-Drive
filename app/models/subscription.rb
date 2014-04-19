@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: subscriptions
+#
+#  id                :integer          not null, primary key
+#  subscription_type :string(255)
+#  date_from         :date
+#  date_to           :date
+#  landlord_id       :integer
+#  created_at        :datetime
+#  updated_at        :datetime
+#  payment_status    :string(255)
+#  return_token      :string(255)
+#
+
 class Subscription < ActiveRecord::Base
   belongs_to :landlord
 
