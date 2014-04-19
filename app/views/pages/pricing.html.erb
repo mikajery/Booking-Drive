@@ -1,23 +1,32 @@
-<div class="singleheader">
-            <div class="container">
-                <div class="col-lg-6 col-sm-6 col-md-6">
-                    <div class="single-title">
-                        <h3>Pricing</h3>
-                        <h4>Our Different Offerings</h4>
-                    </div>
+<% @page_title = "Pricing" %>
+<section class="colon14">
+
+    <div class="singleheader">
+        <div class="container">
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <div class="single-title">
+                    <h3>Pricing Tables</h3>
+                    <h4>You can add anythings here</h4>
                 </div>
-                <div class="col-lg-6 col-sm-6 col-md-6">
-                    <div class="breadcrumb-container">
-                        <ul class="breadcrumb">
-                            <li class="active">Our offers are very affordable!</li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <div class="breadcrumb-container">
+                    <ul class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Shortcodes</a></li>
+                        <li class="active">Pricing Tables</li>
+                    </ul>
                 </div>
-            </div>  
-            <div class="shadow"></div>
-        </div>
-<div id="content" class="single col-lg-12 col-md-12 col-sm-12">
-			
+            </div>
+        </div>  
+        <div class="shadow"></div>
+    </div>
+    
+    <!-- START CONTENT AND SIDEBAR -->
+    <div class="container general">
+    
+        <div id="content" class="single col-lg-12 col-md-12 col-sm-12">
+       
             <div class="col-lg-12 col-md-12 col-sm-12">
             
                         <div class="col-lg-4 col-md-4 col-sm-12">
@@ -25,34 +34,25 @@
                                 <div class="dm-pricing">
                                 
                                     <div class="dm-pricing-header">
-                                        <h5>Standard</h5>
-                                        <div class="dm-pricing-cost"><strike>£3</strike></div>
-                                        <div class="dm-pricing-per">per month</div>
+                                        <h5>Basic</h5>
+                                        <div class="dm-pricing-cost">$10</div>
+                                        <div class="dm-pricing-per">per year</div>
                                     </div>
                                     
                                     <div class="dm-pricing-content">
                                         <ul>
-                                            <li>5 Contracts</li>
-                                            <li>30 Reminders / Emails (Days)</li>
-                                            <li>30 Mobile App Link (Days)</li>
-                                            <li>Dashboard</li>
-                                            <li>Unlimited Tenants</li>
-                                            <li>Unlimited Properties</li>
-                                            <li>Unlimited Tenant History</li>
-                                            <li>Unlimited Property History</li>
+                                            <li>150 Mb Storage</li>
+                                            <li>1 Domain</li>
+                                            <li>2 Sub Domains</li>
+                                            <li>5 MySQL DBs</li>
+                                            <li>1 Emails</li>
                                         </ul>
                                     </div>
                                     
                                     <div class="dm-pricing-button">
-                                      
-                                            <%= form_tag charges_path do %>
-                                            <%= hidden_field_tag "price", "300" %>
-                                              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                                                      data-description="A month's subscription"
-                                                      data-amount="300"></script>
-                                            <% end %>
-                                           
+                                        <a href="#" class="btn btn-general" target="_self" rel="nofollow">
+                                            <span class="btn btn-primary">Sign Up</span>
+                                        </a>
                                    </div>
                                    
                                 </div>
@@ -64,32 +64,25 @@
                                 <div class="dm-pricing">
                                 
                                     <div class="dm-pricing-header">
-                                        <h5>Pro</h5>
-                                        <div class="dm-pricing-cost"><strike>£5</strike></div>
-                                        <div class="dm-pricing-per">per month</div>
+                                        <h5>Standard</h5>
+                                        <div class="dm-pricing-cost">$60</div>
+                                        <div class="dm-pricing-per">per year</div>
                                     </div>
                                     
                                     <div class="dm-pricing-content">
                                         <ul>
-                                            <li>6-10 Contracts</li>
-                                            <li>30 Reminders / Emails (Days)</li>
-                                            <li>30 Mobile App Link (Days)</li>
-                                            <li>Dashboard</li>
-                                            <li>Unlimited Tenants</li>
-                                            <li>Unlimited Properties</li>
-                                            <li>Unlimited Tenant History</li>
-                                            <li>Unlimited Property History</li>
+                                            <li>150 Mb Storage</li>
+                                            <li>1 Domain</li>
+                                            <li>2 Sub Domains</li>
+                                            <li>5 MySQL DBs</li>
+                                            <li>1 Emails</li>
                                         </ul>
                                     </div>
                                     
                                     <div class="dm-pricing-button">
-                                       <%= form_tag charges_path do %>
-                                       <%= hidden_field_tag "price", "500" %>
-                                              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                                                      data-description="A month's subscription"
-                                                      data-amount="500"></script>
-                                            <% end %>
+                                        <a href="#" class="btn btn-general" target="_self" rel="nofollow">
+                                            <span class="btn btn-primary">Sign Up</span>
+                                        </a>
                                    </div>
                                    
                                 </div>
@@ -101,42 +94,134 @@
                                 <div class="dm-pricing">
                                 
                                     <div class="dm-pricing-header green">
-                                        <h5>Enterprise</h5>
-                                        <div class="dm-pricing-cost"><strike>£10</strike></div>
-                                        <div class="dm-pricing-per">per month</div>
+                                        <h5>Premium</h5>
+                                        <div class="dm-pricing-cost">$130</div>
+                                        <div class="dm-pricing-per">per year</div>
                                     </div>
                                     
                                     <div class="dm-pricing-content">
                                         <ul>
-                                            <li>11-unlimited Contracts</li>
-                                            <li>30 Reminders / Emails (Days)</li>
-                                            <li>30 Mobile App Link (Days)</li>
-                                            <li>Dashboard</li>
-                                            <li>Unlimited Tenants</li>
-                                            <li>Unlimited Properties</li>
-                                            <li>Unlimited Tenant History</li>
-                                            <li>Unlimited Property History</li>
+                                            <li>150 Mb Storage</li>
+                                            <li>1 Domain</li>
+                                            <li>2 Sub Domains</li>
+                                            <li>5 MySQL DBs</li>
+                                            <li>1 Emails</li>
                                         </ul>
                                     </div>
                                     
                                     <div class="dm-pricing-button">
-                                        <%= form_tag charges_path do %>
-                                        <%= hidden_field_tag "price", "1000" %>
-                                              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                                                      data-description="A month's subscription"
-                                                      data-amount="1000"></script>
-                                            <% end %>
-                                       <!-- <a href="/users/sign_up?type=landlord&package=enterprise" class="btn btn-general" target="_self" rel="nofollow">
+                                        <a href="#" class="btn btn-general" target="_self" rel="nofollow">
                                             <span class="btn btn-primary">Sign Up</span>
-                                        </a>-->
+                                        </a>
                                    </div>
                                    
                                 </div>
                             </div>
                         </div>
-						
                         
-			</div>
-            
+                       <div class="clearfix"></div>
+                       <hr>
+                       
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="dm-pricing-table">
+                                <div class="dm-pricing">
+                                
+                                    <div class="dm-pricing-header">
+                                        <h5>Basic</h5>
+                                        <div class="dm-pricing-cost">$10</div>
+                                        <div class="dm-pricing-per">per year</div>
+                                    </div>
+                                    
+                                    <div class="dm-pricing-content">
+                                        <ul>
+                                            <li>150 Mb Storage</li>
+                                            <li>1 Domain</li>
+                                            <li>2 Sub Domains</li>
+                                            <li>5 MySQL DBs</li>
+                                            <li>1 Emails</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="dm-pricing-button">
+                                        <a href="#" class="btn btn-general" target="_self" rel="nofollow">
+                                            <span class="btn btn-primary">Sign Up</span>
+                                        </a>
+                                   </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="dm-pricing-table">
+                                <div class="dm-pricing">
+                                
+                                    <div class="dm-pricing-header">
+                                        <h5>Standard</h5>
+                                        <div class="dm-pricing-cost">$60</div>
+                                        <div class="dm-pricing-per">per year</div>
+                                    </div>
+                                    
+                                    <div class="dm-pricing-content">
+                                        <ul>
+                                            <li>150 Mb Storage</li>
+                                            <li>1 Domain</li>
+                                            <li>2 Sub Domains</li>
+                                            <li>5 MySQL DBs</li>
+                                            <li>1 Emails</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="dm-pricing-button">
+                                        <a href="#" class="btn btn-general" target="_self" rel="nofollow">
+                                            <span class="btn btn-primary">Sign Up</span>
+                                        </a>
+                                   </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        
+                       <div class="clearfix"></div>
+                       <hr>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="dm-pricing-table">
+                                <div class="dm-pricing">
+                                
+                                    <div class="dm-pricing-header">
+                                        <h5>Basic</h5>
+                                        <div class="dm-pricing-cost">$10</div>
+                                        <div class="dm-pricing-per">per year</div>
+                                    </div>
+                                    
+                                    <div class="dm-pricing-content">
+                                        <ul>
+                                            <li>150 Mb Storage</li>
+                                            <li>1 Domain</li>
+                                            <li>2 Sub Domains</li>
+                                            <li>5 MySQL DBs</li>
+                                            <li>1 Emails</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="dm-pricing-button">
+                                        <a href="#" class="btn btn-general" target="_self" rel="nofollow">
+                                            <span class="btn btn-primary">Sign Up</span>
+                                        </a>
+                                   </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        
             </div>
+        
+        </div><!-- end content -->
+        
+    </div><!-- end container -->
+
+<!-- END CONTENT AND SIDEBAR -->
+
+</section><!-- end colon1 -->

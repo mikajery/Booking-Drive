@@ -30,6 +30,10 @@ class PagesController < ApplicationController
     @title = "Download"
   end
 
+  def testimonials
+    @title = "Download"
+  end
+
 
 
 

@@ -86,6 +86,7 @@ Geniedrives::Application.routes.draw do
   get "pages/contactus"
   get "pages/features"
   get "pages/download"
+  get "pages/testimonials"
 
   get "home" => "pages#index"
   get "about" => "pages#about"
