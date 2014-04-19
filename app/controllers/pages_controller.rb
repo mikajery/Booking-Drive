@@ -3,37 +3,31 @@ class PagesController < ApplicationController
   layout "frontend"
 
   def index
-    @title = "Home"
   end
 
   def about
-    @title = "About"
   end
 
   def pricing
-    @title = "Pricing"
   end
 
   def helpcentre
-    @title = "Help Centre"
   end
 
   def contactus
-    @title = "Contact Us"
   end
 
   def features
-    @title = "Features"
   end
 
   def download
-    @title = "Download"
   end
 
   def testimonials
-    @title = "Download"
   end
 
+  def parking
+  end
 
 
 

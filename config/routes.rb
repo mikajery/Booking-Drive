@@ -2,6 +2,16 @@ Geniedrives::Application.routes.draw do
 
   devise_for :users, :controllers => {:registrations => "registrations"}
   root :to => "pages#index"
+  
+  get "pages/index"
+  get "pages/about"
+  get "pages/pricing"
+  get "pages/helpcentre"
+  get "pages/contactus"
+  get "pages/features"
+  get "pages/download"
+  get "pages/testimonials"
+  get "pages/parking"
 
   get "landlords/index"
 
@@ -78,15 +88,6 @@ Geniedrives::Application.routes.draw do
   get "reports/property_payments" => "backend#property_payments"
   get "reports/tenant_payments" => "backend#tenant_payments"
   
-
-  get "pages/index"
-  get "pages/about"
-  get "pages/pricing"
-  get "pages/helpcentre"
-  get "pages/contactus"
-  get "pages/features"
-  get "pages/download"
-  get "pages/testimonials"
 
   get "home" => "pages#index"
   get "about" => "pages#about"
