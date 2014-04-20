@@ -135,3 +135,36 @@ a.textLogo > span,
 .top-menu li a {
 color: #777;
 }
+
+.sb-search-input {
+  background: #F5F5F5;
+  border: medium none;
+  color: #777;
+  font-family: inherit;
+  font-size: 11px;
+  height: 30px;
+  margin: 100;
+  outline: medium none;
+  padding: 0 0 0 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+  z-index: 10;
+}
+
+.sb-search-input::-webkit-input-placeholder {
+  color: #777;
+}
+
+.sb-search-input:-moz-placeholder {
+  color: #777;
+}
+
+.sb-search-input::-moz-placeholder {
+  color: #777;
+}
+
+.sb-search-777:-ms-input-placeholder {
+  color: #efb480;
+}

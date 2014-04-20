@@ -29,7 +29,7 @@ gem 'currency_select'
 gem "carrierwave", "~> 0.9.0"
 gem "paperclip", "~> 3.0"
 gem 'annotate'
-
+gem 'bootstrap-datepicker-rails'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

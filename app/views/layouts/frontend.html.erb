@@ -20,7 +20,7 @@
     <script>
     document.documentElement.className = document.documentElement.className.replace(/(\s|^)no-js(\s|$)/, '$1js$2');
     </script>
-
+    <%= javascript_include_tag('public') %>
     <!-- Support for HTML5 -->
     <!--[if lt IE 9]>
   <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -97,7 +97,7 @@
                               <%= link_to "Contact Us", pages_contactus_path %>
                             </li>
                             <li <%= active_if_current_page_is(pages_parking_path)%> >
-                              <%= link_to "Parking", pages_contactus_path %>
+                              <%= link_to "Parking", pages_parking_path %>
                             </li>
                         </ul>
                     </nav>
@@ -275,7 +275,6 @@
     <!-- /wrapper -->
     
     <!-- Main Scripts-->
-    <script src="/assets/public/js/jquery.js"></script>
     <script src="/assets/public/js/bootstrap.min.js"></script>
     <script src="/assets/public/js/retina-1.1.0.js"></script>
     <script src="/assets/public/js/jquery.unveilEffects.min.js"></script>
@@ -299,6 +298,7 @@
         });
     });
     </script>
+    <% yield :javascript %>
     <script src="/assets/public/js/application.js"></script>
 </body>
 
