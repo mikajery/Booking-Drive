@@ -131,3 +131,7 @@ a.textLogo > span,
 .navbar-inverse .navbar-nav > .active > a:focus {
   border-bottom-color: #472BDE;
 }
+
+.top-menu li a {
+color: #777;
+}

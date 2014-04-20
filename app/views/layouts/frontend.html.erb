@@ -46,27 +46,22 @@
                         Call us : +90 532 02 02 // Email us : hello@designingmedia.com
                     </p>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <ul class="dm-social">
-                        <li>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" class="icon-facebook" title="Facebook">Facebook</a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" class="icon-google-plus" title="Google+">Google+</a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" class="icon-twitter" title="Twitter">Twitter</a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" class="icon-pinterest" title="Pinterest">Pinterest</a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" class="icon-linkedin" title="Linkedin">Linkedin</a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" class="icon-rss" title="Feedburner">RSS</a>
-                        </li>
-                    </ul>
+               <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="pull-right">
+                        <ul class="top-menu">
+                            <% if current_user.blank? %>
+                              <li>
+                                <%= link_to "Login", new_user_session_path %>
+                              </li>
+                              <li>
+                                <%= link_to_if current_user.blank?, "Sign Up", new_user_registration_path %>
+                              </li>
+                            <% else %>
+                              <i class="icon-user"></i>
+                            <% end %>
+                        </ul>
+                    </div><!-- /rightmenu -->
+                </div>
                     <!-- End Social -->
                 </div>
             </div>

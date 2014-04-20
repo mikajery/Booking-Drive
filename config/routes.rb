@@ -3,6 +3,8 @@ Geniedrives::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   root :to => "pages#index"
   
+  get 'dashboard', to: 'users/dashboards#index'
+
   get "pages/index"
   get "pages/about"
   get "pages/pricing"
