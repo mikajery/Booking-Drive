@@ -1,12 +1,14 @@
 .row
-  = simple_form_for [:users, @drive] do |f|
-    = f.input :name_of_building
-    = f.input :address_line_1
-    = f.input :address_line_2
-    = f.input :description
-    = f.input :city_town
-    = f.input :province_state_county_region
-    = f.input :country
-    = f.input :post_code
-    = f.input :phone_number
-    = f.submit
+  .col-sm-12
+    .panel.panel-default
+      .panel-body
+      = simple_form_for [:users, @drive], class: 'form-horizontal' do |f|
+        = f.input :name_of_building
+        = f.input :address
+        = f.input :description
+        = f.input :city
+        = f.input :state
+        = f.input :country
+        = f.input :zip_code
+        = f.input :phone
+        = f.submit

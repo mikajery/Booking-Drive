@@ -1,2 +1,33 @@
-%h1 Users::Drives#index
-%p Find me in app/views/users/drives/index.html.haml
+.row
+  .col-md-12
+    / start: BASIC TABLE PANEL
+    .panel.panel-default
+      .panel-heading
+        %i.fa.fa-external-link-square
+        Basic table
+        .panel-tools
+          %a.btn.btn-xs.btn-link.panel-collapse.collapses{href: "#"}
+          %a.btn.btn-xs.btn-link.panel-config{"data-toggle" => "modal", href: "#panel-config"}
+            %i.fa.fa-wrench
+          %a.btn.btn-xs.btn-link.panel-refresh{href: "#"}
+            %i.fa.fa-refresh
+          %a.btn.btn-xs.btn-link.panel-expand{href: "#"}
+            %i.fa.fa-resize-full
+          %a.btn.btn-xs.btn-link.panel-close{href: "#"}
+            %i.fa.fa-times
+      .panel-body
+        = link_to 'new drive', new_users_drive_path, class: 'label label-info'
+        %table.table.table-striped.table-bordered.table-hover
+          %thead
+            %tr
+              %th Address
+              %th zip_code
+              %th city
+              %th state
+          %tbody
+            - @drives.each do |drive|
+              %tr
+                %td= drive.address
+                %td= drive.zip_code
+                %td= drive.city
+                %td= drive.state

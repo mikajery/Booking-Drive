@@ -25,4 +25,6 @@
 class Drive < ActiveRecord::Base
   belongs_to :landlord
   belongs_to :tenant
+  geocoded_by :address
+  after_validation :geocode
 end

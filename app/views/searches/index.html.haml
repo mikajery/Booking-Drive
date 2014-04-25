@@ -1,0 +1,161 @@
+- @page_title = 'Parking'
+%section.colon14
+  .singleheader
+    .container
+      .col-lg-6.col-sm-6.col-md-6
+        .single-title
+          %h3 About Us Page Style
+          %h4 You can add anythings here
+      .col-lg-6.col-sm-6.col-md-6
+        .breadcrumb-container
+          %ul.breadcrumb
+            %li
+              %a{href: "#"} Home
+            %li
+              %a{href: "#"} Pages
+            %li.active About us Page Style
+    .shadow
+  / START CONTENT AND SIDEBAR
+  .container.general
+    #content.single.col-lg-12.col-md-12.col-sm-12
+      .message.text-center
+        %h2 Search Park Location
+        = form_tag parking_path, method: :get do
+          .form-group
+            = text_field_tag :search, params[:search], class: 'form-control', type: 'search', placeholder: 'search any place', id: 'search'
+            / %input#search.form-control{name: "search", placeholder: "Enter your search term...", type: "search", value: ""}/
+          .form-group
+            #datepicker.input-daterange.input-group
+              / %input.form-control{name: "start", placeholder: "start date ..", type: "text"}/
+              %span.input-group-addon
+              / %input.form-control{name: "end", placeholder: "end date", type: "text"}/
+          .form-group
+            = submit_tag :search, class: 'btn btn-primary'
+            / %input.btn.btn-primary{type: "submit", value: "Search"}/
+        :javascript
+          $(function() {
+            $('.input-daterange').datepicker({
+              todayBtn: "linked",
+              keyboardNavigation: false,
+              forceParse: false
+              });
+          });
+      .message.text-center
+        %table.table.table-striped{"data-effect" => "fade"}
+          %thead
+            %tr
+              %th Address
+              %th Zip Code
+              %th Description
+              %th State
+          %tbody
+            - @drives.each do |drive|
+              %tr
+                %td= drive.address
+                %td= drive.zip_code
+                %td= drive.description
+                %td= drive.state
+
+      .col-lg-4.col-md-4.col-sm-6{"data-effect" => "slide-left"}
+        %h2.general-title
+          %span Our Office
+        %img.img-thumbnail{alt: "", src: "/assets/public/demos/office.jpg"}/
+      .col-lg-4.col-md-4.col-sm-6{"data-effect" => "slide-bottom"}
+        %h2.general-title
+          %span Welcome
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+      .col-lg-4.col-md-4.col-sm-6{"data-effect" => "slide-right"}
+        %h2.general-title
+          %span Why Choose Us?
+        %ul.check
+          %li
+            %a{href: "#"} 15+ homepage style (check features menu)
+          %li
+            %a{href: "#"} Compatible any eCommerce solutions
+          %li
+            %a{href: "#"} Limitless color combinations (build your own style)
+          %li
+            %a{href: "#"} Limitless page templates (15+ custom pages)
+          %li
+            %a{href: "#"} 100% responsive layout design
+          %li
+            %a{href: "#"} Awesome slideshows for your contents
+          %li
+            %a{href: "#"} 500+ Google fonts included (use very easy)
+          %li
+            %a{href: "#"} 700+ custom font icons included
+      .clearfix
+      %hr/
+      .message.text-center{"data-effect" => "slide-bottom"}
+        %h2 Our Professional Team Members
+        %p
+          Lorem ipsum
+          %a{href: "#"} dolor sit amet
+          , consectetur adipisicing elit. Suscipit illo voluptas aperiam repudiandae impedit quidem.
+      .authorbox.clearfix{"data-effect" => "slide-bottom"}
+        .col-lg-4.col-md-4.col-sm-4
+          .buddy-group-blocks.buddy-members
+            %figure.inverse
+              %img.avatar{alt: "", src: "/assets/public/demos/01_team.png"}/
+              %figcaption
+                %h3 John DOE
+                %small Founder - CEO
+                %br/
+                %a{href: "#", title: ""} @john
+        .col-lg-8.col-md-8.col-sm-8
+          .author-desc
+            %p Quisque sollicitudin ante vel nulla bibendum varius. Praesent lobortis felis erat, id sagittis quam mollis ac. Aliquam erat volutpat. Integer at tellus bibendum, consequat turpis ultricies, facilisis lectus. Mauris iaculis quam dolor, id commodo lacus viverra eget.
+      / end author
+      .authorbox.clearfix{"data-effect" => "slide-bottom"}
+        .col-lg-4.col-md-4.col-sm-4
+          .buddy-group-blocks.buddy-members
+            %figure.inverse
+              %img.avatar{alt: "", src: "/assets/public/demos/02_team.png"}/
+              %figcaption
+                %h3 Andrew JOHNSEN
+                %small Community Manager
+                %br/
+                %a{href: "#", title: ""} @andrew
+        .col-lg-8.col-md-8.col-sm-8
+          .author-desc
+            %p Quisque sollicitudin ante vel nulla bibendum varius. Praesent lobortis felis erat, id sagittis quam mollis ac. Aliquam erat volutpat. Integer at tellus bibendum, consequat turpis ultricies, facilisis lectus. Mauris iaculis quam dolor, id commodo lacus viverra eget.
+      / end author
+      .authorbox.clearfix{"data-effect" => "slide-bottom"}
+        .col-lg-4.col-md-4.col-sm-4
+          .buddy-group-blocks.buddy-members
+            %figure.inverse
+              %img.avatar{alt: "", src: "/assets/public/demos/03_team.png"}/
+              %figcaption
+                %h3 Michael JACKNESS
+                %small Developer
+                %br/
+                %a{href: "#", title: ""} @michael
+        .col-lg-8.col-md-8.col-sm-8
+          .author-desc
+            %p Quisque sollicitudin ante vel nulla bibendum varius. Praesent lobortis felis erat, id sagittis quam mollis ac. Aliquam erat volutpat. Integer at tellus bibendum, consequat turpis ultricies, facilisis lectus. Mauris iaculis quam dolor, id commodo lacus viverra eget.
+      / end author
+      %hr/
+      .message.text-center{"data-effect" => "slide-bottom"}
+        %h2 We listed below our awesome stats
+        %p
+          Lorem ipsum
+          %a{href: "#"} dolor sit amet
+          , consectetur adipisicing elit. Suscipit illo voluptas aperiam repudiandae impedit quidem.
+      .single-stat
+        .col-lg-3.col-md-3.col-sm-6{"data-effect" => "slide-bottom"}
+          .stat
+            %span.stat-count 325
+            %p.stat-detail Ordered Coffe's
+        .col-lg-3.col-md-3.col-sm-6{"data-effect" => "slide-bottom"}
+          .stat
+            %span.stat-count 652
+            %p.stat-detail Happy Customers
+        .col-lg-3.col-md-3.col-sm-6{"data-effect" => "slide-bottom"}
+          .stat
+            %span.stat-count 245
+            %p.stat-detail Completed Projetcs
+        .col-lg-3.col-md-3.col-sm-6{"data-effect" => "slide-bottom"}
+          .stat
+            %span.stat-count 425
+            %p.stat-detail Questions Answered

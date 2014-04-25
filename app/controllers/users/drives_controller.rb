@@ -1,6 +1,7 @@
 class Users::DrivesController < ApplicationController
   layout "users/dashboards"
   def index
+    @drives = Drive.all
   end
 
   def show
@@ -30,13 +31,12 @@ class Users::DrivesController < ApplicationController
     def drive_params
       params.require(:drive).permit(  :property_type,
                   :name_of_building,
-                  :address_line_1,
+                  :address,
                   :description,
-                  :address_line_2,
-                  :city_town,
-                  :province_state_county_region,
+                  :city,
+                  :state,
                   :country,
-                  :post_code,
+                  :zip_code,
                   :phone_number,
 :notes)
     end

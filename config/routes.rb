@@ -1,32 +1,6 @@
 Geniedrives::Application.routes.draw do
 
-  namespace :users do
-  get 'drives/index'
-  end
-
-  namespace :users do
-  get 'drives/show'
-  end
-
-  namespace :users do
-  get 'drives/new'
-  end
-
-  namespace :users do
-  get 'drives/create'
-  end
-
-  namespace :users do
-  get 'drives/edit'
-  end
-
-  namespace :users do
-  get 'drives/update'
-  end
-
-  namespace :users do
-  get 'drives/destroy'
-  end
+  get '/parking', to: 'searches#index'
 
   devise_for :users, :controllers => {:registrations => "registrations"}
   root :to => "pages#index"
@@ -36,7 +10,6 @@ Geniedrives::Application.routes.draw do
     get 'dashboard', to: 'dashboards#index'
   end
 
-  get "pages/index"
   get "pages/about"
   get "pages/pricing"
   get "pages/helpcentre"
@@ -44,7 +17,6 @@ Geniedrives::Application.routes.draw do
   get "pages/features"
   get "pages/download"
   get "pages/testimonials"
-  get "pages/parking"
 
   get "landlords/index"
 
