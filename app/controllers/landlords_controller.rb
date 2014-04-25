@@ -1,4 +1,5 @@
 class LandlordsController < ApplicationController
+  
   def index
   end
 

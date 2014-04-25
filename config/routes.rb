@@ -1,9 +1,40 @@
 Geniedrives::Application.routes.draw do
 
+  namespace :users do
+  get 'drives/index'
+  end
+
+  namespace :users do
+  get 'drives/show'
+  end
+
+  namespace :users do
+  get 'drives/new'
+  end
+
+  namespace :users do
+  get 'drives/create'
+  end
+
+  namespace :users do
+  get 'drives/edit'
+  end
+
+  namespace :users do
+  get 'drives/update'
+  end
+
+  namespace :users do
+  get 'drives/destroy'
+  end
+
   devise_for :users, :controllers => {:registrations => "registrations"}
   root :to => "pages#index"
   
-  get 'dashboard', to: 'users/dashboards#index'
+  namespace :users do
+    resources :drives
+    get 'dashboard', to: 'dashboards#index'
+  end
 
   get "pages/index"
   get "pages/about"

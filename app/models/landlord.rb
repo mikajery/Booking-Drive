@@ -40,7 +40,7 @@ end
 class Landlord < ActiveRecord::Base
   
   belongs_to :user
-  has_many:subscription
+  has_many    :subscription
   mount_uploader :avatar, AvatarUploader
 
 

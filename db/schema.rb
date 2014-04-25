@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140405110233) do
+ActiveRecord::Schema.define(version: 20140302160950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,25 @@ ActiveRecord::Schema.define(version: 20140405110233) do
   add_index "contracts", ["landlord_id"], name: "index_contracts_on_landlord_id", using: :btree
   add_index "contracts", ["property_id"], name: "index_contracts_on_property_id", using: :btree
   add_index "contracts", ["tenant_id"], name: "index_contracts_on_tenant_id", using: :btree
+
+  create_table "drives", force: true do |t|
+    t.string   "property_type"
+    t.string   "name_of_building"
+    t.string   "address_line_1"
+    t.string   "description"
+    t.string   "address_line_2"
+    t.string   "city_town"
+    t.string   "province_state_county_region"
+    t.string   "country"
+    t.string   "post_code"
+    t.string   "phone_number"
+    t.text     "notes"
+    t.integer  "landlord_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "drives", ["landlord_id"], name: "index_drives_on_landlord_id", using: :btree
 
   create_table "landlords", force: true do |t|
     t.string   "first_name"
@@ -85,7 +104,7 @@ ActiveRecord::Schema.define(version: 20140405110233) do
     t.string   "status"
     t.date     "due_date"
     t.boolean  "late_payment"
-    t.boolean  "date_paid"
+    t.date     "date_paid"
     t.string   "reference_no"
     t.string   "payment_method"
     t.text     "notes"
@@ -100,28 +119,6 @@ ActiveRecord::Schema.define(version: 20140405110233) do
   add_index "payments", ["landlord_id"], name: "index_payments_on_landlord_id", using: :btree
   add_index "payments", ["property_id"], name: "index_payments_on_property_id", using: :btree
   add_index "payments", ["tenant_id"], name: "index_payments_on_tenant_id", using: :btree
-
-  create_table "properties", force: true do |t|
-    t.string   "property_type"
-    t.integer  "number_of_rooms"
-    t.string   "name_of_building"
-    t.string   "address_line_1"
-    t.string   "string"
-    t.string   "address_line_2"
-    t.string   "city_town"
-    t.string   "province_state_county_region"
-    t.string   "country"
-    t.string   "post_code"
-    t.string   "phone_number"
-    t.decimal  "approx_rental"
-    t.text     "notes"
-    t.integer  "landlord_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "tenant_id"
-  end
-
-  add_index "properties", ["landlord_id"], name: "index_properties_on_landlord_id", using: :btree
 
   create_table "subscription_payments", force: true do |t|
     t.string   "subscription_type"

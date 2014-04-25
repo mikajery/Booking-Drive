@@ -22,7 +22,7 @@
 #  tenant_id                    :string(255)
 #
 
-class Property < ActiveRecord::Base
+class Drive < ActiveRecord::Base
   belongs_to :landlord
   belongs_to :tenant
 end
