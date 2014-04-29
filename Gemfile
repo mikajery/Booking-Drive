@@ -31,7 +31,7 @@ gem "paperclip", "~> 3.0"
 gem 'annotate'
 gem 'bootstrap-datepicker-rails'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'simple_form'
+gem 'simple_form', '3.1.0.rc1'
 gem 'haml-rails'
 gem "geocoder"
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
