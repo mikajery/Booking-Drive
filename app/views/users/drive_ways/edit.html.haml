@@ -1,0 +1,7 @@
+%h1 Editing users_drive_way
+= form_for @users_drive_way, url: users_drive_way_path(@users_drive_way) do |f|
+  = render partial: 'form', locals: { f: f }
+
+= link_to 'Show', users_drive_way_path(@users_drive_way)
+
+= link_to 'Back', users_drive_ways_path

@@ -1,6 +1,6 @@
-class Users::DashboardsController < ApplicationController
-  layout 'users/dashboards'
+class Users::DashboardsController < Users::BaseController
   def index
-    @property = Property.new    
+    @drive = Drive.new    
   end
+
 end

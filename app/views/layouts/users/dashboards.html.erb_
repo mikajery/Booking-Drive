@@ -1,0 +1,1022 @@
+!!!
+%html.no-js{lang: "en"}
+  %head
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: "", name: "description"}/
+    %meta{c: "", html: "", name: "keywords"}/
+    / Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3 Version: 1.0 Author: ClipTheme
+    /[if IE 8] <html class="ie8 no-js" lang="en">
+    /[if IE 9] <html class="ie9 no-js" lang="en">
+    / [if !IE]><!
+    / <![endif]
+    / start: HEAD
+    %title Clip-One - Responsive Admin Template
+    / start: META
+    %meta{charset: "utf-8"}/
+    /[if IE] <meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" />
+    %meta{content: "width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0", name: "viewport"}/
+    %meta{content: "yes", name: "apple-mobile-web-app-capable"}/
+    %meta{content: "black", name: "apple-mobile-web-app-status-bar-style"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
+    / end: META
+    / start: MAIN CSS
+    %link{href: "/assets/dashboard/plugins/bootstrap/css/bootstrap.min.css", media: "screen", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/plugins/font-awesome/css/font-awesome.min.css", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/fonts/style.css", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/css/main.css", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/css/main-responsive.css", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/plugins/iCheck/skins/all.css", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/plugins/perfect-scrollbar/src/perfect-scrollbar.css", rel: "stylesheet"}/
+    / <link rel="stylesheet/less" type="text/css" href="/assets/dashboard/css/styles.less">
+    %link#skin_color{href: "/assets/dashboard/css/theme_light.css", rel: "stylesheet", type: "text/css"}/
+    /[if IE 7]
+      <link rel="stylesheet" href="/assets/dashboard/plugins/font-awesome/css/font-awesome-ie7.min.css">
+    / end: MAIN CSS
+    / start: CSS REQUIRED FOR THIS PAGE ONLY
+    %link{href: "/assets/dashboard/plugins/fullcalendar/fullcalendar/fullcalendar.css", rel: "stylesheet"}/
+    / end: CSS REQUIRED FOR THIS PAGE ONLY
+    %link{href: "favicon.ico", rel: "shortcut icon"}/
+    / end: HEAD
+    / start: BODY
+  %body
+    / start: HEADER
+    .navbar.navbar-inverse.navbar-fixed-top
+      / start: TOP NAVIGATION CONTAINER
+      .container
+        .navbar-header
+          / start: RESPONSIVE MENU TOGGLER
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.clip-list-2
+          / end: RESPONSIVE MENU TOGGLER
+          / start: LOGO
+          %a.navbar-brand{href: "index.html"}
+            CLIP
+            %i.clip-clip>
+            ONE
+          / end: LOGO
+        .navbar-tools
+          / start: TOP NAVIGATION MENU
+          %ul.nav.navbar-right
+            / start: TO-DO DROPDOWN
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                %i.clip-list-5
+                %span.badge 12
+              %ul.dropdown-menu.todo
+                %li
+                  %span.dropdown-menu-title You have 12 pending tasks
+                %li
+                  .drop-down-wrapper
+                    %ul
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc{style: "opacity: 1; text-decoration: none;"} Staff Meeting
+                          %span.label.label-danger{style: "opacity: 1;"} today
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc{style: "opacity: 1; text-decoration: none;"} New frontend layout
+                          %span.label.label-danger{style: "opacity: 1;"} today
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc Hire developers
+                          %span.label.label-warning tommorow
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc Staff Meeting
+                          %span.label.label-warning tommorow
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc New frontend layout
+                          %span.label.label-success this week
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc Hire developers
+                          %span.label.label-success this week
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc New frontend layout
+                          %span.label.label-info this month
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc Hire developers
+                          %span.label.label-info this month
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc{style: "opacity: 1; text-decoration: none;"} Staff Meeting
+                          %span.label.label-danger{style: "opacity: 1;"} today
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc{style: "opacity: 1; text-decoration: none;"} New frontend layout
+                          %span.label.label-danger{style: "opacity: 1;"} today
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc Hire developers
+                          %span.label.label-warning tommorow
+                %li.view-all
+                  %a{href: "javascript:void(0)"}
+                    See all tasks
+                    %i.fa.fa-arrow-circle-o-right
+            / end: TO-DO DROPDOWN
+            / start: NOTIFICATION DROPDOWN
+            %li.dropdown
+              %a.dropdown-toggle{"data-close-others" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
+                %i.clip-notification-2
+                %span.badge 11
+              %ul.dropdown-menu.notifications
+                %li
+                  %span.dropdown-menu-title You have 11 notifications
+                %li
+                  .drop-down-wrapper
+                    %ul
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-primary
+                            %i.fa.fa-user
+                          %span.message New user registration
+                          %span.time 1 min
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-success
+                            %i.fa.fa-comment
+                          %span.message New comment
+                          %span.time 7 min
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-success
+                            %i.fa.fa-comment
+                          %span.message New comment
+                          %span.time 8 min
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-success
+                            %i.fa.fa-comment
+                          %span.message New comment
+                          %span.time 16 min
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-primary
+                            %i.fa.fa-user
+                          %span.message New user registration
+                          %span.time 36 min
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-warning
+                            %i.fa.fa-shopping-cart
+                          %span.message 2 items sold
+                          %span.time 1 hour
+                      %li.warning
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-danger
+                            %i.fa.fa-user
+                          %span.message User deleted account
+                          %span.time 2 hour
+                      %li.warning
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-danger
+                            %i.fa.fa-shopping-cart
+                          %span.message Transaction was canceled
+                          %span.time 6 hour
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-success
+                            %i.fa.fa-comment
+                          %span.message New comment
+                          %span.time yesterday
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-primary
+                            %i.fa.fa-user
+                          %span.message New user registration
+                          %span.time yesterday
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-primary
+                            %i.fa.fa-user
+                          %span.message New user registration
+                          %span.time yesterday
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-success
+                            %i.fa.fa-comment
+                          %span.message New comment
+                          %span.time yesterday
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-success
+                            %i.fa.fa-comment
+                          %span.message New comment
+                          %span.time yesterday
+                %li.view-all
+                  %a{href: "javascript:void(0)"}
+                    See all notifications
+                    %i.fa.fa-arrow-circle-o-right
+            / end: NOTIFICATION DROPDOWN
+            / start: MESSAGE DROPDOWN
+            %li.dropdown
+              %a.dropdown-toggle{"data-close-others" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
+                %i.clip-bubble-3
+                %span.badge 9
+              %ul.dropdown-menu.posts
+                %li
+                  %span.dropdown-menu-title You have 9 messages
+                %li
+                  .drop-down-wrapper
+                    %ul
+                      %li
+                        %a{href: "javascript:;"}
+                          .clearfix
+                            .thread-image
+                              %img{alt: "", src: "/assets/dashboard/images/avatar-2.jpg"}/
+                            .thread-content
+                              %span.author Nicole Bell
+                              %span.preview Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                              %span.time Just Now
+                      %li
+                        %a{href: "javascript:;"}
+                          .clearfix
+                            .thread-image
+                              %img{alt: "", src: "/assets/dashboard/images/avatar-1.jpg"}/
+                            .thread-content
+                              %span.author Peter Clark
+                              %span.preview Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                              %span.time 2 mins
+                      %li
+                        %a{href: "javascript:;"}
+                          .clearfix
+                            .thread-image
+                              %img{alt: "", src: "/assets/dashboard/images/avatar-3.jpg"}/
+                            .thread-content
+                              %span.author Steven Thompson
+                              %span.preview Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                              %span.time 8 hrs
+                      %li
+                        %a{href: "javascript:;"}
+                          .clearfix
+                            .thread-image
+                              %img{alt: "", src: "/assets/dashboard/images/avatar-1.jpg"}/
+                            .thread-content
+                              %span.author Peter Clark
+                              %span.preview Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                              %span.time 9 hrs
+                      %li
+                        %a{href: "javascript:;"}
+                          .clearfix
+                            .thread-image
+                              %img{alt: "", src: "/assets/dashboard/images/avatar-5.jpg"}/
+                            .thread-content
+                              %span.author Kenneth Ross
+                              %span.preview Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                              %span.time 14 hrs
+                %li.view-all
+                  %a{href: "pages_messages.html"}
+                    See all messages
+                    %i.fa.fa-arrow-circle-o-right
+            / end: MESSAGE DROPDOWN
+            / start: USER DROPDOWN
+            %li.dropdown.current-user
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                %img.circle-img{alt: "", src: "/assets/dashboard/images/avatar-1-small.jpg"}/
+                %span.username Peter Clark
+                %i.clip-chevron-down
+              %ul.dropdown-menu
+                %li
+                  %a{href: "pages_user_profile.html"}
+                    %i.clip-user-2
+                     My Profile
+                %li
+                  %a{href: "pages_calendar.html"}
+                    %i.clip-calendar
+                     My Calendar
+                %li
+                  %a{href: "pages_messages.html"}
+                    %i.clip-bubble-4
+                     My Messages (3)
+                %li.divider
+                %li
+                  %a{href: "utility_lock_screen.html"}
+                    %i.clip-locked
+                     Lock Screen
+                %li
+                  %a{href: "login_example1.html"}
+                    %i.clip-exit
+                     Log Out
+            / end: USER DROPDOWN
+          / end: TOP NAVIGATION MENU
+      / end: TOP NAVIGATION CONTAINER
+    / end: HEADER
+    / start: MAIN CONTAINER
+    .main-container
+      .navbar-content
+        / start: SIDEBAR
+        .main-navigation.navbar-collapse.collapse
+          / start: MAIN MENU TOGGLER BUTTON
+          .navigation-toggler
+            %i.clip-chevron-left
+            %i.clip-chevron-right
+          / end: MAIN MENU TOGGLER BUTTON
+          / start: MAIN NAVIGATION MENU
+          %ul.main-navigation-menu
+            %li.active.open
+              %a{href: "index.html"}
+                %i.clip-home-3
+                %span.title Dashboard
+                %span.selected
+            %li
+              %a{href: "javascript:void(0)"}
+                %i.clip-screen
+                %span.title Layouts
+                %i.icon-arrow
+                %span.selected
+              %ul.sub-menu
+                %li
+                  %a{href: "layouts_sidebar_closed.html"}
+                    %span.title Sidebar Closed
+                %li
+                  %a{href: "layouts_boxed_layout.html"}
+                    %span.title Boxed Layout
+                %li
+                  %a{href: "layouts_footer_fixed.html"}
+                    %span.title Footer Fixed
+                %li
+                  %a{href: "../clip-one-rtl/index.html"}
+                    %span.title RTL Version
+                    %span.badge.badge-new new
+            %li
+              %a{href: "javascript:void(0)"}
+                %i.clip-cog-2
+                %span.title UI Lab
+                %i.icon-arrow
+                %span.selected
+              %ul.sub-menu
+                %li
+                  %a{href: "ui_elements.html"}
+                    %span.title Elements
+                %li
+                  %a{href: "ui_buttons.html"}
+                    %span.title Buttons & icons
+                %li
+                  %a{href: "ui_animations.html"}
+                    %span.title CSS3 Animation
+                    %span.badge.badge-new new
+                %li
+                  %a{href: "ui_modals.html"}
+                    %span.title Extended Modals
+                %li
+                  %a{href: "ui_tabs_accordions.html"}
+                    %span.title Tabs & Accordions
+                %li
+                  %a{href: "ui_sliders.html"}
+                    %span.title Sliders
+                %li
+                  %a{href: "ui_treeview.html"}
+                    %span.title Treeview
+                %li
+                  %a{href: "ui_nestable.html"}
+                    %span.title Nestable List
+                %li
+                  %a{href: "ui_typography.html"}
+                    %span.title Typography
+            %li
+              %a{href: "javascript:void(0)"}
+                %i.clip-grid-6
+                %span.title Tables
+                %i.icon-arrow
+                %span.selected
+              %ul.sub-menu
+                %li
+                  %a{href: "table_static.html"}
+                    %span.title Static Tables
+                %li
+                  %a{href: "table_responsive.html"}
+                    %span.title Responsive Tables
+                %li
+                  %a{href: "table_data.html"}
+                    %span.title Data Tables
+            %li
+              %a{href: "javascript:void(0)"}
+                %i.clip-pencil
+                %span.title Forms
+                %i.icon-arrow
+                %span.selected
+              %ul.sub-menu
+                %li
+                  %a{href: "form_elements.html"}
+                    %span.title Form Elements
+                %li
+                  %a{href: "form_wizard.html"}
+                    %span.title Form Wizard
+                %li
+                  %a{href: "form_validation.html"}
+                    %span.title Form Validation
+                %li
+                  %a{href: "form_inline.html"}
+                    %span.title Inline Editor
+                %li
+                  %a{href: "form_x_editable.html"}
+                    %span.title Form X-editable
+                    %span.badge.badge-new new
+                %li
+                  %a{href: "form_image_cropping.html"}
+                    %span.title Image Cropping
+                %li
+                  %a{href: "form_multiple_upload.html"}
+                    %span.title Multiple File Upload
+                %li
+                  %a{href: "form_dropzone.html"}
+                    %span.title Dropzone File Upload
+            %li
+              %a{href: "javascript:void(0)"}
+                %i.clip-user-2
+                %span.title Login
+                %i.icon-arrow
+                %span.selected
+              %ul.sub-menu
+                %li
+                  %a{href: "login_example1.html"}
+                    %span.title Login Form Example 1
+                %li
+                  %a{href: "login_example2.html"}
+                    %span.title Login Form Example 2
+            %li
+              %a{href: "javascript:void(0)"}
+                %i.clip-file
+                %span.title Pages
+                %i.icon-arrow
+                %span.selected
+              %ul.sub-menu
+                %li
+                  %a{href: "pages_user_profile.html"}
+                    %span.title User Profile
+                %li
+                  %a{href: "pages_gallery.html"}
+                    %span.title Gallery
+                %li
+                  %a{href: "pages_timeline.html"}
+                    %span.title Timeline
+                %li
+                  %a{href: "pages_calendar.html"}
+                    %span.title Calendar
+                %li
+                  %a{href: "pages_messages.html"}
+                    %span.title Messages
+                %li
+                  %a{href: "pages_blank_page.html"}
+                    %span.title Blank Page
+            %li
+              %a{href: "javascript:void(0)"}
+                %i.clip-attachment-2
+                %span.title Utility
+                %i.icon-arrow
+                %span.selected
+              %ul.sub-menu
+                %li
+                  %a{href: "utility_faq.html"}
+                    %span.title Faq
+                %li
+                  %a{href: "utility_lock_screen.html"}
+                    %span.title Lock Screen
+                %li
+                  %a{href: "utility_404_example1.html"}
+                    %span.title Error 404 Example 1
+                %li
+                  %a{href: "utility_404_example2.html"}
+                    %span.title Error 404 Example 2
+                %li
+                  %a{href: "utility_404_example3.html"}
+                    %span.title Error 404 Example 3
+                %li
+                  %a{href: "utility_500_example1.html"}
+                    %span.title Error 500 Example 1
+                %li
+                  %a{href: "utility_500_example2.html"}
+                    %span.title Error 500 Example 2
+                %li
+                  %a{href: "utility_pricing_table.html"}
+                    %span.title Pricing Table
+                %li
+                  %a{href: "utility_coming_soon.html"}
+                    %span.title Cooming Soon
+            %li
+              %a.active{href: "javascript:;"}
+                %i.clip-folder
+                %span.title 3 Level Menu
+                %i.icon-arrow
+              %ul.sub-menu
+                %li
+                  %a{href: "javascript:;"}
+                    Item 1
+                    %i.icon-arrow
+                  %ul.sub-menu
+                    %li
+                      %a{href: "#"}
+                        Sample Link 1
+                    %li
+                      %a{href: "#"}
+                        Sample Link 2
+                    %li
+                      %a{href: "#"}
+                        Sample Link 3
+                %li
+                  %a{href: "javascript:;"}
+                    Item 1
+                    %i.icon-arrow
+                  %ul.sub-menu
+                    %li
+                      %a{href: "#"}
+                        Sample Link 1
+                    %li
+                      %a{href: "#"}
+                        Sample Link 1
+                    %li
+                      %a{href: "#"}
+                        Sample Link 1
+                %li
+                  %a{href: "#"}
+                    Item 3
+            %li
+              %a{href: "javascript:;"}
+                %i.clip-folder-open
+                %span.title 4 Level Menu
+                %i.icon-arrow
+                %span.arrow
+              %ul.sub-menu
+                %li
+                  %a{href: "javascript:;"}
+                    Item 1
+                    %i.icon-arrow
+                  %ul.sub-menu
+                    %li
+                      %a{href: "javascript:;"}
+                        Sample Link 1
+                        %i.icon-arrow
+                      %ul.sub-menu
+                        %li
+                          %a{href: "#"}
+                            %i.fa.fa-times
+                            Sample Link 1
+                        %li
+                          %a{href: "#"}
+                            %i.fa.fa-pencil
+                            Sample Link 1
+                        %li
+                          %a{href: "#"}
+                            %i.fa.fa-edit
+                            Sample Link 1
+                    %li
+                      %a{href: "#"}
+                        Sample Link 1
+                    %li
+                      %a{href: "#"}
+                        Sample Link 2
+                    %li
+                      %a{href: "#"}
+                        Sample Link 3
+                %li
+                  %a{href: "javascript:;"}
+                    Item 2
+                    %i.icon-arrow
+                  %ul.sub-menu
+                    %li
+                      %a{href: "#"}
+                        Sample Link 1
+                    %li
+                      %a{href: "#"}
+                        Sample Link 1
+                    %li
+                      %a{href: "#"}
+                        Sample Link 1
+                %li
+                  %a{href: "#"}
+                    Item 3
+            %li
+              %a{href: "maps.html"}
+                %i.clip-location
+                %span.title Maps
+                %span.selected
+            %li
+              %a{href: "charts.html"}
+                %i.clip-bars
+                %span.title Charts
+                %span.selected
+          / end: MAIN NAVIGATION MENU
+        / end: SIDEBAR
+      / start: PAGE
+      / start: PAGE CONTENT
+      .main-content
+        / start: PANEL CONFIGURATION MODAL FORM
+        #panel-config.modal.fade{"aria-hidden" => "true", role: "dialog", tabindex: "-1"}
+          .modal-dialog
+            .modal-content
+              .modal-header
+                %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"}
+                  ×
+                %h4.modal-title Panel Configuration
+              .modal-body
+                Here will be a configuration form
+              .modal-footer
+                %button.btn.btn-default{"data-dismiss" => "modal", type: "button"}
+                  Close
+                %button.btn.btn-primary{type: "button"}
+                  Save changes
+            / /.modal-content
+          / /.modal-dialog
+        / /.modal
+        / end: SPANEL CONFIGURATION MODAL FORM
+        .container
+          / start: PAGE HEADER
+          .row
+            .col-sm-12
+              / start: STYLE SELECTOR BOX
+              #style_selector.hidden-xs
+                #style_selector_container{style: "display:block"}
+                  .style-main-title
+                    Style Selector
+                  .box-title
+                    Choose Your Layout Style
+                  .input-box
+                    .input
+                      %select{name: "layout"}
+                        %option{value: "default"} Wide
+                        %option{value: "boxed"} Boxed
+                  .box-title
+                    Choose Your Header Style
+                  .input-box
+                    .input
+                      %select{name: "header"}
+                        %option{value: "fixed"} Fixed
+                        %option{value: "default"} Default
+                  .box-title
+                    Choose Your Footer Style
+                  .input-box
+                    .input
+                      %select{name: "footer"}
+                        %option{value: "default"} Default
+                        %option{value: "fixed"} Fixed
+                  .box-title
+                    Backgrounds for Boxed Version
+                  .images.boxed-patterns
+                    %a#bg_style_1{href: "#"}
+                      %img{alt: "", src: "/assets/dashboard/images/bg.png"}/
+                    %a#bg_style_2{href: "#"}
+                      %img{alt: "", src: "/assets/dashboard/images/bg_2.png"}/
+                    %a#bg_style_3{href: "#"}
+                      %img{alt: "", src: "/assets/dashboard/images/bg_3.png"}/
+                    %a#bg_style_4{href: "#"}
+                      %img{alt: "", src: "/assets/dashboard/images/bg_4.png"}/
+                    %a#bg_style_5{href: "#"}
+                      %img{alt: "", src: "/assets/dashboard/images/bg_5.png"}/
+                  .box-title
+                    5 Predefined Color Schemes
+                  .images.icons-color
+                    %a#light{href: "#"}
+                      %img.active{alt: "", src: "/assets/dashboard/images/lightgrey.png"}/
+                    %a#dark{href: "#"}
+                      %img{alt: "", src: "/assets/dashboard/images/darkgrey.png"}/
+                    %a#black_and_white{href: "#"}
+                      %img{alt: "", src: "/assets/dashboard/images/blackandwhite.png"}/
+                    %a#navy{href: "#"}
+                      %img{alt: "", src: "/assets/dashboard/images/navy.png"}/
+                    %a#green{href: "#"}
+                      %img{alt: "", src: "/assets/dashboard/images/green.png"}/
+                  .box-title
+                    Style it with LESS
+                  .images
+                    .form-group
+                      %label
+                        Basic
+                      %input.color-base{type: "text", value: "#ffffff"}/
+                      .dropdown
+                        %a.add-on.dropdown-toggle{"data-toggle" => "dropdown"}
+                          %i{style: "background-color: #ffffff"}
+                        %ul.dropdown-menu.pull-right
+                          %li
+                            .colorpalette
+                    .form-group
+                      %label
+                        Text
+                      %input.color-text{type: "text", value: "#555555"}/
+                      .dropdown
+                        %a.add-on.dropdown-toggle{"data-toggle" => "dropdown"}
+                          %i{style: "background-color: #555555"}
+                        %ul.dropdown-menu.pull-right
+                          %li
+                            .colorpalette
+                    .form-group
+                      %label
+                        Elements
+                      %input.color-badge{type: "text", value: "#007AFF"}/
+                      .dropdown
+                        %a.add-on.dropdown-toggle{"data-toggle" => "dropdown"}
+                          %i{style: "background-color: #007AFF"}
+                        %ul.dropdown-menu.pull-right
+                          %li
+                            .colorpalette
+                  %div{style: "height:25px;line-height:25px; text-align: center"}
+                    %a.clear_style{href: "#"}
+                      Clear Styles
+                    %a.save_style{href: "#"}
+                      Save Styles
+                .style-toggle.open
+              / end: STYLE SELECTOR BOX
+              / start: PAGE TITLE & BREADCRUMB
+              %ol.breadcrumb
+                %li
+                  %i.clip-home-3
+                  %a{href: "#"}
+                    Home
+                %li.active
+                  Dashboard
+                %li.search-box
+                  %form.sidebar-search
+                    .form-group
+                      %input{placeholder: "Start Searching...", type: "text"}/
+                      %button.submit
+                        %i.clip-search-3
+              .page-header
+                %h1
+                  Dashboard
+                  %small overview & stats
+              / end: PAGE TITLE & BREADCRUMB
+          / end: PAGE HEADER
+          = yield
+          / end: PAGE
+          / end: PAGE CONTENT
+    / end: MAIN CONTAINER
+    / start: FOOTER
+    .footer.clearfix
+      .footer-inner
+        2013 © clip-one by cliptheme.
+      .footer-items
+        %span.go-top
+          %i.clip-chevron-up
+    / end: FOOTER
+    #event-management.modal.fade{"data-width" => "760", style: "display: none;", tabindex: "-1"}
+      .modal-dialog
+        .modal-content
+          .modal-header
+            %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"}
+              ×
+            %h4.modal-title Event Management
+          .modal-body
+          .modal-footer
+            %button.btn.btn-light-grey{"data-dismiss" => "modal", type: "button"}
+              Close
+            %button.btn.btn-danger.remove-event.no-display{type: "button"}
+              %i.fa.fa-trash-o
+              Delete Event
+            %button.btn.btn-success.save-event{type: "submit"}
+              %i.fa.fa-check
+              Save
+    / start: MAIN JAVASCRIPTS
+    /[if lt IE 9]
+      <script src="/assets/dashboard/plugins/respond.min.js"></script>
+      <script src="/assets/dashboard/plugins/excanvas.min.js"></script>
+    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"}
+    %script{src: "/assets/dashboard/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"}
+    %script{src: "/assets/dashboard/plugins/bootstrap/js/bootstrap.min.js"}
+    %script{src: "/assets/dashboard/plugins/blockUI/jquery.blockUI.js"}
+    %script{src: "/assets/dashboard/plugins/iCheck/jquery.icheck.min.js"}
+    %script{src: "/assets/dashboard/plugins/perfect-scrollbar/src/jquery.mousewheel.js"}
+    %script{src: "/assets/dashboard/plugins/perfect-scrollbar/src/perfect-scrollbar.js"}
+    %script{src: "/assets/dashboard/plugins/less/less-1.5.0.min.js"}
+    %script{src: "/assets/dashboard/plugins/jquery-cookie/jquery.cookie.js"}
+    %script{src: "/assets/dashboard/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"}
+    %script{src: "/assets/dashboard/js/main.js"}
+    / end: MAIN JAVASCRIPTS
+    / start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY
+    %script{src: "/assets/dashboard/plugins/flot/jquery.flot.js"}
+    %script{src: "/assets/dashboard/plugins/flot/jquery.flot.pie.js"}
+    %script{src: "/assets/dashboard/plugins/flot/jquery.flot.resize.min.js"}
+    %script{src: "/assets/dashboard/plugins/jquery.sparkline/jquery.sparkline.js"}
+    %script{src: "/assets/dashboard/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"}
+    %script{src: "/assets/dashboard/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"}
+    %script{src: "/assets/dashboard/plugins/fullcalendar/fullcalendar/fullcalendar.js"}
+    %script{src: "/assets/dashboard/js/index.js"}
+    / end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY
+    :javascript
+      jQuery(document).ready(function() {
+        Main.init();
+        Index.init();
+      });
+    / end: BODY
+%html
+  %p
+    ontent="">
+    %meta{content: "", name: "author"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
+  %title
+    = @page_title
+    \- GenieDrives
+  / Bootstrap Styles
+  %link{href: "/assets/public/assets/css/bootstrap.min.css", rel: "stylesheet"}/
+  %link{href: "/assets/public/style.css", rel: "stylesheet"}/
+  = stylesheet_link_tag('public')
+  / RS PLUGIN Styles
+  %link{href: "/assets/public/rs-plugin/css/settings.css", media: "screen", rel: "stylesheet", type: "text/css"}/
+  / http://www.456bereastreet.com/archive/201209/tell_css_that_javascript_is_available_asap/
+  :javascript
+    document.documentElement.className = document.documentElement.className.replace(/(\s|^)no-js(\s|$)/, '$1js$2');
+  = javascript_include_tag('public')
+  / Support for HTML5
+  /[if lt IE 9]
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  / Enable media queries on older browsers
+  /[if lt IE 9]
+    <script src="/assets/public/assets/js/respond.min.js"></script>
+  %link{href: "/assets/public/custom.css", rel: "stylesheet"}/
+  %body
+    #preloader
+      #status  
+    #wrapper
+      .topbar
+        .container
+          .col-lg-6.col-md-6.col-sm-6
+            %p.tagline
+              Call us : +90 532 02 02 // Email us : hello@designingmedia.com
+          .col-lg-6.col-md-6.col-sm-6
+            .pull-right
+              %ul.top-menu
+                - if current_user.blank?
+                  %li
+                    = link_to "Login", new_user_session_path
+                  %li
+                    = link_to current_user.blank?, "Sign Up", new_user_registration_path
+                - else
+                  %i.icon-user
+            / /rightmenu
+          / End Social
+    / /topbar
+    %header.header-wrapper
+      .container
+        .col-lg-2.col-md-2.col-sm-2
+          %a.cssLogo{href: "index.html"}
+            %img{alt: "", src: "/assets/public/images/logo.png"}/
+        .col-lg-10.col-md-10.col-sm-12
+          %nav
+            %ul#jetmenu.jetmenu
+              %li
+                active_if_current_page_is(root_path)   >
+                \#{link_to "home", root_path}
+              %li
+                active_if_current_page_is(pages_about_path)  >
+                \#{link_to "About Us", pages_about_path}
+              %li
+                active_if_current_page_is(pages_features_path) >
+                \#{link_to "Features", pages_features_path}
+              %li
+                active_if_current_page_is(pages_pricing_path) >
+                \#{link_to "Pricing", pages_pricing_path}
+              %li
+                active_if_current_page_is(pages_testimonials_path) >
+                \#{link_to "Testimonials", pages_testimonials_path}
+              %li
+                active_if_current_page_is(pages_contactus_path) >
+                \#{link_to "Contact Us", pages_contactus_path}
+              %li
+                active_if_current_page_is(parking_path) >
+                \#{link_to "Parking", parking_path}
+          / /nav
+        / /col10
+      / /container
+    / /header wrapper
+    = yield
+    %footer.footer-wrapper
+      .container
+        .col-lg-3.col-md-3.col-sm-6
+          .widget
+            %h2.general-title
+              %span About {NEVER}MIND
+            %p
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+            %a.btn.btn-primary.btn-sm{href: "#"} read more
+        .col-lg-3.col-md-3.col-sm-6
+          .widget
+            %h2.general-title
+              %span Flickr Stream
+            %ul.flickr
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/01_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/02_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/03_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/04_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/05_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/06_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/07_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/08_flickr.jpg", width: "54"}/
+        .col-lg-3.col-md-3.col-sm-6
+          .widget
+            %h2.general-title
+              %span Twitter Stream
+            .tweets
+              %ul
+                %li
+                  %span.content
+                    Looking a special HTML5 CSS3 template for your works? Visit here
+                    %a{href: "http://goo.gl/eVrkdq"} http://goo.gl/eVrkdq
+            %a.twitter-follow-button{"data-show-count" => "false", href: "https://twitter.com/envato"} Follow @envato
+            :javascript
+              ! function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0],
+                      p = /^http:/.test(d.location) ? 'http' : 'https';
+                  if (!d.getElementById(id)) {
+                      js = d.createElement(s);
+                      js.id = id;
+                      js.src = p + '://platform.twitter.com/widgets.js';
+                      fjs.parentNode.insertBefore(js, fjs);
+                  }
+              }(document, 'script', 'twitter-wjs');
+        .col-lg-3.col-md-3.col-sm-6
+          .widget
+            %h2.general-title
+              %span Contact Details
+            %p
+              Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac.
+            %ul.contact-details
+              %li
+                %i.icon-home
+                Lorem ipsum dolar sit amet / USA
+              %li
+                %i.icon-mobile-phone
+                +0 554 777 78 78
+              %li
+                %i.icon-envelope-alt
+                hello@designingmedia.com
+              %li
+                %i.icon-map-marker
+                %a{href: "#", title: "View large map on Google"} Google Map
+    .copyright-wrapper
+      .container
+        .col-lg-6.col-md-6.col-sm-6
+          %span.copyright
+            © Copyright 2013 -
+            %a{href: "#"} {NEVER}MIND
+            HTML5 Template by
+            %a{href: "http://www.designingmedia.com"} Designing Media
+        .col-lg-6.col-md-6.col-sm-6
+          %nav
+            %ul.footer-menu
+              %li
+                %a{href: "#", title: "#"} Home
+              %li
+                %a{href: "#", title: "#"} About
+              %li
+                %a{href: "#", title: "#"} Portfolio
+              %li
+                %a{href: "#", title: "#"} Shop
+              %li
+                %a{href: "#", title: "#"} Forums
+              %li
+                %a{href: "#", title: "#"} Contact
+    .dmtop Scroll to Top
+    / /wrapper
+    / Main Scripts
+    %script{src: "/assets/public/js/retina-1.1.0.js"}
+    %script{src: "/assets/public/js/jquery.unveilEffects.min.js"}
+    %script{src: "/assets/public/js/jetmenu.js"}
+    / RS PLUGIN Scripts
+    %script{src: "/assets/public/rs-plugin/js/jquery.themepunch.plugins.min.js"}
+    %script{src: "/assets/public/rs-plugin/js/jquery.themepunch.revolution.min.js"}
+    :javascript
+      var revapi;
+      jQuery(document).ready(function() {
+          revapi = jQuery('.tp-banner').revolution({
+              delay: 9000,
+              startwidth: 1170,
+              startheight: 450,
+              hideThumbs: 10,
+              fullWidth: "on",
+              forceFullWidth: "on",
+              lazyload: "on",
+              navigationStyle: "square"
+          });
+      });
+    - yield :javascript
+    %script{src: "/assets/public/js/application.js"}

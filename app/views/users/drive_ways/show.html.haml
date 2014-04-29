@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Price:
+  = @users_drive_way.price
+%p
+  %b Name:
+  = @users_drive_way.name
+%p
+  %b Description:
+  = @users_drive_way.description
+
+= link_to 'Edit', edit_users_drive_way_path(@users_drive_way)
+\|
+= link_to 'Back', users_drive_ways_path

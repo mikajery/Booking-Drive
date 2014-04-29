@@ -1,0 +1,429 @@
+!!!
+/ Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3 Version: 1.0 Author: ClipTheme
+/[if IE 8] <html class="ie8 no-js" lang="en">
+/[if IE 9] <html class="ie9 no-js" lang="en">
+/ [if !IE]><!
+%html.no-js{lang: "en"}
+  / <![endif]
+  / start: HEAD
+  %head
+    %title User Dashboard - Geniedrives
+    / start: META
+    %meta{charset: "utf-8"}/
+    /[if IE] <meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" />
+    %meta{content: "width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0", name: "viewport"}/
+    %meta{content: "yes", name: "apple-mobile-web-app-capable"}/
+    %meta{content: "black", name: "apple-mobile-web-app-status-bar-style"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
+    / end: META
+    / start: MAIN CSS
+
+    = javascript_include_tag "application"
+    = csrf_meta_tag
+    %link{href: "/assets/dashboard/plugins/bootstrap/css/bootstrap.min.css", media: "screen", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/plugins/font-awesome/css/font-awesome.min.css", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/fonts/style.css", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/css/main.css", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/css/main-responsive.css", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/plugins/iCheck/skins/all.css", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css", rel: "stylesheet"}/
+    %link{href: "/assets/dashboard/plugins/perfect-scrollbar/src/perfect-scrollbar.css", rel: "stylesheet"}/
+    / <link rel="stylesheet/less" type="text/css" href="/assets/dashboard/css/styles.less">
+    %link#skin_color{href: "/assets/dashboard/css/theme_light.css", rel: "stylesheet", type: "text/css"}/
+    /[if IE 7]
+      <link rel="stylesheet" href="/assets/dashboard/plugins/font-awesome/css/font-awesome-ie7.min.css">
+    / end: MAIN CSS
+    / start: CSS REQUIRED FOR THIS PAGE ONLY
+    %link{href: "/assets/dashboard/plugins/fullcalendar/fullcalendar/fullcalendar.css", rel: "stylesheet"}/
+    / end: CSS REQUIRED FOR THIS PAGE ONLY
+    %link{href: "favicon.ico", rel: "shortcut icon"}/
+  / end: HEAD
+  / start: BODY
+  %body
+    / start: HEADER
+    .navbar.navbar-inverse.navbar-fixed-top
+      / start: TOP NAVIGATION CONTAINER
+      .container
+        .navbar-header
+          / start: RESPONSIVE MENU TOGGLER
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.clip-list-2
+          / end: RESPONSIVE MENU TOGGLER
+          / start: LOGO
+          %a.navbar-brand{href: "index.html"}
+            CLIP
+            %i.clip-clip>
+            ONE
+          / end: LOGO
+        .navbar-tools
+          / start: TOP NAVIGATION MENU
+          %ul.nav.navbar-right
+            / start: TO-DO DROPDOWN
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                %i.clip-list-5
+                %span.badge 12
+              %ul.dropdown-menu.todo
+                %li
+                  %span.dropdown-menu-title You have 12 pending tasks
+                %li
+                  .drop-down-wrapper
+                    %ul
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc{style: "opacity: 1; text-decoration: none;"} Staff Meeting
+                          %span.label.label-danger{style: "opacity: 1;"} today
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc{style: "opacity: 1; text-decoration: none;"} New frontend layout
+                          %span.label.label-danger{style: "opacity: 1;"} today
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc Hire developers
+                          %span.label.label-warning tommorow
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc Staff Meeting
+                          %span.label.label-warning tommorow
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc New frontend layout
+                          %span.label.label-success this week
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc Hire developers
+                          %span.label.label-success this week
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc New frontend layout
+                          %span.label.label-info this month
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc Hire developers
+                          %span.label.label-info this month
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc{style: "opacity: 1; text-decoration: none;"} Staff Meeting
+                          %span.label.label-danger{style: "opacity: 1;"} today
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc{style: "opacity: 1; text-decoration: none;"} New frontend layout
+                          %span.label.label-danger{style: "opacity: 1;"} today
+                      %li
+                        %a.todo-actions{href: "javascript:void(0)"}
+                          %i.fa.fa-square-o
+                          %span.desc Hire developers
+                          %span.label.label-warning tommorow
+                %li.view-all
+                  %a{href: "javascript:void(0)"}
+                    See all tasks
+                    %i.fa.fa-arrow-circle-o-right
+            / end: TO-DO DROPDOWN
+            / start: NOTIFICATION DROPDOWN
+            %li.dropdown
+              %a.dropdown-toggle{"data-close-others" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
+                %i.clip-notification-2
+                %span.badge 11
+              %ul.dropdown-menu.notifications
+                %li
+                  %span.dropdown-menu-title You have 11 notifications
+                %li
+                  .drop-down-wrapper
+                    %ul
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-primary
+                            %i.fa.fa-user
+                          %span.message New user registration
+                          %span.time 1 min
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-success
+                            %i.fa.fa-comment
+                          %span.message New comment
+                          %span.time 7 min
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-success
+                            %i.fa.fa-comment
+                          %span.message New comment
+                          %span.time 8 min
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-success
+                            %i.fa.fa-comment
+                          %span.message New comment
+                          %span.time 16 min
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-primary
+                            %i.fa.fa-user
+                          %span.message New user registration
+                          %span.time 36 min
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-warning
+                            %i.fa.fa-shopping-cart
+                          %span.message 2 items sold
+                          %span.time 1 hour
+                      %li.warning
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-danger
+                            %i.fa.fa-user
+                          %span.message User deleted account
+                          %span.time 2 hour
+                      %li.warning
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-danger
+                            %i.fa.fa-shopping-cart
+                          %span.message Transaction was canceled
+                          %span.time 6 hour
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-success
+                            %i.fa.fa-comment
+                          %span.message New comment
+                          %span.time yesterday
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-primary
+                            %i.fa.fa-user
+                          %span.message New user registration
+                          %span.time yesterday
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-primary
+                            %i.fa.fa-user
+                          %span.message New user registration
+                          %span.time yesterday
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-success
+                            %i.fa.fa-comment
+                          %span.message New comment
+                          %span.time yesterday
+                      %li
+                        %a{href: "javascript:void(0)"}
+                          %span.label.label-success
+                            %i.fa.fa-comment
+                          %span.message New comment
+                          %span.time yesterday
+                %li.view-all
+                  %a{href: "javascript:void(0)"}
+                    See all notifications
+                    %i.fa.fa-arrow-circle-o-right
+            / end: NOTIFICATION DROPDOWN
+            / start: MESSAGE DROPDOWN
+            %li.dropdown
+              %a.dropdown-toggle{"data-close-others" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
+                %i.clip-bubble-3
+                %span.badge 9
+              %ul.dropdown-menu.posts
+                %li
+                  %span.dropdown-menu-title You have 9 messages
+                %li
+                  .drop-down-wrapper
+                    %ul
+                      %li
+                        %a{href: "javascript:;"}
+                          .clearfix
+                            .thread-image
+                              %img{alt: "", src: "/assets/dashboard/images/avatar-2.jpg"}/
+                            .thread-content
+                              %span.author Nicole Bell
+                              %span.preview Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                              %span.time Just Now
+                      %li
+                        %a{href: "javascript:;"}
+                          .clearfix
+                            .thread-image
+                              %img{alt: "", src: "/assets/dashboard/images/avatar-1.jpg"}/
+                            .thread-content
+                              %span.author Peter Clark
+                              %span.preview Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                              %span.time 2 mins
+                      %li
+                        %a{href: "javascript:;"}
+                          .clearfix
+                            .thread-image
+                              %img{alt: "", src: "/assets/dashboard/images/avatar-3.jpg"}/
+                            .thread-content
+                              %span.author Steven Thompson
+                              %span.preview Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                              %span.time 8 hrs
+                      %li
+                        %a{href: "javascript:;"}
+                          .clearfix
+                            .thread-image
+                              %img{alt: "", src: "/assets/dashboard/images/avatar-1.jpg"}/
+                            .thread-content
+                              %span.author Peter Clark
+                              %span.preview Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                              %span.time 9 hrs
+                      %li
+                        %a{href: "javascript:;"}
+                          .clearfix
+                            .thread-image
+                              %img{alt: "", src: "/assets/dashboard/images/avatar-5.jpg"}/
+                            .thread-content
+                              %span.author Kenneth Ross
+                              %span.preview Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                              %span.time 14 hrs
+                %li.view-all
+                  %a{href: "pages_messages.html"}
+                    See all messages
+                    %i.fa.fa-arrow-circle-o-right
+            / end: MESSAGE DROPDOWN
+            / start: USER DROPDOWN
+            %li.dropdown.current-user
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                %img.circle-img{alt: "", src: "/assets/dashboard/images/avatar-1-small.jpg"}/
+                %span.username Peter Clark
+                %i.clip-chevron-down
+              %ul.dropdown-menu
+                %li
+                  %a{href: "pages_user_profile.html"}
+                    %i.clip-user-2
+                    \ My Profile
+                %li
+                  %a{href: "pages_calendar.html"}
+                    %i.clip-calendar
+                    \ My Calendar
+                %li
+                  %a{href: "pages_messages.html"}
+                    %i.clip-bubble-4
+                    \ My Messages (3)
+                %li.divider
+                %li
+                  %a{href: "utility_lock_screen.html"}
+                    %i.clip-locked
+                    \ Lock Screen
+                %li
+                  %a{href: "login_example1.html"}
+                    %i.clip-exit
+                    \ Log Out
+            / end: USER DROPDOWN
+          / end: TOP NAVIGATION MENU
+      / end: TOP NAVIGATION CONTAINER
+    / end: HEADER
+    / start: MAIN CONTAINER
+    .main-container
+      = render 'layouts/users/dashboard_left_navigation'
+      / start: PAGE
+      / start: PAGE CONTENT
+      .main-content
+        / start: PANEL CONFIGURATION MODAL FORM
+        #panel-config.modal.fade{"aria-hidden" => "true", role: "dialog", tabindex: "-1"}
+          .modal-dialog
+            .modal-content
+              .modal-header
+                %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"}
+                  \×
+                %h4.modal-title Panel Configuration
+              .modal-body
+                Here will be a configuration form
+              .modal-footer
+                %button.btn.btn-default{"data-dismiss" => "modal", type: "button"}
+                  Close
+                %button.btn.btn-primary{type: "button"}
+                  Save changes
+            / /.modal-content
+          / /.modal-dialog
+        / /.modal
+        / end: SPANEL CONFIGURATION MODAL FORM
+        .container
+          / start: PAGE HEADER
+          .row
+            .col-sm-12
+              / start: PAGE TITLE & BREADCRUMB
+              %ol.breadcrumb
+                %li
+                  %i.clip-home-3
+                  %a{href: "#"}
+                    Home
+                %li.active
+                  Dashboard
+                %li.search-box
+                  %form.sidebar-search
+                    .form-group
+                      %input{placeholder: "Start Searching...", type: "text"}/
+                      %button.submit
+                        %i.clip-search-3
+              .page-header
+                %h1
+                  Dashboard
+                  %small overview & stats
+              / end: PAGE TITLE & BREADCRUMB
+          / end: PAGE HEADER
+          = yield
+          / end: PAGE
+          / end: PAGE CONTENT
+    / end: MAIN CONTAINER
+    / start: FOOTER
+    .footer.clearfix
+      .footer-inner
+        2013 © clip-one by cliptheme.
+      .footer-items
+        %span.go-top
+          %i.clip-chevron-up
+    / end: FOOTER
+    #event-management.modal.fade{"data-width" => "760", style: "display: none;", tabindex: "-1"}
+      .modal-dialog
+        .modal-content
+          .modal-header
+            %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"}
+              \×
+            %h4.modal-title Event Management
+          .modal-body
+          .modal-footer
+            %button.btn.btn-light-grey{"data-dismiss" => "modal", type: "button"}
+              Close
+            %button.btn.btn-danger.remove-event.no-display{type: "button"}
+              %i.fa.fa-trash-o
+              Delete Event
+            %button.btn.btn-success.save-event{type: "submit"}
+              %i.fa.fa-check
+              Save
+    / start: MAIN JAVASCRIPTS
+    /[if lt IE 9]
+      <script src="/assets/dashboard/plugins/respond.min.js"></script>
+      <script src="/assets/dashboard/plugins/excanvas.min.js"></script>
+    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"}
+    %script{src: "/assets/dashboard/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"}
+    %script{src: "/assets/dashboard/plugins/bootstrap/js/bootstrap.min.js"}
+    %script{src: "/assets/dashboard/plugins/blockUI/jquery.blockUI.js"}
+    %script{src: "/assets/dashboard/plugins/iCheck/jquery.icheck.min.js"}
+    %script{src: "/assets/dashboard/plugins/perfect-scrollbar/src/jquery.mousewheel.js"}
+    %script{src: "/assets/dashboard/plugins/perfect-scrollbar/src/perfect-scrollbar.js"}
+    %script{src: "/assets/dashboard/plugins/less/less-1.5.0.min.js"}
+    %script{src: "/assets/dashboard/plugins/jquery-cookie/jquery.cookie.js"}
+    %script{src: "/assets/dashboard/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"}
+    %script{src: "/assets/dashboard/js/main.js"}
+    / end: MAIN JAVASCRIPTS
+    / start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY
+    %script{src: "/assets/dashboard/plugins/flot/jquery.flot.js"}
+    %script{src: "/assets/dashboard/plugins/flot/jquery.flot.pie.js"}
+    %script{src: "/assets/dashboard/plugins/flot/jquery.flot.resize.min.js"}
+    %script{src: "/assets/dashboard/plugins/jquery.sparkline/jquery.sparkline.js"}
+    %script{src: "/assets/dashboard/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"}
+    %script{src: "/assets/dashboard/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"}
+    %script{src: "/assets/dashboard/plugins/fullcalendar/fullcalendar/fullcalendar.js"}
+    %script{src: "/assets/dashboard/js/index.js"}
+    / end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY
+    :javascript
+      jQuery(document).ready(function() {
+        Main.init();
+        Index.init();
+      });
+  / end: BODY

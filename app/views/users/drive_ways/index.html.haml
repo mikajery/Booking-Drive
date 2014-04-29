@@ -1,0 +1,22 @@
+%h1 Listing users_drive_ways
+%table
+  %tr
+    %th Price
+    %th Name
+    %th Description
+    %th
+    %th
+    %th
+
+  - @users_drive_ways.each do |users_drive_way|
+    %tr
+      %td= users_drive_way.price
+      %td= users_drive_way.name
+      %td= users_drive_way.description
+      %td= link_to 'Show', users_drive_way_path(users_drive_way)
+      %td= link_to 'Edit', edit_users_drive_way_path(users_drive_way)
+      %td= link_to 'Destroy', users_drive_way_path(users_drive_way), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Drive way', new_users_drive_way_path

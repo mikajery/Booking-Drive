@@ -3,12 +3,12 @@ class BackendController < ApplicationController
   layout "backend"
 
   def payment_confirm
-      @payment = Payment.where(:return_token => params[:id]).first
-      @payment.status = "Paid"
-      @payment.payment_method = "Paypal"
-      @payment.date_paid = Date.today
-      @payment.save
-      redirect_to :action => 'contract_view', :id => @payment.id
+    @payment = Payment.where(:return_token => params[:id]).first
+    @payment.status = "Paid"
+    @payment.payment_method = "Paypal"
+    @payment.date_paid = Date.today
+    @payment.save
+    redirect_to :action => 'contract_view', :id => @payment.id
   end
 
   def index
@@ -45,9 +45,8 @@ class BackendController < ApplicationController
   end
 
   def contract_edit
-
     if get_type == "Tenant"
-                      redirect_to :controller => 'backend', :action => 'contract_view', :id => params[:id]
+      redirect_to :controller => 'backend', :action => 'contract_view', :id => params[:id]
     end
 
       if get_type == "Landlord"

@@ -1,0 +1,206 @@
+!!!
+%html.no-js{lang: "en"}
+  %head
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "keywords"}/
+    %meta{content: "", name: "author"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
+    %title
+      = @page_title
+      \- GenieDrives
+    / Bootstrap Styles
+    %link{href: "/assets/public/assets/css/bootstrap.min.css", rel: "stylesheet"}/
+    %link{href: "/assets/public/style.css", rel: "stylesheet"}/
+    = stylesheet_link_tag('public')
+    / RS PLUGIN Styles
+    %link{href: "/assets/public/rs-plugin/css/settings.css", media: "screen", rel: "stylesheet", type: "text/css"}/
+    / http://www.456bereastreet.com/archive/201209/tell_css_that_javascript_is_available_asap/
+    :javascript
+      document.documentElement.className = document.documentElement.className.replace(/(\s|^)no-js(\s|$)/, '$1js$2');
+    = javascript_include_tag('public')
+    / Support for HTML5
+    /[if lt IE 9]
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    / Enable media queries on older browsers
+    /[if lt IE 9]
+      <script src="/assets/public/assets/js/respond.min.js"></script>
+    %link{href: "/assets/public/custom.css", rel: "stylesheet"}/
+  %body
+    / #preloader
+    /   #status  
+    #wrapper
+      .topbar
+        .container
+          .col-lg-6.col-md-6.col-sm-6
+            %p.tagline
+              Call us : +90 532 02 02 // Email us : hello@designingmedia.com
+          .col-lg-6.col-md-6.col-sm-6
+            .pull-right
+              %ul.top-menu
+                - if current_user.blank?
+                  %li
+                    = link_to "Login", new_user_session_path
+                  %li
+                    = link_to "Sign Up", new_user_registration_path
+                - else
+                  = link_to users_dashboard_path, data: {no_turbolink: true} do
+                    %i.icon-user 
+                    My account
+            / /rightmenu
+          / End Social
+    / /topbar
+    %header.header-wrapper
+      .container
+        .col-lg-2.col-md-2.col-sm-2
+          %a.cssLogo{href: "index.html"}
+            %img{alt: "", src: "/assets/public/images/logo.png"}/
+        .col-lg-10.col-md-10.col-sm-12
+          %nav
+            %ul#jetmenu.jetmenu
+              %li{ class: set_active(root_path) }
+                = link_to "home", root_path
+              %li{ class: set_active(pages_about_path) }
+                = link_to "About Us", pages_about_path
+              %li{ class: set_active(pages_features_path) }
+                = link_to "Features", pages_features_path
+              %li{ class: set_active(pages_pricing_path) }
+                = link_to "Pricing", pages_pricing_path
+              %li{ class: set_active(pages_testimonials_path) }
+                = link_to "Testimonials", pages_testimonials_path
+              %li{ class: set_active(pages_contactus_path) }
+                \#{link_to "Contact Us", pages_contactus_path}
+              %li{ class: set_active(parking_path) }
+                \#{link_to "Parking", parking_path}
+          / /nav
+        / /col10
+      / /container
+    / /header wrapper
+    = yield
+    %footer.footer-wrapper
+      .container
+        .col-lg-3.col-md-3.col-sm-6
+          .widget
+            %h2.general-title
+              %span About {NEVER}MIND
+            %p
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+            %a.btn.btn-primary.btn-sm{href: "#"} read more
+        .col-lg-3.col-md-3.col-sm-6
+          .widget
+            %h2.general-title
+              %span Flickr Stream
+            %ul.flickr
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/01_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/02_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/03_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/04_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/05_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/06_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/07_flickr.jpg", width: "54"}/
+              %li
+                %a{href: "#", title: ""}
+                  %img.img-thumbnail.img-rounded{alt: "", height: "54", src: "/assets/public/demos/08_flickr.jpg", width: "54"}/
+        .col-lg-3.col-md-3.col-sm-6
+          .widget
+            %h2.general-title
+              %span Twitter Stream
+            .tweets
+              %ul
+                %li
+                  %span.content
+                    Looking a special HTML5 CSS3 template for your works? Visit here
+                    %a{href: "http://goo.gl/eVrkdq"} http://goo.gl/eVrkdq
+            %a.twitter-follow-button{"data-show-count" => "false", href: "https://twitter.com/envato"} Follow @envato
+            :javascript
+              ! function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0],
+                      p = /^http:/.test(d.location) ? 'http' : 'https';
+                  if (!d.getElementById(id)) {
+                      js = d.createElement(s);
+                      js.id = id;
+                      js.src = p + '://platform.twitter.com/widgets.js';
+                      fjs.parentNode.insertBefore(js, fjs);
+                  }
+              }(document, 'script', 'twitter-wjs');
+        .col-lg-3.col-md-3.col-sm-6
+          .widget
+            %h2.general-title
+              %span Contact Details
+            %p
+              Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac.
+            %ul.contact-details
+              %li
+                %i.icon-home
+                Lorem ipsum dolar sit amet / USA
+              %li
+                %i.icon-mobile-phone
+                +0 554 777 78 78
+              %li
+                %i.icon-envelope-alt
+                hello@designingmedia.com
+              %li
+                %i.icon-map-marker
+                %a{href: "#", title: "View large map on Google"} Google Map
+    .copyright-wrapper
+      .container
+        .col-lg-6.col-md-6.col-sm-6
+          %span.copyright
+            © Copyright 2013 -
+            %a{href: "#"} {NEVER}MIND
+            HTML5 Template by
+            %a{href: "http://www.designingmedia.com"} Designing Media
+        .col-lg-6.col-md-6.col-sm-6
+          %nav
+            %ul.footer-menu
+              %li
+                %a{href: "#", title: "#"} Home
+              %li
+                %a{href: "#", title: "#"} About
+              %li
+                %a{href: "#", title: "#"} Portfolio
+              %li
+                %a{href: "#", title: "#"} Shop
+              %li
+                %a{href: "#", title: "#"} Forums
+              %li
+                %a{href: "#", title: "#"} Contact
+    .dmtop Scroll to Top
+    / /wrapper
+    / Main Scripts
+    %script{src: "/assets/public/js/retina-1.1.0.js"}
+    %script{src: "/assets/public/js/jquery.unveilEffects.min.js"}
+    %script{src: "/assets/public/js/jetmenu.js"}
+    / RS PLUGIN Scripts
+    %script{src: "/assets/public/rs-plugin/js/jquery.themepunch.plugins.min.js"}
+    %script{src: "/assets/public/rs-plugin/js/jquery.themepunch.revolution.min.js"}
+    :javascript
+      var revapi;
+      jQuery(document).ready(function() {
+          revapi = jQuery('.tp-banner').revolution({
+              delay: 9000,
+              startwidth: 1170,
+              startheight: 450,
+              hideThumbs: 10,
+              fullWidth: "on",
+              forceFullWidth: "on",
+              lazyload: "on",
+              navigationStyle: "square"
+          });
+      });
+    - yield :javascript
+    %script{src: "/assets/public/js/application.js"}

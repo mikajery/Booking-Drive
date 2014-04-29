@@ -5,6 +5,7 @@ class Users::DrivesController < ApplicationController
   end
 
   def show
+    @drive  = Drive.find params[:id]
   end
 
   def new
@@ -14,16 +15,21 @@ class Users::DrivesController < ApplicationController
   def create
     @drive = Drive.create(drive_params)
     @drive.save!
-    redirect_to controller: :drives, action: :new
+    redirect_to controller: :drives, action: :index
   end
 
   def edit
+    @drive  = Drive.find params[:id]
   end
 
   def update
+    @drive.find 
   end
 
   def destroy
+    @drive = Drive.find params[:id]
+    @drive.destroy
+    redirect_to :index
   end
 
   private

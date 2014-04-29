@@ -6,7 +6,9 @@ Geniedrives::Application.routes.draw do
   root :to => "pages#index"
   
   namespace :users do
-    resources :drives
+    resources :drives do
+      resources :drive_ways
+    end
     get 'dashboard', to: 'dashboards#index'
   end
 

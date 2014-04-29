@@ -1,14 +1,7 @@
 .row
   .col-sm-12
     .panel.panel-default
-      .panel-body
-      = simple_form_for [:users, @drive], class: 'form-horizontal' do |f|
-        = f.input :name_of_building
-        = f.input :address
-        = f.input :description
-        = f.input :city
-        = f.input :state
-        = f.input :country
-        = f.input :zip_code
-        = f.input :phone
-        = f.submit
+      .panel-heading
+        .panel-body
+          = simple_form_for [:users, @drive], class: 'form-horizontal', role: "form" do |f|
+            = render partial: 'drive_form', locals: { f: f }
