@@ -2,6 +2,7 @@
   .col-sm-12
     .panel.panel-default
       .panel-heading
+        Create Drives
       .panel-body
-        = simple_form_for [:users, @drive], html: { class: 'form-horizontal' }, role: "form" do |f|
+        = simple_nested_form_for [:users, @drive], html: { class: 'form-horizontal' }, role: "form" do |f|
           = render partial: 'drive_form', locals: { f: f }

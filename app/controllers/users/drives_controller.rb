@@ -23,7 +23,13 @@ class Users::DrivesController < ApplicationController
   end
 
   def update
-    @drive.find 
+    @drive =  Drive.find params[:id]
+    if @drive.update_attributes(drive_params)
+      flash[:success] = 'Drive Successfuly Create'
+      redirect_to controller: :drives, action: :index
+    else
+      render controller: :drives, action: :edit
+    end
   end
 
   def destroy
@@ -44,6 +50,7 @@ class Users::DrivesController < ApplicationController
                   :country,
                   :zip_code,
                   :phone_number,
-:notes)
+                  :notes,
+                  :phone, drive_ways_attributes: [ :name, :id, :price, :description, :created_at, :updated_at  ])
     end
 end

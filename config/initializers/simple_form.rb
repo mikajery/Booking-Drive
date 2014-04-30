@@ -185,5 +185,28 @@ SimpleForm.setup do |config|
         ba.use :error, wrap_with: { tag: 'span', class: 'help-block' }
         ba.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
       end
+    end   
+
+    config.wrappers :nested_form, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
+      b.use :html5
+      b.use :placeholder
+      b.use :label, class: 'col-sm-2 control-label'
+   
+      b.wrapper tag: 'div', class: 'col-sm-4' do |ba|
+        ba.wrapper tag: 'div', class: 'panel panel-default' do |append|
+          ba.use :input, class: 'form-control'
+        end
+        ba.use :error, wrap_with: { tag: 'span', class: 'help-block' }
+        ba.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
+      end
+    end
+
+    config.wrappers :text_area, tag: :div, class: 'form-group' do |b|
+      b.use :html5
+      b.use :placeholder
+      b.use :label, class: 'col-sm-2 control-label'
+      b.use :input, class: 'form-control  col-sm-9'
+      b.use :error, wrap_with: { tag: 'span', class: 'help-block' }
+      b.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
     end
 end

@@ -10,7 +10,7 @@
 #  status         :string(255)
 #  due_date       :date
 #  late_payment   :boolean
-#  date_paid      :boolean
+#  date_paid      :date
 #  reference_no   :string(255)
 #  payment_method :string(255)
 #  notes          :text

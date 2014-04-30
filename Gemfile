@@ -37,6 +37,8 @@ gem "geocoder"
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem "nested_form", :git => 'git://github.com/ryanb/nested_form.git'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

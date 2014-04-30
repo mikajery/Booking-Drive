@@ -13,6 +13,7 @@ class Users::DriveWaysController < Users::BaseController
   end
 
   def edit
+    @users_drive_way = DriveWay.find(params[:id])
   end
 
   def create
@@ -36,7 +37,6 @@ class Users::DriveWaysController < Users::BaseController
         format.json { render :show, status: :ok, location: @users_drive_way }
       else
         format.html { render :edit }
-        format.json { render json: @users_drive_way.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -46,7 +46,6 @@ class Users::DriveWaysController < Users::BaseController
     @users_drive_way.destroy
     respond_to do |format|
       format.html { redirect_to users_drive_ways_url }
-      format.json { head :no_content }
     end
   end
 

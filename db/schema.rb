@@ -51,9 +51,12 @@ ActiveRecord::Schema.define(version: 20140429144940) do
     t.float    "price"
     t.string   "description"
     t.string   "name"
+    t.integer  "drive_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "drive_ways", ["drive_id"], name: "index_drive_ways_on_drive_id", using: :btree
 
   create_table "drives", force: true do |t|
     t.string   "property_type"

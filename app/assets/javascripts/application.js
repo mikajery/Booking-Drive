@@ -14,5 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require analytics
-
-
+//= require jquery_nested_form

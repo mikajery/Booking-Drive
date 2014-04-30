@@ -6,4 +6,19 @@
 = f.input :country, wrapper: :horizontal_input_group
 = f.input :zip_code, wrapper: :horizontal_input_group
 = f.input :phone, wrapper: :horizontal_input_group
-= f.submit
+= f.simple_fields_for :drive_ways, @drive.drive_ways_builds, wrapper: :horizontal_input_group do |dwf|
+  .col-sm-6
+    / start: TEXT AREA PANEL
+    .panel.panel-default
+      .panel-heading
+        Drive Ways
+      .panel-body
+        = dwf.input :name
+        = dwf.input :price
+        = dwf.input :description, as: :text, input_html: { class: 'autosize', rows: 7 }
+= f.link_to_add 'add driveways', :drive_ways, class: 'btn btn-green'
+.clearfix
+%hr/ 
+.form-group
+  .col-sm-2.col-sm-offset-10
+    = f.submit class: 'btn btn-blue next-step btn-block'
