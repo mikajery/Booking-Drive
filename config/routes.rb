@@ -1,6 +1,6 @@
 Geniedrives::Application.routes.draw do
 
-  get '/parking', to: 'searches#index'
+  get '/search', to: 'searches#index'
 
   devise_for :users, :controllers => {:registrations => "registrations"}
   root :to => "pages#index"
@@ -11,6 +11,8 @@ Geniedrives::Application.routes.draw do
     end
     get 'dashboard', to: 'dashboards#index'
   end
+
+  resources 'parkings', only: [:show, :index] 
 
   get "pages/about"
   get "pages/pricing"

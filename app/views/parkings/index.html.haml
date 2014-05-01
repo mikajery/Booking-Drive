@@ -1,0 +1,18 @@
+%section.colon14
+  .container.general
+    #content.single.col-lg-12.col-md-12.col-sm-12
+      - @parkings.each do |parking|
+        .authorbox.clearfix.effect-slide-bottom.in{"data-effect" => "slide-bottom", style: "-webkit-transition: all 0.7s ease-in-out; transition: all 0.7s ease-in-out;"}
+          .col-lg-4.col-md-4.col-sm-4
+            .buddy-group-blocks.buddy-members
+              %figure.inverse
+                %img.avatar{alt: "", src: "demos/02_team.png"}/
+                %figcaption
+                  %h3
+                  %small= parking.city
+                  %br/
+                  = link_to parking.address, parking_path(parking)
+          .col-lg-8.col-md-8.col-sm-8
+            .author-desc
+              %p
+                = parking.description

@@ -1,0 +1,12 @@
+.col-lg-6.col-md-6.col-sm-6
+  .pull-right
+    %ul.top-menu
+      - if current_user.blank?
+        %li
+          = link_to "Login", new_user_session_path
+        %li
+          = link_to "Sign Up", new_user_registration_path
+      - else
+        = link_to users_dashboard_path, data: {no_turbolink: true} do
+          %i.icon-user 
+          My account

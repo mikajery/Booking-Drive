@@ -37,6 +37,7 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
+    attr_required (1.0.0)
     bcrypt (3.1.7)
     bootstrap-datepicker-rails (1.3.0.2)
       railties (>= 3.0)
@@ -90,8 +91,14 @@ GEM
       activesupport (>= 4.0.1)
       haml (>= 3.1, < 5.0)
       railties (>= 4.0.1)
+    has_scope (0.6.0.rc)
+      actionpack (>= 3.2, < 5)
+      activesupport (>= 3.2, < 5)
     hike (1.2.3)
     i18n (0.6.9)
+    inherited_resources (1.4.1)
+      has_scope (~> 0.6.0.rc)
+      responders (~> 1.0.0.rc)
     jbuilder (2.0.6)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -117,6 +124,10 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    paypal-express (0.5.5)
+      activesupport (>= 2.3)
+      attr_required (>= 0.0.5)
+      restclient_with_cert
     pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
@@ -148,8 +159,12 @@ GEM
     rake (10.3.1)
     rdoc (4.1.1)
       json (~> 1.4)
+    responders (1.0.0)
+      railties (>= 3.2, < 5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    restclient_with_cert (0.0.8)
+      rest-client (>= 1.6)
     ruby-graphviz (1.0.9)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -214,12 +229,14 @@ DEPENDENCIES
   faker
   geocoder
   haml-rails
+  inherited_resources
   jbuilder (~> 2.0)
   jquery-rails
   meta_request
   money
   nested_form!
   paperclip (~> 3.0)
+  paypal-express
   pg
   railroady
   rails (= 4.1.0)

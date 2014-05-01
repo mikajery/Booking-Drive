@@ -16,7 +16,7 @@
           %a.btn.btn-xs.btn-link.panel-close{href: "#"}
             %i.fa.fa-times
       .panel-body
-        = link_to 'new drive', new_users_drive_path, class: 'label label-info'
+        = link_to 'new drive', new_users_drive_path, class: 'btn btn-info col-sm-offset-11'
         %table.table.table-striped.table-bordered.table-hover
           %thead
             %tr
@@ -24,6 +24,7 @@
               %th zip_code
               %th city
               %th state
+              %th Actions
           %tbody
             - @drives.each do |drive|
               %tr
@@ -31,3 +32,5 @@
                 %td= drive.zip_code
                 %td= drive.city
                 %td= drive.state
+                %td
+                  = link_to 'edit drives', edit_users_drive_path(drive), class: 'btn btn-primary'

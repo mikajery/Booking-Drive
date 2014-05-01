@@ -35,20 +35,7 @@
           .col-lg-6.col-md-6.col-sm-6
             %p.tagline
               Call us : +90 532 02 02 // Email us : hello@designingmedia.com
-          .col-lg-6.col-md-6.col-sm-6
-            .pull-right
-              %ul.top-menu
-                - if current_user.blank?
-                  %li
-                    = link_to "Login", new_user_session_path
-                  %li
-                    = link_to "Sign Up", new_user_registration_path
-                - else
-                  = link_to users_dashboard_path, data: {no_turbolink: true} do
-                    %i.icon-user 
-                    My account
-            / /rightmenu
-          / End Social
+          = render partial: 'layouts/user_navigation'
     / /topbar
     %header.header-wrapper
       .container
@@ -56,22 +43,7 @@
           %a.cssLogo{href: "index.html"}
             %img{alt: "", src: "/assets/public/images/logo.png"}/
         .col-lg-10.col-md-10.col-sm-12
-          %nav
-            %ul#jetmenu.jetmenu
-              %li{ class: set_active(root_path) }
-                = link_to "home", root_path
-              %li{ class: set_active(pages_about_path) }
-                = link_to "About Us", pages_about_path
-              %li{ class: set_active(pages_features_path) }
-                = link_to "Features", pages_features_path
-              %li{ class: set_active(pages_pricing_path) }
-                = link_to "Pricing", pages_pricing_path
-              %li{ class: set_active(pages_testimonials_path) }
-                = link_to "Testimonials", pages_testimonials_path
-              %li{ class: set_active(pages_contactus_path) }
-                \#{link_to "Contact Us", pages_contactus_path}
-              %li{ class: set_active(parking_path) }
-                \#{link_to "Parking", parking_path}
+          = render 'layouts/page_navigation'
           / /nav
         / /col10
       / /container

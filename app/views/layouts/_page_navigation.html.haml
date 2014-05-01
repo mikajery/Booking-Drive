@@ -1,0 +1,18 @@
+%nav
+  %ul#jetmenu.jetmenu
+    %li{ class: set_active(root_path) }
+      = link_to "home", root_path
+    %li{ class: set_active(pages_about_path) }
+      = link_to "About Us", pages_about_path
+    %li{ class: set_active(pages_features_path) }
+      = link_to "Features", pages_features_path
+    %li{ class: set_active(pages_pricing_path) }
+      = link_to "Pricing", pages_pricing_path
+    %li{ class: set_active(pages_testimonials_path) }
+      = link_to "Testimonials", pages_testimonials_path
+    %li{ class: set_active(pages_contactus_path) }
+      \#{link_to "Contact Us", pages_contactus_path}
+    %li{ class: set_active(search_path) }
+      \#{link_to "Search", search_path}
+    %li{ class: set_active(parkings_path) }
+      \#{link_to "Parking", parkings_path}
