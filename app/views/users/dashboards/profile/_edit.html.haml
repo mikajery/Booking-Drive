@@ -1,0 +1,113 @@
+- @active_page == :panel_edit_account ? edit = 'active' : edit = ''
+#panel_edit_account.tab-pane{ class: edit }
+  = simple_form_for @user, url: edit_user_registration_path(current_user), wrapper: :new_line_on_label do |f|
+    .row
+      .col-md-12
+        %h3 Account Info
+        %hr/
+      .col-md-6
+        = f.input :first_name
+        = f.input :last_name
+        = f.input :email
+        = f.input :phone
+        = f.input :password
+        = f.input :confirm_password
+        = f.input :current_password
+        = f.input :address1
+        = f.input :address2
+      .col-md-6
+        = f.input :birthday, :item_wrapper_class => 'col-md-3'
+        = f.input :gender
+        .row
+          .col-md-4
+            = f.input :zipcode
+          .col-md-4
+            = f.input :city
+          .col-md-4
+            = f.input :country
+        .form-group
+          %label
+            Image Upload
+          .fileupload.fileupload-new{"data-provides" => "fileupload"}
+            .fileupload-preview.fileupload-exists.thumbnail{style: "max-width: 150px; max-height: 150px; line-height: 20px;"}
+            .user-edit-image-buttons
+              %span.btn.btn-light-grey.btn-file
+                %span.fileupload-new
+                  %i.fa.fa-picture
+                  Select image
+                %span.fileupload-exists
+                  %i.fa.fa-picture
+                  Change
+                = f.input :picture
+    / .row
+    /   .col-md-12
+    /     %h3 Additional Info
+    /     %hr/
+    /   .col-md-6
+    /     .form-group
+    /       %label.control-label
+    /         Twitter
+    /       %span.input-icon
+    /         %input.form-control{placeholder: "Text Field", type: "text"}/
+    /         %i.clip-twitter
+    /     .form-group
+    /       %label.control-label
+    /         Facebook
+    /       %span.input-icon
+    /         %input.form-control{placeholder: "Text Field", type: "text"}/
+    /         %i.clip-facebook
+    /     .form-group
+    /       %label.control-label
+    /         Google Plus
+    /       %span.input-icon
+    /         %input.form-control{placeholder: "Text Field", type: "text"}/
+    /         %i.clip-google-plus
+    /   .col-md-6
+    /     .form-group
+    /       %label.control-label
+    /         Github
+    /       %span.input-icon
+    /         %input.form-control{placeholder: "Text Field", type: "text"}/
+    /         %i.clip-github-2
+    /     .form-group
+    /       %label.control-label
+    /         Linkedin
+    /       %span.input-icon
+    /         %input.form-control{placeholder: "Text Field", type: "text"}/
+    /         %i.clip-linkedin
+    /     .form-group
+    /       %label.control-label
+    /         Skype
+    /       %span.input-icon
+    /         %input.form-control{placeholder: "Text Field", type: "text"}/
+    /         %i.clip-skype
+    .row
+      .col-md-12
+        %div
+          Required Fields
+          %hr/
+    .row
+      .col-md-8
+        %p
+          By clicking UPDATE, you are agreeing to the Policy and Terms & Conditions.
+      .col-md-4
+        %button.btn.btn-teal.btn-block{type: "submit"}
+          Update
+          %i.fa.fa-arrow-circle-right
+
+:javascript
+  $(document).ready(function() {
+      
+      var tabs = $('ul#myTab4 li a');
+      
+      tabs.bind('click',function(event){
+          var $anchor = $(this);
+          var ids = tabs.each(function(){
+             $($(this).attr('href')).parent().removeClass('active');   
+          });
+          $($anchor.attr('href')).parent().addClass('active');
+          event.preventDefault();
+      });
+      
+      
+  });

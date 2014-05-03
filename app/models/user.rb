@@ -16,6 +16,17 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  user_type              :string(255)
+#  first_name             :string(255)
+#  last_name              :string(255)
+#  phone                  :string(255)
+#  city                   :string(255)
+#  state                  :string(255)
+#  country                :string(255)
+#  address1               :string(255)
+#  address2               :string(255)
+#  birthday               :date
+#  gender                 :string(255)
+#  zipcode                :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -24,6 +35,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  
+  mount_uploader :picture, PictureUploader
 
 end

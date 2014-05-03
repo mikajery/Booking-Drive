@@ -1,0 +1,271 @@
+- @active_page == :panel_overview ? overview = 'active' : overview = ''
+#panel_overview.tab-pane.in{ class: overview }
+  .row
+    .col-sm-5.col-md-4
+      .user-left
+        .center
+          %h4 Peter Clark
+          .fileupload.fileupload-new{"data-provides" => "fileupload"}
+            .user-image
+              .fileupload-new.thumbnail
+                %img{alt: "", src: "assets/images/avatar-1-xl.jpg"}/
+              .fileupload-preview.fileupload-exists.thumbnail{style: "max-width: 200px; max-height: 150px; line-height: 20px;"}
+              .user-image-buttons
+                %span.btn.btn-teal.btn-file.btn-sm
+                  %span.fileupload-new
+                    %i.fa.fa-pencil
+                  %span.fileupload-exists
+                    %i.fa.fa-pencil
+                  %input{type: "file"}/
+                %a.btn.fileupload-exists.btn-bricky.btn-sm{"data-dismiss" => "fileupload", href: "#"}
+                  %i.fa.fa-times
+          %hr/
+          %p
+            %a.btn.btn-twitter.btn-sm.btn-squared
+              %i.fa.fa-twitter
+            %a.btn.btn-linkedin.btn-sm.btn-squared
+              %i.fa.fa-linkedin
+            %a.btn.btn-google-plus.btn-sm.btn-squared
+              %i.fa.fa-google-plus
+            %a.btn.btn-github.btn-sm.btn-squared
+              %i.fa.fa-github
+          %hr/
+        %table.table.table-condensed.table-hover
+          %thead
+            %tr
+              %th{colspan: "3"} Contact Information
+          %tbody
+            %tr
+              %td url
+              %td
+                %a{href: "#"}
+                  www.example.com
+              %td
+                %a.show-tab{href: "#panel_edit_account"}
+                  %i.fa.fa-pencil.edit-user-info
+            %tr
+              %td email:
+              %td
+                %a{href: ""}
+                  peter@example.com
+              %td
+                %a.show-tab{href: "#panel_edit_account"}
+                  %i.fa.fa-pencil.edit-user-info
+            %tr
+              %td phone:
+              %td (641)-734-4763
+              %td
+                %a.show-tab{href: "#panel_edit_account"}
+                  %i.fa.fa-pencil.edit-user-info
+            %tr
+              %td skye
+              %td
+                %a{href: ""}
+                  peterclark82
+              %td
+                %a.show-tab{href: "#panel_edit_account"}
+                  %i.fa.fa-pencil.edit-user-info
+        %table.table.table-condensed.table-hover
+          %thead
+            %tr
+              %th{colspan: "3"} General information
+          %tbody
+            %tr
+              %td Position
+              %td UI Designer
+              %td
+                %a.show-tab{href: "#panel_edit_account"}
+                  %i.fa.fa-pencil.edit-user-info
+            %tr
+              %td Last Logged In
+              %td 56 min
+              %td
+                %a.show-tab{href: "#panel_edit_account"}
+                  %i.fa.fa-pencil.edit-user-info
+            %tr
+              %td Position
+              %td Senior Marketing Manager
+              %td
+                %a.show-tab{href: "#panel_edit_account"}
+                  %i.fa.fa-pencil.edit-user-info
+            %tr
+              %td Supervisor
+              %td
+                %a{href: "#"}
+                  Kenneth Ross
+              %td
+                %a.show-tab{href: "#panel_edit_account"}
+                  %i.fa.fa-pencil.edit-user-info
+            %tr
+              %td Status
+              %td
+                %span.label.label-sm.label-info Administrator
+              %td
+                %a.show-tab{href: "#panel_edit_account"}
+                  %i.fa.fa-pencil.edit-user-info
+        %table.table.table-condensed.table-hover
+          %thead
+            %tr
+              %th{colspan: "3"} Additional information
+          %tbody
+            %tr
+              %td Birth
+              %td 21 October 1982
+              %td
+                %a.show-tab{href: "#panel_edit_account"}
+                  %i.fa.fa-pencil.edit-user-info
+            %tr
+              %td Groups
+              %td New company web site development, HR Management
+              %td
+                %a.show-tab{href: "#panel_edit_account"}
+                  %i.fa.fa-pencil.edit-user-info
+    .col-sm-7.col-md-8
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis porta purus, pulvinar mattis nulla tempus ut. Curabitur quis dui orci. Ut nisi dolor, dignissim a aliquet quis, vulputate id dui. Proin ultrices ultrices ligula, dictum varius turpis faucibus non. Curabitur faucibus ultrices nunc, nec aliquet leo tempor cursus.
+      .row
+        .col-sm-3
+          %button.btn.btn-icon.btn-block
+            %i.clip-clip
+            Projects
+            %span.badge.badge-info 4
+        .col-sm-3
+          %button.btn.btn-icon.btn-block.pulsate
+            %i.clip-bubble-2
+            Messages
+            %span.badge.badge-info 23
+        .col-sm-3
+          %button.btn.btn-icon.btn-block
+            %i.clip-calendar
+            Calendar
+            %span.badge.badge-info 5
+        .col-sm-3
+          %button.btn.btn-icon.btn-block
+            %i.clip-list-3
+            Notifications
+            %span.badge.badge-info 9
+      .panel.panel-white
+        .panel-heading
+          %i.clip-menu
+          Recent Activities
+          .panel-tools
+            %a.btn.btn-xs.btn-link.panel-collapse.collapses{href: "#"}
+            %a.btn.btn-xs.btn-link.panel-config{"data-toggle" => "modal", href: "#panel-config"}
+              %i.fa.fa-wrench
+            %a.btn.btn-xs.btn-link.panel-refresh{href: "#"}
+              %i.fa.fa-refresh
+            %a.btn.btn-xs.btn-link.panel-close{href: "#"}
+              %i.fa.fa-times
+        .panel-body.panel-scroll{style: "height:300px"}
+          %ul.activities
+            %li
+              %a.activity{href: "javascript:void(0)"}
+                %i.clip-upload-2.circle-icon.circle-green
+                %span.desc You uploaded a new release.
+                .time
+                  %i.fa.fa-time.bigger-110
+                  2 hours ago
+            %li
+              %a.activity{href: "javascript:void(0)"}
+                %img{alt: "image", src: "assets/images/avatar-2.jpg"}/
+                %span.desc Nicole Bell sent you a message.
+                .time
+                  %i.fa.fa-time.bigger-110
+                  3 hours ago
+            %li
+              %a.activity{href: "javascript:void(0)"}
+                %i.clip-data.circle-icon.circle-bricky
+                %span.desc DataBase Migration.
+                .time
+                  %i.fa.fa-time.bigger-110
+                  5 hours ago
+            %li
+              %a.activity{href: "javascript:void(0)"}
+                %i.clip-clock.circle-icon.circle-teal
+                %span.desc You added a new event to the calendar.
+                .time
+                  %i.fa.fa-time.bigger-110
+                  8 hours ago
+            %li
+              %a.activity{href: "javascript:void(0)"}
+                %i.clip-images-2.circle-icon.circle-green
+                %span.desc Kenneth Ross uploaded new images.
+                .time
+                  %i.fa.fa-time.bigger-110
+                  9 hours ago
+            %li
+              %a.activity{href: "javascript:void(0)"}
+                %i.clip-image.circle-icon.circle-green
+                %span.desc Peter Clark uploaded a new image.
+                .time
+                  %i.fa.fa-time.bigger-110
+                  12 hours ago
+      .panel.panel-white
+        .panel-heading
+          %i.clip-checkmark-2
+          To Do
+          .panel-tools
+            %a.btn.btn-xs.btn-link.panel-collapse.collapses{href: "#"}
+            %a.btn.btn-xs.btn-link.panel-config{"data-toggle" => "modal", href: "#panel-config"}
+              %i.fa.fa-wrench
+            %a.btn.btn-xs.btn-link.panel-refresh{href: "#"}
+              %i.fa.fa-refresh
+            %a.btn.btn-xs.btn-link.panel-close{href: "#"}
+              %i.fa.fa-times
+        .panel-body.panel-scroll{style: "height:300px"}
+          %ul.todo
+            %li
+              %a.todo-actions{href: "javascript:void(0)"}
+                %i.fa.fa-square-o
+                %span.desc{style: "opacity: 1; text-decoration: none;"} Staff Meeting
+                %span.label.label-danger{style: "opacity: 1;"} today
+            %li
+              %a.todo-actions{href: "javascript:void(0)"}
+                %i.fa.fa-square-o
+                %span.desc{style: "opacity: 1; text-decoration: none;"} New frontend layout
+                %span.label.label-danger{style: "opacity: 1;"} today
+            %li
+              %a.todo-actions{href: "javascript:void(0)"}
+                %i.fa.fa-square-o
+                %span.desc Hire developers
+                %span.label.label-warning tommorow
+            %li
+              %a.todo-actions{href: "javascript:void(0)"}
+                %i.fa.fa-square-o
+                %span.desc Staff Meeting
+                %span.label.label-warning tommorow
+            %li
+              %a.todo-actions{href: "javascript:void(0)"}
+                %i.fa.fa-square-o
+                %span.desc New frontend layout
+                %span.label.label-success this week
+            %li
+              %a.todo-actions{href: "javascript:void(0)"}
+                %i.fa.fa-square-o
+                %span.desc Hire developers
+                %span.label.label-success this week
+            %li
+              %a.todo-actions{href: "javascript:void(0)"}
+                %i.fa.fa-square-o
+                %span.desc New frontend layout
+                %span.label.label-info this month
+            %li
+              %a.todo-actions{href: "javascript:void(0)"}
+                %i.fa.fa-square-o
+                %span.desc Hire developers
+                %span.label.label-info this month
+            %li
+              %a.todo-actions{href: "javascript:void(0)"}
+                %i.fa.fa-square-o
+                %span.desc{style: "opacity: 1; text-decoration: none;"} Staff Meeting
+                %span.label.label-danger{style: "opacity: 1;"} today
+            %li
+              %a.todo-actions{href: "javascript:void(0)"}
+                %i.fa.fa-square-o
+                %span.desc{style: "opacity: 1; text-decoration: none;"} New frontend layout
+                %span.label.label-danger{style: "opacity: 1;"} today
+            %li
+              %a.todo-actions{href: "javascript:void(0)"}
+                %i.fa.fa-square-o
+                %span.desc Hire developers
+                %span.label.label-warning tommorow}

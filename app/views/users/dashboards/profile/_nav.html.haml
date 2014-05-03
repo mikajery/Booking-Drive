@@ -1,0 +1,11 @@
+- @active_page == :panel_overview ? overview = 'active' : overview = ''
+- @active_page == :panel_edit_account ? edit = 'active' : edit = ''
+%ul#myTab4.nav.nav-tabs.tab-padding.tab-space-3.tab-blue
+  %li{ class: overview }
+    %a{"data-toggle" => "tab", href: "#panel_overview"}
+      Overview
+  }
+  }
+  %li{ class: edit }
+    %a{"data-toggle" => "tab", href: "#panel_edit_account"}
+      Edit Account

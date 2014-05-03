@@ -36,6 +36,7 @@ gem 'haml-rails'
 gem "geocoder"
 gem 'inherited_resources'
 gem 'paypal-express'
+gem 'enumerize'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 

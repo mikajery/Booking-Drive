@@ -52,7 +52,7 @@ SimpleForm.setup do |config|
   end
 
   # The default wrapper to be used by the FormBuilder.
-  config.default_wrapper = :default
+  config.default_wrapper = :horizontal_input_group
 
   # Define the way to render check boxes / radio buttons with labels.
   # Defaults to :nested for bootstrap config.
@@ -182,6 +182,18 @@ SimpleForm.setup do |config|
         # ba.wrapper tag: 'div', class: 'input-group col-sm-12' do |append|
           ba.use :input, class: 'form-control'
         # end
+        ba.use :error, wrap_with: { tag: 'span', class: 'help-block' }
+        ba.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
+      end
+    end
+
+    config.wrappers :new_line_on_label, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
+      b.use :html5
+      b.use :placeholder
+      b.use :label, class: 'control-label'
+   
+      b.wrapper tag: 'div' do |ba|
+        ba.use :input, class: 'form-control'
         ba.use :error, wrap_with: { tag: 'span', class: 'help-block' }
         ba.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
       end

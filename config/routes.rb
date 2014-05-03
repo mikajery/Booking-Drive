@@ -12,7 +12,12 @@ Geniedrives::Application.routes.draw do
     get 'dashboard', to: 'dashboards#index'
   end
 
-  resources 'parkings', only: [:show, :index] 
+  resources :parkings, only: :index
+  get 'p/:id', to: 'parkings#show', as: :parking
+  get 'parking/:country_id' =>'parkings#country', as: 'country'
+  get 'parking/:country_id/:state_id' => 'parkings#state', as: 'state'
+  get 'parking/:country_id/:state_id/:city' => 'parkings#city', as: 'city'
+
 
   get "pages/about"
   get "pages/pricing"

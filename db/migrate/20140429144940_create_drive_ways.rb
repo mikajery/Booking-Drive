@@ -4,6 +4,7 @@ class CreateDriveWays < ActiveRecord::Migration
       t.float        :price, precision: 2
       t.string       :description
       t.string       :name
+      t.string       :picture
       t.references   :drive, index: true
       t.timestamps
     end
