@@ -1,40 +1,42 @@
 class Users::DriveWaysController < Users::BaseController
-  before_action :set_users_drive_way, only: [:show, :edit, :update, :destroy]
+  before_action :set_drive_way, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users_drive_ways = DriveWay.all
+    @drive_ways = current_user.drive_ways
+    @drive_way = DriveWay.new
   end
 
   def show
   end
 
   def new
-    @users_drive_way = DriveWay.new
+    @drive_ways = current_user.drive_ways
+    @drive_way = DriveWay.new
   end
 
   def edit
-    @users_drive_way = DriveWay.find(params[:id])
+    @drive_way = DriveWay.find(params[:id])
   end
 
   def create
-    @users_drive_way = DriveWay.new(users_drive_way_params)
+    @drive_way = DriveWay.new(drive_way_params)
 
     respond_to do |format|
-      if @users_drive_way.save
+      if @drive_way.save
         format.html { redirect_to controller: 'users/drive_ways', action: 'index', notice: 'Drive way was successfully created.' }
-        format.json { render :show, status: :created, location: @users_drive_way }
+        format.json { render :show, status: :created, location: @drive_way }
       else
         format.html { render :new }
-        format.json { render json: @users_drive_way.errors, status: :unprocessable_entity }
+        format.json { render json: @drive_way.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
     respond_to do |format|
-      if @users_drive_way.update(users_drive_way_params)
+      if @drive_way.update(drive_way_params)
         format.html { redirect_to controller: 'users/drive_ways', action: 'index', notice: 'Drive way was successfully updated.' }
-        format.json { render :show, status: :ok, location: @users_drive_way }
+        format.json { render :show, status: :ok, location: @drive_way }
       else
         format.html { render :edit }
       end
@@ -43,18 +45,18 @@ class Users::DriveWaysController < Users::BaseController
 
   def destroy
     debugger
-    @users_drive_way.destroy
+    @drive_way.destroy
     respond_to do |format|
-      format.html { redirect_to users_drive_ways_url }
+      format.html { redirect_to drive_ways_url }
     end
   end
 
   private
-    def set_users_drive_way
-      @users_drive_way = DriveWay.find(params[:id])
+    def set_drive_way
+      @drive_way = DriveWay.find(params[:id])
     end
 
-    def users_drive_way_params
-      params.require(:drive_way).permit(:price, :name, :description)
+    def drive_way_params
+      params.require(:drive_way).permit(:price, :name, :description, :size, drive_way_availabilities: [:from, :to, :inclussion], drive_way_prices: [:days, :price])
     end
 end

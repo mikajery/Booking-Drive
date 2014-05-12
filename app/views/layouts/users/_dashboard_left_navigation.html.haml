@@ -13,75 +13,30 @@
           %i.clip-home-3
           %span.title Dashboard
           %span.selected
-      %li
-        %a{href: "javascript:void(0)"}
-          %i.clip-screen
+
+    %ul.main-navigation-menu
+      %li.active.open
+        = link_to users_drives_path do 
+          %i.clip-home-3
+          %span.title Property
+          %span.selected
+    %ul.main-navigation-menu
+      %li.active.open
+        = link_to users_drive_ways_path do 
+          %i.clip-home-3
           %span.title Drives
-          %i.icon-arrow
           %span.selected
-        %ul.sub-menu
-          %li
-            = link_to users_drives_path do
-              %span.title Posted Drives
-          %li
-            = link_to new_users_drive_path do
-              %span.title Create Drives
-          %li
-            %a{href: "layouts_footer_fixed.html"}
-              %span.title Footer Fixed
-          %li
-            %a{href: "../clip-one-rtl/index.html"}
-              %span.title RTL Version
-              %span.badge.badge-new new
-      %li
-        %a{href: "javascript:void(0)"}
-          %i.clip-cog-2
-          %span.title UI Lab
-          %i.icon-arrow
-          %span.selected
-        %ul.sub-menu
-          %li
-            %a{href: "ui_elements.html"}
-              %span.title Elements
-          %li
-            %a{href: "ui_buttons.html"}
-              %span.title Buttons & icons
-          %li
-            %a{href: "ui_animations.html"}
-              %span.title CSS3 Animation
-              %span.badge.badge-new new
-          %li
-            %a{href: "ui_modals.html"}
-              %span.title Extended Modals
-          %li
-            %a{href: "ui_tabs_accordions.html"}
-              %span.title Tabs & Accordions
-          %li
-            %a{href: "ui_sliders.html"}
-              %span.title Sliders
-          %li
-            %a{href: "ui_treeview.html"}
-              %span.title Treeview
-          %li
-            %a{href: "ui_nestable.html"}
-              %span.title Nestable List
-          %li
-            %a{href: "ui_typography.html"}
-              %span.title Typography
-      %li
-        %a{href: "javascript:void(0)"}
-          %i.clip-grid-6
-          %span.title Tables
-          %i.icon-arrow
-          %span.selected
-        %ul.sub-menu
-          %li
-            %a{href: "table_static.html"}
-              %span.title Static Tables
-          %li
-            %a{href: "table_responsive.html"}
-              %span.title Responsive Tables
-          %li
-            %a{href: "table_data.html"}
-              %span.title Data Tables
-    / end: MAIN NAVIGATION MENU
+          
+      / %li
+      /   %a{href: "javascript:void(0)"}
+      /     %i.clip-screen
+      /     %span.title Drives
+      /     %i.icon-arrow
+      /     %span.selected
+      /   %ul.sub-menu
+      /     %li
+      /       = link_to users_drives_path do
+      /         %span.title Posted Drives
+      /     %li
+      /       = link_to new_users_drive_path do
+      /         %span.title Create Drives

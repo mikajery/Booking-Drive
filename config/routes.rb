@@ -6,10 +6,12 @@ Geniedrives::Application.routes.draw do
   root :to => "pages#index"
   
   namespace :users do
-    resources :drives do
-      resources :drive_ways
+    resources :drives, path: 'properties' do
+      resources :drive_ways, only: [:update, :create, :destroy]
     end
+    resources :drive_ways, only: [:new, :edit, :index, :create, :update]
     get 'dashboard', to: 'dashboards#index'
+    patch 'dashboard/update_profile/:id', to: 'dashboards#update_user'
   end
 
   resources :parkings, only: :index

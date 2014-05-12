@@ -7,15 +7,18 @@ class Users::DashboardsController < Users::BaseController
   end
 
   def update_user
-    @user  = current_user.assign_attributes(user_params)
-    if @user.save
-      
+    redirect_to users_dashboard_path
+
+    @user  = current_user
+    if @user.update_with_password(user_params)
+      sign_in(current_user, :bypass => true)
+      flash[:notice] = 'Profile updated.'
     else
-      @active_page = :panel_edit_account
+
     end
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :user_type, :type) 
+    params.require(:user).permit(:email, :password, :password_confirmation, :user_type, :type, :first_name, :last_name, :phone, :address1, :address2, :birthday, :gender, :zipcode, :city, :country, :confirm_password, :current_password, :picture) 
   end
 end

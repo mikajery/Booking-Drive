@@ -52,7 +52,7 @@ gem "nested_form", :git => 'git://github.com/ryanb/nested_form.git'
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
 group :development do
   gem 'meta_request'

@@ -1,7 +1,8 @@
 class Users::DrivesController < ApplicationController
   layout "users/dashboards"
   def index
-    @drives = Drive.all
+    @drives = current_user.drives
+    @drive  = Drive.new
   end
 
   def show
@@ -13,17 +14,16 @@ class Users::DrivesController < ApplicationController
   end
 
   def create
-    @drive = Drive.create(drive_params)
-    @drive.save!
+    @drive = current_user.drives.create(drive_params)
     redirect_to controller: :drives, action: :index
   end
 
   def edit
-    @drive  = Drive.find params[:id]
+    @drive  = current_user.drives.find params[:id]
   end
 
   def update
-    @drive =  Drive.find params[:id]
+    @drive =  current_user.drives.find params[:id]
     if @drive.update_attributes(drive_params)
       flash[:success] = 'Drive Successfuly Create'
       redirect_to controller: :drives, action: :index

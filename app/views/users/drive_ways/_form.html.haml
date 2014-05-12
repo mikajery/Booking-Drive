@@ -1,18 +1,42 @@
-- if @users_drive_way.errors.any?
-  #error_explanation
-    %h2= "#{pluralize(@users_drive_way.errors.count, "error")} prohibited this users_drive_way from being saved:"
-    %ul
-      - @users_drive_way.errors.full_messages.each do |msg|
-        %li= msg
+.col-sm-7
+  .panel.panel-default
+    .panel-heading
+      Create Drives
+    .panel-body
+      = f.input :name
+      = f.input :size
+      .clearfix
+      %hr/ 
+      = f.simple_fields_for :drive_way_prices, @drive_way.drive_way_prices_builds, wrapper: :horizontal_input_group do |dwf|
+        .col-sm-6
+          / start: TEXT AREA PANEL
+          .panel.panel-default
+            .panel-heading
+              Drive Ways
+            .panel-body
+              = dwf.input :days
+              = dwf.input :price
+      = f.link_to_add 'add price', :drive_way_prices, class: 'btn btn-green'
+      .clearfix
+      %hr/ 
+      = f.simple_fields_for :drive_way_availabilities, @drive_way.drive_way_availabilities_builds, wrapper: :horizontal_input_group do |dwf|
+        .col-sm-6
+          / start: TEXT AREA PANEL
+          .panel.panel-default
+            .panel-heading
+              Drive Ways
+            .panel-body
+              = dwf.input :from
+              = dwf.input :to
+      = f.link_to_add 'add availability', :drive_way_availabilities, class: 'btn btn-green'
+      .form-group
+        .col-sm-4.col-sm-offset-8
+          = f.submit class: 'btn btn-blue next-step btn-block'
+.col-sm-5
+  .panel.panel-default
+    .panel-heading
+      My Properties
+    .panel-body
+      = f.association :drive, as: :select, label_method: :name_of_building, value_method: :id
+                
 
-.field
-  = f.label :price
-  = f.text_field :price
-.field
-  = f.label :name
-  = f.text_field :name
-.field
-  = f.label :description
-  = f.text_field :description
-.actions
-  = f.submit 'Save'

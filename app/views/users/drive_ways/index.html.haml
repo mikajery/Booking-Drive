@@ -1,22 +1,32 @@
-%h1 Listing users_drive_ways
-%table
-  %tr
-    %th Price
-    %th Name
-    %th Description
-    %th
-    %th
-    %th
+.row
+  = simple_nested_form_for [:users, @drive_way], html: { class: 'form-horizontal' }, role: "form" do |f|
+    = render partial: 'form', locals: { f: f }
 
-  - @users_drive_ways.each do |users_drive_way|
+/ %h1 New users_drive_way
+/ = form_for @users_drive_way, url: drive_way_path do |f|
+/   = render partial: 'form', locals: { f: f }
+
+/ = link_to 'Back', drive_way_path
+.row
+  %h1 Listing drive_way
+  %table
     %tr
-      %td= users_drive_way.price
-      %td= users_drive_way.name
-      %td= users_drive_way.description
-      %td= link_to 'Show', users_drive_way_path(users_drive_way)
-      %td= link_to 'Edit', edit_users_drive_way_path(users_drive_way)
-      %td= link_to 'Destroy', users_drive_way_path(users_drive_way), :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th Price
+      %th Name
+      %th Description
+      %th
+      %th
+      %th
 
-%br
+    - @drive_ways.each do |users_drive_way|
+      %tr
+        %td= users_drive_way.price
+        %td= users_drive_way.name
+        %td= users_drive_way.description
+        %td= link_to 'Show', users_drive_way_path(users_drive_way)
+        %td= link_to 'Edit', edit_users_drive_way_path(users_drive_way)
+        %td= link_to 'Destroy', users_drive_way_path(users_drive_way), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Drive way', new_users_drive_way_path
+  %br
+
+  = link_to 'New Drive way', new_users_drive_way_path

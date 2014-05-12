@@ -1,6 +1,5 @@
-- @active_page == :panel_edit_account ? edit = 'active' : edit = ''
-#panel_edit_account.tab-pane{ class: edit }
-  = simple_form_for @user, url: edit_user_registration_path(current_user), wrapper: :new_line_on_label do |f|
+#panel_edit_account.tab-pane
+  = simple_form_for @user, url: users_path(current_user), wrapper: :new_line_on_label do |f|
     .row
       .col-md-12
         %h3 Account Info
@@ -11,7 +10,7 @@
         = f.input :email
         = f.input :phone
         = f.input :password
-        = f.input :confirm_password
+        = f.input :password_confirmation
         = f.input :current_password
         = f.input :address1
         = f.input :address2

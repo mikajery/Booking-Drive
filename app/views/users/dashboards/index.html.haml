@@ -5,3 +5,18 @@
       .tab-content
         = render 'users/dashboards/profile/overview'
         = render 'users/dashboards/profile/edit'
+
+:javascript
+  function set_active_tab() {
+  requested_tab = '#' + window.location.hash.substring(1) || "#panel_overview"
+    if (requested_tab == '#panel_edit_account') {
+      $('a[href=#panel_edit_account]').parent().addClass('active')
+      $('a[href=#panel_overview]').parent().removeClass('active')
+      $('#panel_overview').removeClass('active');
+      $(requested_tab).addClass('active');
+    }
+  }
+
+  $(document).ready(function(){
+    set_active_tab();
+  });

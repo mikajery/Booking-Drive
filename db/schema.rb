@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140503162429) do
+ActiveRecord::Schema.define(version: 20140512150546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,10 +47,28 @@ ActiveRecord::Schema.define(version: 20140503162429) do
   add_index "contracts", ["property_id"], name: "index_contracts_on_property_id", using: :btree
   add_index "contracts", ["tenant_id"], name: "index_contracts_on_tenant_id", using: :btree
 
+  create_table "drive_way_availabilities", force: true do |t|
+    t.date     "from"
+    t.date     "to"
+    t.integer  "drive_way_id"
+    t.boolean  "inclusion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "drive_way_prices", force: true do |t|
+    t.integer  "days"
+    t.decimal  "price"
+    t.integer  "drive_way_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "drive_ways", force: true do |t|
     t.float    "price"
     t.string   "description"
     t.string   "name"
+    t.string   "size"
     t.string   "picture"
     t.integer  "drive_id"
     t.datetime "created_at"
@@ -62,6 +80,7 @@ ActiveRecord::Schema.define(version: 20140503162429) do
   create_table "drives", force: true do |t|
     t.string   "property_type"
     t.string   "name_of_building"
+    t.string   "building_number"
     t.string   "description"
     t.string   "address"
     t.string   "city"
@@ -72,12 +91,12 @@ ActiveRecord::Schema.define(version: 20140503162429) do
     t.text     "notes"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "landlord_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "drives", ["landlord_id"], name: "index_drives_on_landlord_id", using: :btree
+  add_index "drives", ["user_id"], name: "index_drives_on_user_id", using: :btree
 
   create_table "landlords", force: true do |t|
     t.string   "first_name"

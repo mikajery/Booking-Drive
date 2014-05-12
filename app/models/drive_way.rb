@@ -15,4 +15,17 @@
 class DriveWay < ActiveRecord::Base
   belongs_to :drive
   mount_uploader :picture, PictureUploader
+  has_many :drive_way_prices
+  has_many :drive_way_availabilities
+  accepts_nested_attributes_for :drive_way_prices
+  accepts_nested_attributes_for :drive_way_availabilities
+
+  def drive_way_prices_builds
+    return drive_way_prices if drive_way_prices.present?
+    drive_way_prices.build
+  end
+  def drive_way_availabilities_builds
+    return drive_way_availabilities if drive_way_availabilities.present?
+    drive_way_availabilities.build
+  end
 end

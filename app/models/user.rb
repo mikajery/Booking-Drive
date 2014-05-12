@@ -27,14 +27,23 @@
 #  birthday               :date
 #  gender                 :string(255)
 #  zipcode                :string(255)
+#  picture                :string(255)
 #
 
 class User < ActiveRecord::Base
+  attr_accessor :password, :password_confirmation, :remember_me
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   mount_uploader :picture, PictureUploader
+
+  has_many :drives
+  has_many :drive_ways, through: :drives
+
+  def name
+    first_name.to_s + ' ' + last_name.to_s
+  end
 
 end

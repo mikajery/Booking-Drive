@@ -3,6 +3,7 @@ class CreateDrives < ActiveRecord::Migration
     create_table :drives do |t|
       t.string      :property_type
       t.string      :name_of_building
+      t.string      :building_number
       t.string      :description
       t.string      :address
       t.string      :city
@@ -13,7 +14,7 @@ class CreateDrives < ActiveRecord::Migration
       t.text        :notes
       t.float       :latitude
       t.float       :longitude
-      t.references  :landlord, index: true
+      t.references  :user, index: true
       t.timestamps
     end
   end
