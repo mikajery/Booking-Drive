@@ -168,3 +168,29 @@ color: #777;
 .sb-search-777:-ms-input-placeholder {
   color: #efb480;
 }
+.container .col-lg-6{
+  float: none;
+  margin: 0 auto;
+}
+.container .single-title{
+  margin-top: 50px;
+}
+.container .single-title .form-group{
+  height: 50px;
+}
+.container .single-title .form-group .col-sm-6{
+  float: none;
+  margin: auto;
+}
+.table-condensed tr td.day:hover, .table-condensed tr th.dow:hover, .table-condensed tr th.prev:hover,
+ .table-condensed tr th.next:hover, .table-condensed tr th.datepicker-switch:hover, .table-condensed tr span.month:hover, .table-condensed tr th.today:hover{
+    background-color: #472BDE !important;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+.table-condensed tr th.prev{
+  text-align: right;
+}
+.table-condensed tr th.datepicker-switch, .table-condensed tr th.today{
+  text-align: center;
+}

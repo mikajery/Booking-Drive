@@ -11,6 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     super
+    
     if resource.persisted?
       UserMailer.welcome_email(@user).deliver
     end
@@ -22,6 +23,11 @@ class RegistrationsController < Devise::RegistrationsController
   #     UserMailer.close_email(@user).deliver
   #   end
   # end
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation) }
+  end
 
 
 end 

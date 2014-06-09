@@ -24,7 +24,7 @@ class Drive < ActiveRecord::Base
   belongs_to :landlord
   belongs_to :tenant
   geocoded_by :address
-  after_validation :geocode
+  after_validation :geocode, :if => :address_changed?
   has_many :drive_ways
   accepts_nested_attributes_for :drive_ways
 

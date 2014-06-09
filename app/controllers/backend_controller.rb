@@ -555,11 +555,11 @@ class BackendController < ApplicationController
   def getproperties
    
     if get_type == "Landlord"
-      logger.info"=============================#{get_landlord.id}"
+      
       return Property.where(landlord_id: get_landlord.id)
     end
     if get_type == "Tenant"
-      logger.info"=============================#{get_tenant.id}"
+      
       return Property.where(tenant_id: get_tenant.id)
     end
   end

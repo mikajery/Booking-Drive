@@ -8,24 +8,24 @@
     / end: MAIN MENU TOGGLER BUTTON
     / start: MAIN NAVIGATION MENU
     %ul.main-navigation-menu
-      %li.active.open
+      %li{:class => "#{@dashboards_actived}"}
         = link_to users_dashboard_path do 
           %i.clip-home-3
           %span.title Dashboard
-          %span.selected
+          %span{:class => "#{@dashboards_select}"}
 
     %ul.main-navigation-menu
-      %li.active.open
+      %li{class: "#{@properties_actived}"}
         = link_to users_drives_path do 
           %i.clip-home-3
           %span.title Property
-          %span.selected
+          %span{:class => "#{@properties_selected}"}
     %ul.main-navigation-menu
-      %li.active.open
+      %li{class: "#{@drives_actived}"}
         = link_to users_drive_ways_path do 
           %i.clip-home-3
           %span.title Drives
-          %span.selected
+          %span{:class => "#{@drives_selected}"}
           
       / %li
       /   %a{href: "javascript:void(0)"}

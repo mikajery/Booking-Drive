@@ -4,12 +4,14 @@ class Users::DashboardsController < Users::BaseController
     @drive = Drive.new 
     @user  = current_user
     @active_page = :panel_overview
+    
   end
 
   def update_user
     redirect_to users_dashboard_path
 
     @user  = current_user
+    
     if @user.update_with_password(user_params)
       sign_in(current_user, :bypass => true)
       flash[:notice] = 'Profile updated.'

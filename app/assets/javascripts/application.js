@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require analytics
 //= require jquery_nested_form
+//= require bootstrap-datepicker

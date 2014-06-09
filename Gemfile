@@ -61,7 +61,8 @@ end
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'railroady'
-  gem 'sqlite3'
+  #gem 'sqlite3'
+  gem 'mysql2'
   gem "rails-erd"
   gem 'factory_girl_rails'
   gem 'faker'
@@ -69,7 +70,7 @@ end
 
 group :production do 
   gem 'thin' 
-  gem 'pg' 
+  #gem 'pg' 
 end
 
 gem 'stripe'

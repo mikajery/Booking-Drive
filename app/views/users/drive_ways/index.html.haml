@@ -1,3 +1,6 @@
+- @drives_actived = "active open"
+- @drives_selected = "selected"
+- @position = "Drives"
 .row
   = simple_nested_form_for [:users, @drive_way], html: { class: 'form-horizontal' }, role: "form" do |f|
     = render partial: 'form', locals: { f: f }

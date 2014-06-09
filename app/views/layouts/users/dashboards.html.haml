@@ -310,10 +310,10 @@
                     %i.clip-locked
                     \ Lock Screen
                 %li
-                  %a{href: "login_example1.html"}
+                  = link_to destroy_user_session_path, :id => "logout", :method => :delete do
                     %i.clip-exit
-                    \ Log Out
-            / end: USER DROPDOWN
+                    \ &nbsp;Log Out
+              / end: USER DROPDOWN
           / end: TOP NAVIGATION MENU
       / end: TOP NAVIGATION CONTAINER
     / end: HEADER
@@ -353,7 +353,7 @@
                   %a{href: "#"}
                     Home
                 %li.active
-                  Dashboard
+                  = @position
                 %li.search-box
                   %form.sidebar-search
                     .form-group
@@ -362,7 +362,7 @@
                         %i.clip-search-3
               .page-header
                 %h1
-                  Dashboard
+                  = @position
                   %small overview & stats
               / end: PAGE TITLE & BREADCRUMB
           / end: PAGE HEADER

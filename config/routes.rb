@@ -1,5 +1,15 @@
 Geniedrives::Application.routes.draw do
 
+  get 'book/index'
+
+  get 'book/create'
+
+  get 'book/new'
+
+  get 'book/edit'
+
+  get 'book/delete'
+
   get '/search', to: 'searches#index'
 
   devise_for :users, :controllers => {:registrations => "registrations"}

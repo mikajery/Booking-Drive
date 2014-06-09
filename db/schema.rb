@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140512150546) do
+ActiveRecord::Schema.define(version: 20140607082335) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "books", force: true do |t|
+    t.string   "user_id"
+    t.string   "drive_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.boolean  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "username"
+  end
 
   create_table "connections", force: true do |t|
     t.boolean  "approved"
@@ -34,7 +42,7 @@ ActiveRecord::Schema.define(version: 20140512150546) do
     t.integer  "tenant_id"
     t.integer  "landlord_id"
     t.integer  "property_id"
-    t.decimal  "rental_amount"
+    t.decimal  "rental_amount", precision: 10, scale: 0
     t.integer  "pay_date"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -47,6 +55,15 @@ ActiveRecord::Schema.define(version: 20140512150546) do
   add_index "contracts", ["property_id"], name: "index_contracts_on_property_id", using: :btree
   add_index "contracts", ["tenant_id"], name: "index_contracts_on_tenant_id", using: :btree
 
+  create_table "drive_feedbacks", force: true do |t|
+    t.string   "drive_id"
+    t.string   "user_id"
+    t.float    "score"
+    t.text     "feed_msg"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "drive_way_availabilities", force: true do |t|
     t.date     "from"
     t.date     "to"
@@ -58,7 +75,7 @@ ActiveRecord::Schema.define(version: 20140512150546) do
 
   create_table "drive_way_prices", force: true do |t|
     t.integer  "days"
-    t.decimal  "price"
+    t.decimal  "price",        precision: 10, scale: 0
     t.integer  "drive_way_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -94,6 +111,7 @@ ActiveRecord::Schema.define(version: 20140512150546) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "average_score"
   end
 
   add_index "drives", ["user_id"], name: "index_drives_on_user_id", using: :btree
@@ -142,7 +160,7 @@ ActiveRecord::Schema.define(version: 20140512150546) do
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "amount"
+    t.decimal  "amount",         precision: 10, scale: 0
     t.string   "return_token"
     t.string   "paypal_token"
   end
@@ -154,9 +172,9 @@ ActiveRecord::Schema.define(version: 20140512150546) do
 
   create_table "subscription_payments", force: true do |t|
     t.string   "subscription_type"
-    t.decimal  "amount"
+    t.decimal  "amount",            precision: 10, scale: 0
     t.date     "date_from"
-    t.decimal  "date_to"
+    t.decimal  "date_to",           precision: 10, scale: 0
     t.string   "payment_for"
     t.date     "payment_date"
     t.datetime "created_at"
