@@ -24,7 +24,7 @@
             .col-sm-9
               %h2 Book a parking space
         .single-title
-          = form_for :books do |f|
+          = form_for :books, :url => book_create_path, :method => "Post" do |f|
             .form-group
               = f.label :username, class: 'col-sm-3 control-label'
               .col-sm-9
@@ -38,13 +38,14 @@
               .col-sm-9
                 = f.text_field :end_date, class: 'form-control datepicker'  
             .form-group
-              = label_tag "Drive", class: 'col-sm-3 control-label'
+              = f.label :property, class: 'col-sm-3 control-label'
               .col-sm-9
-                = text_field_tag "Drives", "", class: 'form-control'
+                = text_field_tag "Drives", @drive.name_of_building, class: 'form-control'
+                = hidden_field_tag "drive_id", @drive.id
             .form-group
-              = label_tag "Drive-way", "Drive-way", class: 'col-sm-3 control-label'
+              = f.label :drive_way, class: 'col-sm-3 control-label'
               .col-sm-9
-                = text_field_tag "Drives-way", "", class: 'form-control'
+                = select "DriveWay","drive_way_id", get_drive_way(@drive.id), :prompt => "Please Select Drive Way ..."
             .form-group
               .col-sm-12
                 = submit_tag :Save, class: 'btn btn-primary btn-lg btn-block'

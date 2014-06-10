@@ -1,11 +1,11 @@
-- @page_title = 'Parking'
+- @page_title = 'Booking'
 %section.colon14
   .singleheader
     .container
       .col-lg-12.col-sm-12.col-md-12
         .single-title
-          %h3 About Us Page Style
-          %h4 You can add anythings here
+          %h3 Review Booking
+          %h4 Please check your booking
       .col-lg-6.col-sm-6.col-md-6
         .breadcrumb-container
           %ul.breadcrumb
@@ -19,19 +19,8 @@
   .container.general
     #content.single.col-lg-12.col-md-12.col-sm-12
       .message.text-center
-        %h2 Search Park Location
-        = form_tag search_path, method: :get do
-          .form-group
-            = text_field_tag :search, params[:search], class: 'form-control', type: 'search', placeholder: 'search any place', id: 'search'
-            / %input#search.form-control{name: "search", placeholder: "Enter your search term...", type: "search", value: ""}/
-          .form-group
-            #datepicker.input-daterange.input-group
-              / %input.form-control{name: "start", placeholder: "start date ..", type: "text"}/
-              %span.input-group-addon
-              / %input.form-control{name: "end", placeholder: "end date", type: "text"}/
-          .form-group
-            = submit_tag :search, class: 'btn btn-primary'
-            / %input.btn.btn-primary{type: "submit", value: "Search"}/
+        %h2 Booking View
+        
         :javascript
           $(function() {
             $('.input-daterange').datepicker({
@@ -44,22 +33,24 @@
         %table.table.table-striped{"data-effect" => "fade"}
           %thead
             %tr
-              %th Address
-              %th Zip Code
-              %th Description
-              %th State
-              %th Score
+              %th Booking Title
+              %th Drive
+              %th Drive Way
+              %th Start Date
+              %th End Date
               %th 
           %tbody
-            - @drives.each do |drive|
+            - @books.each do |book|
               %tr
-                %td= drive.address
-                %td= drive.zip_code
-                %td= drive.description
-                %td= drive.state
-                %td= drive.average_score
-                %td= link_to("Booking", book_new_path, class: "btn, btn-primary")
-            = debug @drives    
+                %td= book.username
+                %td= book.drive_id
+                %td= book.drive_way_id
+                %td= book.start_date
+                %td= book.end_date
+                %td= link_to("View", book_new_path(id: book.id), class: "btn, btn-primary")
+                %td= link_to("End", book_new_path(id: book.id), class: "btn, btn-primary")
+                
+               
 
       .col-lg-4.col-md-4.col-sm-6{"data-effect" => "slide-left"}
         %h2.general-title

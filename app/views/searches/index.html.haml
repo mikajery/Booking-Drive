@@ -58,8 +58,9 @@
                 %td= drive.description
                 %td= drive.state
                 %td= drive.average_score
-                %td= link_to("Booking", book_new_path, class: "btn, btn-primary")
-            = debug @drives    
+                %td= link_to("Booking", book_new_path(id: drive.id), class: "btn, btn-primary")
+                
+              
 
       .col-lg-4.col-md-4.col-sm-6{"data-effect" => "slide-left"}
         %h2.general-title

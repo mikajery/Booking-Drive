@@ -2,9 +2,11 @@ Geniedrives::Application.routes.draw do
 
   get 'book/index'
 
-  get 'book/create'
+  post 'book/create'
 
   get 'book/new'
+  
+  #post 'book/new'
 
   get 'book/edit'
 
