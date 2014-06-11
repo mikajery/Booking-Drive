@@ -47,8 +47,7 @@
                 %td= book.drive_way_id
                 %td= book.start_date
                 %td= book.end_date
-                %td= link_to("View", book_new_path(id: book.id), class: "btn, btn-primary")
-                %td= link_to("End", book_new_path(id: book.id), class: "btn, btn-primary")
+                %td.vee= link_to("View", book_new_path(id: book.id), class: "btn, btn-primary")+link_to("Edit", book_new_path(id: book.id), class: "btn, btn-primary")+link_to("End", book_new_path(id: book.id), class: "btn, btn-danger")
                 
                
 

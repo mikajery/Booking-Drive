@@ -26,9 +26,7 @@ class BookController < ApplicationController
   def new
     
     @drive = Drive.find_by_id(params[:id])
-    
-    
-    
+   
   end
 
   def edit
