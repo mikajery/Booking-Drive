@@ -64,7 +64,7 @@
                 %td= drive.description
                 %td= drive.state
                 %td
-                  - if get_average_score(drive.id).to_s == "nan"
+                  - if get_average_score(drive.id) == 0
                     .marks= "No Given Feedbacks"
                   - else 
                     .marks= get_average_score(drive.id)

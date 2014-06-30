@@ -3,7 +3,7 @@ module SearchesHelper
 		scores = DriveFeedback.where(:drive_id => str).sum(:score)
 		counts = DriveFeedback.where(:drive_id => str).count
 		if scores == 0 || counts == 0
-			@average = "nan"
+			@average = 0
 		else
 			@average = (scores / counts).round(2)
 		end
