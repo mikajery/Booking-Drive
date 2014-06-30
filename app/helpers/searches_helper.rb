@@ -1,7 +1,7 @@
 module SearchesHelper
 	def get_average_score(str)
-		scores = DriveFeedback.where(:drive_id => str).sum(:score)
-		counts = DriveFeedback.where(:drive_id => str).count
+		scores = DriveFeedback.where(:drive_id => str.to_i).sum(:score)
+		counts = DriveFeedback.where(:drive_id => str.to_i).count
 		if scores == 0 || counts == 0
 			@average = 0
 		else
