@@ -9,7 +9,7 @@ class Users::DashboardsController < Users::BaseController
 
   def update_user
     redirect_to users_dashboard_path
-
+    
     @user  = current_user
     
     if @user.update_with_password(user_params)

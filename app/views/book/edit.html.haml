@@ -1,2 +1,66 @@
-%h1 Book#edit
-%p Find me in app/views/book/edit.html.haml
+- @page_title = 'Booking'
+%section.colon14
+  .singleheader
+    .container
+      .col-lg-12.col-sm-12.col-md-12
+        .single-title
+          %h3 Booking Drive
+          %h4 You can book your drive
+      .col-lg-6.col-sm-6.col-md-6
+        .breadcrumb-container
+          %ul.breadcrumb
+            %li
+              %a{href: root_path } Home
+            %li
+              %a{href: "#"} Pages
+            %li.active About us Book Style
+    .shadow
+%section.colon14
+  .book-content
+    .container
+      .col-lg-6.col-sm-6.col-md-6.book-new
+        .single-title
+          .form-group
+            .col-sm-9
+              %h2 Book a parking space
+        .single-title
+          = form_for :book, :url => book_update_path, :method => "Post" do |f|
+            = hidden_field_tag "id", @book.id
+            .form-group
+              = f.label :username, class: 'col-sm-3 control-label'
+              .col-sm-9
+                = f.text_field :username, class: 'form-control'
+            .form-group
+              = f.label :start_date, class: 'col-sm-3 control-label'
+              .col-sm-9
+                = f.text_field :start_date, class: 'form-control datepicker'
+            .form-group
+              = f.label :end_date, class: 'col-sm-3 control-label'
+              .col-sm-9
+                = f.text_field :end_date, class: 'form-control datepicker'  
+            .form-group
+              = f.label :property, class: 'col-sm-3 control-label'
+              .col-sm-9
+                = text_field_tag "Drives", get_drive(@book.drive_id), class: 'form-control'
+                = hidden_field_tag "drive_id", @book.drive_id
+            .form-group
+              = f.label :drive_way, class: 'col-sm-3 control-label'
+              .col-sm-9
+                = select "DriveWay","drive_way_id", get_drive_way(@book.drive_id), :prompt => "Please Select Drive Way ..."
+            .form-group
+              .col-sm-12
+                = submit_tag :Save, class: 'btn btn-primary btn-lg btn-block'
+              / %input.btn.btn-primary{type: "submit", value: "Search"}/
+          
+        :javascript
+          $(function() {
+            $('.datepicker').datepicker({
+              format: "yyyy-mm-dd",
+              todayHighlight: true,
+              todayBtn: 'linked',
+              autoclose: true
+            });
+            
+          });
+      
+    .shadow

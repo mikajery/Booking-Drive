@@ -1,18 +1,7 @@
 Geniedrives::Application.routes.draw do
 
-  get 'book/index'
 
-  post 'book/create'
-
-  get 'book/new'
-  
-  #post 'book/new'
-
-  get 'book/edit'
-
-  get 'book/delete'
-
-  get '/search', to: 'searches#index'
+  get 'fdback/new'
 
   devise_for :users, :controllers => {:registrations => "registrations"}
   root :to => "pages#index"
@@ -145,6 +134,22 @@ Geniedrives::Application.routes.draw do
     get "/backend/display_404"
 
 
+  get 'book/index'
+
+  post 'book/create'
+
+  get 'book/new'
+  
+  #post 'book/new'
+
+  get 'book/edit'
+
+  get 'book/delete'
+
+  get '/search', to: 'searches#index'
+  post 'book/update'
+  post 'fdback/create'
+  get 'fdback/show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

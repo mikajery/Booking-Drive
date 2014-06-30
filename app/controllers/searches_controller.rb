@@ -3,8 +3,8 @@ class SearchesController < ApplicationController
   
   def index
   	
-    if !(params[:search].blank?)
-      @drives = Drive.near([params[:search]], 50, :order => :distance)
+    if params[:search].present? 
+      @drives = Drive.search(params[:search]).order("created_at DESC")
     
     else
     

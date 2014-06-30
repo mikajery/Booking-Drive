@@ -202,4 +202,23 @@ color: #777;
 	text-decoration: none;
 	border-radius: 20px;
 }
-
+#score-form{
+	height: 215px;
+}
+#fd-txt{
+	height: auto;
+}
+.btn-r{
+	float: right;
+}
+.star-bar{
+    background: url("/assets/stars.png") no-repeat scroll 0 0 / 100px 85px rgba(0, 0, 0, 0);
+    height: 18px;
+    width: 100px;
+    margin: 0 auto;
+}
+.star-black{
+    background: url("/assets/stars.png") no-repeat scroll 0 -22px / 100px 85px rgba(0, 0, 0, 0);
+    height: 18px;
+    
+}

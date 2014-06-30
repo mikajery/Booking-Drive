@@ -33,7 +33,7 @@
         %table.table.table-striped{"data-effect" => "fade"}
           %thead
             %tr
-              %th Booking Title
+              %th Username
               %th Drive
               %th Drive Way
               %th Start Date
@@ -47,7 +47,7 @@
                 %td= book.drive_way_id
                 %td= book.start_date
                 %td= book.end_date
-                %td.vee= link_to("View", book_new_path(id: book.id), class: "btn, btn-primary")+link_to("Edit", book_new_path(id: book.id), class: "btn, btn-primary")+link_to("End", book_new_path(id: book.id), class: "btn, btn-danger")
+                %td.vee= link_to("View", book_new_path(id: book.id), class: "btn, btn-primary")+link_to("Edit", book_edit_path(id: book.id), class: "btn, btn-primary")+link_to("End", book_delete_path(id: book.id), class: "btn, btn-danger")
                 
                
 

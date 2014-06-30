@@ -1,0 +1,90 @@
+- @page_title = 'Leave your suggestion'
+%section.colon14
+  .singleheader
+    .container
+      .col-lg-12.col-sm-12.col-md-12
+        .single-title
+          %h3 Booking Drive
+          %h4 You can book your drive
+      .col-lg-6.col-sm-6.col-md-6
+        .breadcrumb-container
+          %ul.breadcrumb
+            %li
+              %a{href: root_path } Home
+            %li
+              %a{href: "#"} Pages
+            %li.active About us Book Style
+    .shadow
+%section.colon14
+  .book-content
+    .container
+      .col-lg-6.col-sm-6.col-md-6.book-new
+        .single-title
+          .form-group
+            .col-sm-12
+              %h2 Leaving Feedback
+        .form-horizontal
+          = form_for :drive_feedback, :url => fdback_create_path, :method => "Post" do |f|
+            = hidden_field_tag "id", @drive.id
+            .form-group
+              = f.label :Drive_Name, class: 'col-sm-3 control-label'
+              .col-sm-9
+                = text_field_tag "drive-name", @drive.name_of_building, class: 'form-control'
+            #score-form.form-group
+              = f.label :score, class: 'col-sm-3 control-label'
+              .col-sm-9
+                %p Feedback to Drive
+                %input.star{name: "price", value: "1", type: "radio"}/
+                %input.star{name: "price", value: "2", type: "radio"}/
+                %input.star{name: "price", value: "3", type: "radio"}/
+                %input.star{name: "price", value: "4", type: "radio"}/
+                %input.star{name: "price", value: "5", type: "radio"}/
+                %p &nbsp; :Price
+                %input.star{name: "service", value: "1", type: "radio"}/
+                %input.star{name: "service", value: "2", type: "radio"}/
+                %input.star{name: "service", value: "3", type: "radio"}/
+                %input.star{name: "service", value: "4", type: "radio"}/
+                %input.star{name: "service", value: "5", type: "radio"}/
+                %p &nbsp; :Service
+                %input.star{name: "environment", value: "1", type: "radio"}/
+                %input.star{name: "environment", value: "2", type: "radio"}/
+                %input.star{name: "environment", value: "3", type: "radio"}/
+                %input.star{name: "environment", value: "4", type: "radio"}/
+                %input.star{name: "environment", value: "5", type: "radio"}/
+                %p &nbsp; :Environment
+                %input.star{name: "star4", value: "1", type: "radio"}/
+                %input.star{name: "star4", value: "2", type: "radio"}/
+                %input.star{name: "star4", value: "3", type: "radio"}/
+                %input.star{name: "star4", value: "4", type: "radio"}/
+                %input.star{name: "star4", value: "5", type: "radio"}/
+                %p &nbsp; :Attribute4
+                %input.star{name: "star5", value: "1", type: "radio"}/
+                %input.star{name: "star5", value: "2", type: "radio"}/
+                %input.star{name: "star5", value: "3", type: "radio"}/
+                %input.star{name: "star5", value: "4", type: "radio"}/
+                %input.star{name: "star5", value: "5", type: "radio"}/
+                %p &nbsp; :Attribute5  
+            
+            #fd-txt.form-group
+              = f.label :description, class: 'col-sm-3 control-label'
+              .col-sm-9
+                %p Share your experience with this Drive
+                = text_area_tag "feed_msg", "", class: 'form-control'
+            .form-group
+              .col-sm-12
+                = submit_tag :Save, class: 'btn btn-primary btn-lg btn-r'
+              / %input.btn.btn-primary{type: "submit", value: "Search"}/
+          
+        :javascript
+          $(function() {
+            $('.datepicker').datepicker({
+              format: "yyyy-mm-dd",
+              todayHighlight: true,
+              todayBtn: 'linked',
+              autoclose: true
+            });
+           
+            
+          });
+      
+    .shadow

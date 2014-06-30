@@ -24,7 +24,7 @@
             .col-sm-9
               %h2 Book a parking space
         .single-title
-          = form_for :books, :url => book_create_path, :method => "Post" do |f|
+          = form_for :book, :url => book_create_path, :method => "Post" do |f|
             .form-group
               = f.label :username, class: 'col-sm-3 control-label'
               .col-sm-9

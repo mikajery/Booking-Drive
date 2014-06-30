@@ -16,3 +16,7 @@
 //= require analytics
 //= require jquery_nested_form
 //= require bootstrap-datepicker
+//= require jquery-star-rating
+$(function(){
+
+});

@@ -20,24 +20,30 @@
     #content.single.col-lg-12.col-md-12.col-sm-12
       .message.text-center
         %h2 Search Park Location
-        = form_tag search_path, method: :get do
-          .form-group
-            = text_field_tag :search, params[:search], class: 'form-control', type: 'search', placeholder: 'search any place', id: 'search'
-            / %input#search.form-control{name: "search", placeholder: "Enter your search term...", type: "search", value: ""}/
-          .form-group
-            #datepicker.input-daterange.input-group
-              / %input.form-control{name: "start", placeholder: "start date ..", type: "text"}/
-              %span.input-group-addon
-              / %input.form-control{name: "end", placeholder: "end date", type: "text"}/
-          .form-group
-            = submit_tag :search, class: 'btn btn-primary'
-            / %input.btn.btn-primary{type: "submit", value: "Search"}/
+        .form-inline
+          = form_tag search_path, method: :get do
+            .form-group
+              %label{:for => "drive"} Drive:
+              = text_field_tag :search, params[:search], class: 'form-control', type: 'search', placeholder: 'search any place', id: 'search'
+              / %input#search.form-control{name: "search", placeholder: "Enter your search term...", type: "search", value: ""}/
+            .form-group
+              #datepicker.input-daterange.input-group
+                %label{:for => "startDate"} Start Date:
+                %input.form-control{name: "start", placeholder: "start date ...", type: "text"}
+                %span.input-group-addon
+                %label{:for => "endDate"} End Date:
+                %input.form-control{name: "end", placeholder: "end date ...", type: "text"}
+            .form-group
+              = submit_tag :search, class: 'btn btn-primary'
+              / %input.btn.btn-primary{type: "submit", value: "Search"}/
         :javascript
           $(function() {
             $('.input-daterange').datepicker({
+              format: "yyyy-mm-dd",
               todayBtn: "linked",
               keyboardNavigation: false,
-              forceParse: false
+              forceParse: false,
+              autoclose: true
               });
           });
       .message.text-center
@@ -57,10 +63,26 @@
                 %td= drive.zip_code
                 %td= drive.description
                 %td= drive.state
-                %td= drive.average_score
+                %td
+                  - if get_average_score(drive.id) == "nan"
+                    .marks= "No Given Feedbacks"
+                  - else 
+                    .marks= get_average_score(drive.id)
+                  .star-bar                  
+                    .star-black
                 %td= link_to("Booking", book_new_path(id: drive.id), class: "btn, btn-primary")
-                
-              
+      :javascript
+        $(function(){
+          $("table tr").each(function(){
+            var t = $(this).find('.marks').html();
+            if (t == "No Given Feedbacks"){
+              $(this).find('.star-black').css("width", "0px");
+            }else{
+              $(this).find('.star-black').css("width", t/5*100 + "px");
+            }
+            
+          })
+        })
 
       .col-lg-4.col-md-4.col-sm-6{"data-effect" => "slide-left"}
         %h2.general-title
