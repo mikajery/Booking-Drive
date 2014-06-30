@@ -4,10 +4,10 @@ module BookHelper
   end
   
   def get_drive(drive_id)
-    Drive.where(id: drive_id).collect {|dw| [ dw.name_of_building, dw.id ] }
+    Drive.where(id: drive_id).collect {|dw| [ dw.name_of_building ] }
   end
   
   def get_drive_way_id(drive_way_id)
-    DriveWay.where(id: drive_way_id).collect {|dw| [ dw.name, dw.id ] }
+    DriveWay.where(id: drive_way_id).collect {|dw| [ dw.name] }
   end
 end

@@ -38,6 +38,7 @@ class Drive < ActiveRecord::Base
     "#{address}, #{zip_code}, #{city}, #{country}"
   end
   def self.search(query)
-  where("address like ?", "%#{query}%")
-end
+    where("lower(address) like ? OR lower(zip_code) like ? OR lower(city) like ? OR lower(country) like ?", "%#{query.downcase}%", "%#{query.downcase}%", "%#{query.downcase}%", "%#{query.downcase}%")
+  end
+
 end

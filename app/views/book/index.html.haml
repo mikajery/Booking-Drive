@@ -43,8 +43,8 @@
             - @books.each do |book|
               %tr
                 %td= book.username
-                %td= book.drive_id
-                %td= book.drive_way_id
+                %td= get_drive(book.drive_id)*","
+                %td= get_drive_way_id(book.drive_way_id)*","
                 %td= book.start_date
                 %td= book.end_date
                 %td.vee= link_to("View", book_new_path(id: book.id), class: "btn, btn-primary")+link_to("Edit", book_edit_path(id: book.id), class: "btn, btn-primary")+link_to("End", book_delete_path(id: book.id), class: "btn, btn-danger")

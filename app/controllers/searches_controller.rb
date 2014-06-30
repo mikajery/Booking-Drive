@@ -4,8 +4,7 @@ class SearchesController < ApplicationController
   def index
   	
     if params[:search].present? 
-      @drives = Drive.search(params[:search]).order("created_at DESC")
-    
+      @drives = Drive.search(params[:search]).order("name_of_building ASC")
     else
     
       @drives = Drive.all
