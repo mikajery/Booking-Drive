@@ -222,3 +222,10 @@ color: #777;
     height: 18px;
     
 }
+.input-line{
+    display: table-cell;
+    width: 4px;
+}
+.btn-search{
+  margin-top: 26px;
+}

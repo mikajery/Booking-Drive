@@ -30,11 +30,11 @@
               #datepicker.input-daterange.input-group
                 %label{:for => "startDate"} Start Date:
                 %input.form-control{name: "start", placeholder: "start date ...", type: "text"}
-                %span.input-group-addon
+                %span.input-line
                 %label{:for => "endDate"} End Date:
                 %input.form-control{name: "end", placeholder: "end date ...", type: "text"}
             .form-group
-              = submit_tag :search, class: 'btn btn-primary'
+              = submit_tag :search, class: 'btn btn-primary btn-search'
               / %input.btn.btn-primary{type: "submit", value: "Search"}/
         :javascript
           $(function() {
